@@ -5,7 +5,7 @@ from rag_core.storage import StorageBundle
 from rag_core.parsers import make_parser
 from rag_core.pipeline import RagPipeline
 from rag_core.processors import ModalProcessors
-from rag_core.llm_bedrock import BedrockLLM
+from rag_core.llm_unified import UnifiedLLM, create_llm
 
 @lru_cache()
 def get_config() -> AppConfig:
@@ -17,9 +17,9 @@ def get_storages() -> StorageBundle:
     return StorageBundle.initialize(cfg)
 
 @lru_cache()
-def get_llm() -> BedrockLLM:
-    # Reads BEDROCK_REGION, BEDROCK_LLM_MODEL_ID, and AWS_BEARER_TOKEN_BEDROCK from .env
-    return BedrockLLM()
+def get_llm() -> UnifiedLLM:
+    cfg = get_config()
+    return create_llm(cfg)
 
 @lru_cache()
 def get_processors() -> ModalProcessors:

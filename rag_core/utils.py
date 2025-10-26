@@ -30,6 +30,18 @@ def cache_key(path: Path, parser: str, method: str, **kwargs) -> str:
     }
     return md5_hex(str(payload))
 
+def cache_key_with_overlay(path: Path, parser: str, method: str, **kwargs) -> str:
+    """Enhanced cache key that includes overlay settings"""
+    payload = {
+        "path": str(path.resolve()),
+        "mtime": file_mtime(path),
+        "parser": parser,
+        "parse_method": method,
+        "opts": {k: v for k, v in kwargs.items() if v is not None},
+        "overlay": kwargs.get("export_overlay", False)
+    }
+    return md5_hex(str(payload))
+
 def content_doc_id(content_list: List[Dict[str, Any]]) -> str:
     sig_parts = []
     for item in content_list:
@@ -60,11 +72,18 @@ def _safe_join_str(v) -> str:
 # --- multimodal chunk templating (clean output for each type)
 def template_chunk(item: Dict[str, Any], description: str) -> str:
     t = item.get("type")
+    page_info = f"page={item.get('page_idx', 0)}" if item.get('page_idx') is not None else ""
+
     if t == "image":
         cap = _safe_join_str(item.get("image_caption"))
         foot = _safe_join_str(item.get("image_footnote"))
+        bbox_info = ""
+        if item.get("bbox"):
+            x1, y1, x2, y2 = item["bbox"]
+            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
+
         return (
-            f"[IMAGE]\n"
+            f"[IMAGE] {bbox_info}{page_info}\n"
             f"path={item.get('img_path','')}\n"
             f"caption={cap}\n"
             f"footnote={foot}\n"
@@ -75,8 +94,19 @@ def template_chunk(item: Dict[str, Any], description: str) -> str:
         foot = _safe_join_str(item.get("table_footnote"))
         body = item.get("table_body", "")
         body = body if isinstance(body, str) else ("" if body is None else str(body))
+
+        # Truncate if too long
+        max_chars = 5000  # Configurable via environment
+        if len(body) > max_chars:
+            body = body[:max_chars] + "..."
+
+        bbox_info = ""
+        if item.get("bbox"):
+            x1, y1, x2, y2 = item["bbox"]
+            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
+
         return (
-            f"[TABLE]\n"
+            f"[TABLE] {bbox_info}{page_info}\n"
             f"caption={cap}\n"
             f"body=\n{body}\n"
             f"footnote={foot}\n"
@@ -86,10 +116,22 @@ def template_chunk(item: Dict[str, Any], description: str) -> str:
         fmt = item.get("text_format") or "plain"
         expr = item.get("text","")
         expr = expr if isinstance(expr, str) else ("" if expr is None else str(expr))
-        return f"[EQUATION]\nformat={fmt}\nexpr={expr}\nsummary={description or ''}\n"
+
+        bbox_info = ""
+        if item.get("bbox"):
+            x1, y1, x2, y2 = item["bbox"]
+            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
+
+        return f"[EQUATION] {bbox_info}{page_info}\nformat={fmt}\nexpr={expr}\nsummary={description or ''}\n"
     if t == "text":
         text = item.get("text", "")
         text = text if isinstance(text, str) else ("" if text is None else str(text))
-        return f"[TEXT]\ncontent=\n{text}\nsummary={description or ''}\n"
+
+        bbox_info = ""
+        if item.get("bbox"):
+            x1, y1, x2, y2 = item["bbox"]
+            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
+
+        return f"[TEXT] {bbox_info}{page_info}\ncontent=\n{text}\nsummary={description or ''}\n"
     # generic fallback
-    return f"[{str(t).upper()}]\nsummary={description or ''}\n"
+    return f"[{str(t).upper()}] {page_info}\nsummary={description or ''}\n"

@@ -56,35 +56,120 @@ class DoclingParser(BaseParser):
         doc = conv_res.document
         blocks: List[Dict[str, Any]] = []
 
-        # 1) TEXT (best-effort)
-        for t in getattr(doc, "texts", []):
-            page_idx = getattr(t, "page_no", None)
-            if t.text and t.text.strip():
-                blocks.append({"type": "text", "text": t.text, "page_idx": page_idx})
+        # Get page sizes for bbox calculations
+        page_sizes = {}
+        pages = getattr(doc, "pages", None)
+        if pages:
+            for pg_no, page in pages.items():
+                try:
+                    # Get page dimensions from the page object
+                    page_sizes[pg_no] = (page.size.width, page.size.height)
+                except:
+                    page_sizes[pg_no] = (612, 792)  # Default A4 size in points
 
-        # 2) TABLES
-        for tb in getattr(doc, "tables", []):
+        # 1) TEXT with enhanced metadata
+        for i, t in enumerate(getattr(doc, "texts", [])):
+            if t.text and t.text.strip():
+                # Extract page info - fallback to sequential assignment if not available
+                page_idx = getattr(t, "page_no", None)
+                if page_idx is None:
+                    # Fallback: estimate page based on position in document
+                    # This is a rough approximation when page info is not available
+                    page_idx = i // 50  # Assume ~50 text items per page
+
+                # Extract bounding box if available
+                bbox = None
+                page_size = page_sizes.get(page_idx, None)
+                try:
+                    if hasattr(t, 'prov') and t.prov:
+                        # Try to get bounding box from provenance
+                        if hasattr(t.prov, 'bbox'):
+                            bbox = (t.prov.bbox.x1, t.prov.bbox.y1, t.prov.bbox.x2, t.prov.bbox.y2)
+                except:
+                    pass
+
+                # Extract headers if available
+                headers = []
+                if hasattr(t, 'level') and t.level > 0:
+                    # Convert level to header markers
+                    headers = ['#' * t.level]
+
+                block = {
+                    "type": "text",
+                    "text": t.text,
+                    "page_idx": page_idx,
+                    "bbox": bbox,
+                    "page_size": page_size
+                }
+
+                if headers:
+                    block["headers"] = headers
+
+                blocks.append(block)
+
+        # 2) TABLES with enhanced metadata
+        for i, tb in enumerate(getattr(doc, "tables", [])):
             try:
                 body_md = tb.export_to_markdown()
             except Exception:
                 body_md = (tb.export_to_html(doc=doc) or "")[:100000]
+
+            # Extract page info - fallback to sequential assignment if not available
             page_idx = getattr(tb, "page_no", None)
+            if page_idx is None:
+                # Fallback: estimate page based on position in document
+                page_idx = i // 5  # Assume fewer tables than text items
+
+            page_size = page_sizes.get(page_idx, None)
+
+            # Extract bounding box if available
+            bbox = None
+            try:
+                if hasattr(tb, 'prov') and tb.prov:
+                    if hasattr(tb.prov, 'bbox'):
+                        bbox = (tb.prov.bbox.x1, tb.prov.bbox.y1, tb.prov.bbox.x2, tb.prov.bbox.y2)
+            except:
+                pass
+
             caps = getattr(tb, "captions", None)
-            blocks.append({
+            footnotes = getattr(tb, "footnotes", None)
+
+            block = {
                 "type": "table",
                 "table_body": body_md,
                 "table_caption": caps if isinstance(caps, list) else ([caps] if caps else []),
+                "table_footnote": footnotes if isinstance(footnotes, list) else ([footnotes] if footnotes else []),
                 "page_idx": page_idx,
-            })
+                "bbox": bbox,
+                "page_size": page_size
+            }
 
-        # 3) PICTURES (iterate items, save PNGs if enabled)
+            blocks.append(block)
+
+        # 3) PICTURES with enhanced metadata
         from docling_core.types.doc import PictureItem
-        for element, _level in doc.iterate_items():
+        for i, (element, _level) in enumerate(doc.iterate_items()):
             if isinstance(element, PictureItem):
+                # Extract page info - fallback to sequential assignment if not available
                 page_idx = getattr(element, "page_no", None)
+                if page_idx is None:
+                    # Fallback: estimate page based on position in document
+                    page_idx = i // 10  # Assume fewer images than text items
+
+                page_size = page_sizes.get(page_idx, None)
+
+                # Extract bounding box if available
+                bbox = None
+                try:
+                    if hasattr(element, 'prov') and element.prov:
+                        if hasattr(element.prov, 'bbox'):
+                            bbox = (element.prov.bbox.x1, element.prov.bbox.y1, element.prov.bbox.x2, element.prov.bbox.y2)
+                except:
+                    pass
+
                 img_path = ""
                 try:
-                    pil_img = element.get_image(doc)  # requires generate_picture_images=True
+                    pil_img = element.get_image(doc)
                     out_dir = Path(os.getenv("OUTPUT_DIR", "./output"))
                     out_dir.mkdir(parents=True, exist_ok=True)
                     fname = f"docling-figure-p{page_idx or 0}-{id(element)}.png"
@@ -93,20 +178,77 @@ class DoclingParser(BaseParser):
                     img_path = str(fpath)
                 except Exception:
                     pass
+
                 caps = getattr(element, "captions", None)
-                blocks.append({
+                footnotes = getattr(element, "footnotes", None)
+
+                block = {
                     "type": "image",
                     "img_path": img_path,
                     "image_caption": caps if isinstance(caps, list) else ([caps] if caps else []),
+                    "image_footnote": footnotes if isinstance(footnotes, list) else ([footnotes] if footnotes else []),
                     "page_idx": page_idx,
-                })
+                    "bbox": bbox,
+                    "page_size": page_size
+                }
 
-        # 4) PAGE RENDERS (optional)
+                blocks.append(block)
+
+        # 4) EQUATIONS - try to extract from document
+        try:
+            for i, eq in enumerate(getattr(doc, "equations", [])):
+                # Extract page info - fallback to sequential assignment if not available
+                page_idx = getattr(eq, "page_no", None)
+                if page_idx is None:
+                    # Fallback: estimate page based on position in document
+                    page_idx = i // 20  # Assume fewer equations than text items
+
+                page_size = page_sizes.get(page_idx, None)
+
+                # Extract bounding box if available
+                bbox = None
+                try:
+                    if hasattr(eq, 'prov') and eq.prov:
+                        if hasattr(eq.prov, 'bbox'):
+                            bbox = (eq.prov.bbox.x1, eq.prov.bbox.y1, eq.prov.bbox.x2, eq.prov.bbox.y2)
+                except:
+                    pass
+
+                # Get equation text and format
+                eq_text = ""
+                eq_format = "plain"
+
+                if hasattr(eq, 'text') and eq.text:
+                    eq_text = eq.text
+                    if hasattr(eq, 'format'):
+                        eq_format = eq.format
+                    elif "\\" in eq_text or "$" in eq_text:
+                        eq_format = "latex"
+
+                if eq_text:
+                    caps = getattr(eq, "captions", None)
+                    block = {
+                        "type": "equation",
+                        "text": eq_text,
+                        "text_format": eq_format,
+                        "page_idx": page_idx,
+                        "bbox": bbox,
+                        "page_size": page_size
+                    }
+
+                    if caps:
+                        block["equation_caption"] = caps if isinstance(caps, list) else [caps]
+
+                    blocks.append(block)
+        except:
+            pass
+
+        # 5) PAGE RENDERS (optional)
         pages = getattr(doc, "pages", None)
         if pages:
             for _pg_no, page in pages.items():
                 try:
-                    pil = page.image.pil_image  # only if generate_page_images=True
+                    pil = page.image.pil_image
                     out_dir = Path(os.getenv("OUTPUT_DIR", "./output"))
                     out_dir.mkdir(parents=True, exist_ok=True)
                     fpath = out_dir / f"docling-page-{page.page_no}.png"
@@ -116,13 +258,29 @@ class DoclingParser(BaseParser):
                         "img_path": str(fpath),
                         "image_caption": [f"Rendered page {page.page_no}"],
                         "page_idx": page.page_no,
+                        "bbox": None,
+                        "page_size": page_sizes.get(page.page_no, None)
                     })
                 except Exception:
                     pass
 
         if not blocks:
             md = doc.export_to_markdown()
-            blocks.append({"type": "text", "text": md[:200000], "page_idx": 0})
+            blocks.append({
+                "type": "text",
+                "text": md[:200000],
+                "page_idx": 0,
+                "bbox": None,
+                "page_size": None
+            })
+
+        # Sort blocks by page and position for consistent ordering
+        blocks.sort(key=lambda x: (
+            x.get("page_idx", 0),
+            x.get("bbox", [0, 0, 0, 0])[1] if x.get("bbox") else 0,  # y1 coordinate
+            x.get("bbox", [0, 0, 0, 0])[0] if x.get("bbox") else 0   # x1 coordinate
+        ))
+
         return blocks
 
     def parse_pdf(self, pdf_path: Path, **kw) -> List[Dict[str, Any]]:
