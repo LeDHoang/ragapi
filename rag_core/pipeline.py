@@ -1,13 +1,13 @@
 from __future__ import annotations
 from typing import Dict, Any, List
 from pathlib import Path
-import shutil
+import shutil, json
 from fastapi import UploadFile
 from rag_core.config import AppConfig
-from rag_core.schemas import IngestOptions, IngestResponse, QueryRequest, QueryResponse, StatusResponse
+from rag_core.schemas import IngestOptions, IngestResponse, QueryRequest, QueryResponse, StatusResponse, DocumentListResponse
 from rag_core.parsers import BaseParser, excel_native_summary
 from rag_core.storage import StorageBundle
-from rag_core.utils import cache_key, content_doc_id, template_chunk
+from rag_core.utils import cache_key, content_doc_id, template_chunk, calculate_file_hash
 from rag_core.processors import ModalProcessors
 from rag_core.llm_bedrock import BedrockLLM
 
@@ -45,6 +45,29 @@ class RagPipeline:
         dest.parent.mkdir(parents=True, exist_ok=True)
         with dest.open("wb") as f:
             shutil.copyfileobj(file.file, f)
+
+        # Calculate file hash for duplicate detection
+        file_hash = calculate_file_hash(dest)
+        file_size = dest.stat().st_size
+
+        # Check for duplicates before processing
+        is_duplicate, existing_doc_id = self.stores.documents.is_duplicate(
+            file.filename, file_hash, file_size
+        )
+
+        if is_duplicate and existing_doc_id:
+            # Return existing document info without reprocessing
+            existing_info = self.stores.documents.get_document_info(existing_doc_id)
+            if existing_info:
+                return IngestResponse(
+                    doc_id=existing_doc_id,
+                    file_name=file.filename,
+                    total_blocks=existing_info["total_blocks"],
+                    by_type=existing_info["by_type"],
+                    notes="duplicate_skipped",
+                    is_duplicate=True,
+                    duplicate_doc_id=existing_doc_id
+                )
 
         key = cache_key(
             dest, self.cfg.parser, opts.parse_method or self.cfg.parse_method,
@@ -103,6 +126,16 @@ class RagPipeline:
             "by_type": by_type
         })
 
+        # Register the document to prevent future duplicates
+        self.stores.documents.register_document(
+            doc_id=doc_id,
+            filename=file.filename,
+            file_hash=file_hash,
+            file_size=file_size,
+            content_list=content_list,
+            by_type=by_type
+        )
+
         return IngestResponse(doc_id=doc_id, file_name=file.filename,
                               total_blocks=sum(by_type.values()), by_type=by_type)
 
@@ -158,3 +191,38 @@ class RagPipeline:
         kv_dir = Path(self.stores.cache.path)
         docs = len(list(kv_dir.glob("*.json")))
         return StatusResponse(docs_indexed=docs, chunks_indexed=chunks)
+
+    async def list_documents(self) -> DocumentListResponse:
+        """List all processed documents"""
+        documents = self.stores.documents.list_documents()
+        return DocumentListResponse(documents=documents, total=len(documents))
+
+    async def delete_document(self, doc_id: str) -> bool:
+        """Delete a document and its associated data"""
+        # Delete from document registry
+        registry_deleted = self.stores.documents.delete_document(doc_id)
+
+        # Delete associated chunks from text store
+        text_dir = Path(self.stores.text_chunks.path)
+        chunks_deleted = 0
+        for chunk_file in text_dir.glob(f"chunk-{doc_id}-*.txt"):
+            chunk_file.unlink()
+            chunks_deleted += 1
+
+        # Delete from cache if exists
+        cache_deleted = False
+        kv_dir = Path(self.stores.cache.path)
+        for cache_file in kv_dir.glob("*.json"):
+            try:
+                cached_data = json.loads(cache_file.read_text())
+                if cached_data.get("doc_id") == doc_id:
+                    cache_file.unlink()
+                    cache_deleted = True
+                    break
+            except (json.JSONDecodeError, IOError):
+                continue
+
+        # TODO: Delete from vector store (would need more sophisticated implementation)
+        # For now, we'll leave vectors but they won't be returned in searches without chunks
+
+        return registry_deleted or chunks_deleted > 0 or cache_deleted

@@ -3,6 +3,17 @@ import hashlib
 from pathlib import Path
 from typing import Dict, List, Any
 
+def calculate_file_hash(file_path: Path) -> str:
+    """Calculate SHA-256 hash of a file for duplicate detection"""
+    hash_sha256 = hashlib.sha256()
+    try:
+        with open(file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(8192), b""):
+                hash_sha256.update(chunk)
+        return hash_sha256.hexdigest()
+    except (IOError, OSError):
+        return ""
+
 def file_mtime(p: Path) -> float:
     return p.stat().st_mtime
 

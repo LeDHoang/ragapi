@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Literal, Dict, Any
+from typing import List, Optional, Literal, Dict, Any, Union
 
 # ----- Normalized content items (mirrors RAG-Anything)
 class TextItem(BaseModel):
@@ -49,6 +49,8 @@ class IngestResponse(BaseModel):
     total_blocks: int
     by_type: Dict[str, int]
     notes: Optional[str] = None
+    is_duplicate: bool = False
+    duplicate_doc_id: Optional[str] = None
 
 class QueryRequest(BaseModel):
     query: str
@@ -74,3 +76,15 @@ class QueryResponse(BaseModel):
 class StatusResponse(BaseModel):
     docs_indexed: int
     chunks_indexed: int
+
+class DocumentInfo(BaseModel):
+    doc_id: str
+    filename: str
+    file_size: int
+    total_blocks: int
+    by_type: Dict[str, int]
+    processed_at: int
+
+class DocumentListResponse(BaseModel):
+    documents: List[DocumentInfo]
+    total: int
