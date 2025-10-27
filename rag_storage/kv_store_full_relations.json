@@ -1,0 +1,426 @@
+{
+  "eca7733e-3dce-4bbe-81f4-f9495f0aa534": {
+    "relation_pairs": [
+      [
+        "Mouse",
+        "Zoom"
+      ],
+      [
+        "NHNNg",
+        "TT.NVNHGD"
+      ],
+      [
+        "Cách 1",
+        "Dé Chut"
+      ],
+      [
+        "Màn Hình",
+        "Thông Tin"
+      ],
+      [
+        "Ctrl Key",
+        "Lan chuột"
+      ],
+      [
+        "KH",
+        "Lệnh Chuyển Tiền Bản Chính"
+      ],
+      [
+        "BM_TTQT.TT.01",
+        "QĐ 68/2019/QĐ-VBLQ"
+      ],
+      [
+        "Ni Dung",
+        "Sheet Chúa Thông Tin"
+      ],
+      [
+        "BM-TTQT.CTNNMG.01",
+        "Moneygram"
+      ],
+      [
+        "Agent Portal",
+        "Hóa Đơn"
+      ],
+      [
+        "ESC",
+        "Màn Hình"
+      ],
+      [
+        "Nguòi Dung",
+        "Sheet Bảng"
+      ],
+      [
+        "Mone",
+        "money transfer"
+      ],
+      [
+        "BM_TTQT.TT.01",
+        "Lệnh Chuyển Tiền Bản Chính"
+      ],
+      [
+        "Mone",
+        "Money Transfer"
+      ],
+      [
+        "Màn Hình",
+        "Phím \"ESC\""
+      ],
+      [
+        "ESC",
+        "Thông Tin"
+      ],
+      [
+        "Biu Tugng",
+        "So Do Ban Dau"
+      ],
+      [
+        "NHNNg",
+        "Người Thụ Hưởng"
+      ],
+      [
+        "CKS",
+        "Hóa Đơn"
+      ],
+      [
+        "KH",
+        "Moneygram"
+      ],
+      [
+        "Agent Portal",
+        "Omni"
+      ],
+      [
+        "B15",
+        "TT.NVNHGD"
+      ],
+      [
+        "Màn Hình",
+        "Nguòi Dung"
+      ],
+      [
+        "Màn Hình",
+        "Truòng HGP"
+      ],
+      [
+        "Agent Portal",
+        "CKS"
+      ],
+      [
+        "Ctrl Key",
+        "Zoom"
+      ]
+    ],
+    "count": 27,
+    "create_time": 1761551447,
+    "update_time": 1761551447,
+    "_id": "eca7733e-3dce-4bbe-81f4-f9495f0aa534"
+  },
+  "bbbeb685-2dff-489b-9748-f7d8a569563e": {
+    "relation_pairs": [
+      [
+        "Action",
+        "ESC key"
+      ],
+      [
+        "Foreign Currency Exchange",
+        "Time Period"
+      ],
+      [
+        "Screen",
+        "Truòng HGP"
+      ],
+      [
+        "Màn Hình",
+        "Thông Tin"
+      ],
+      [
+        "KH",
+        "Lệnh Chuyển Tiền Bản Chính"
+      ],
+      [
+        "BM_TTQT.TT.01",
+        "QĐ 68/2019/QĐ-VBLQ"
+      ],
+      [
+        "ESC Key",
+        "Screen"
+      ],
+      [
+        "Quay",
+        "So Dò"
+      ],
+      [
+        "Ctrl",
+        "Zoom In"
+      ],
+      [
+        "Screen",
+        "information"
+      ],
+      [
+        "KH",
+        "LCT Moneygram"
+      ],
+      [
+        "Nguòi Dung",
+        "Phóng To"
+      ],
+      [
+        "Ctrl",
+        "Zoom Out"
+      ],
+      [
+        "Nguòi Dung",
+        "Thu Nh"
+      ],
+      [
+        "Sheet Chúa",
+        "Thông Tin"
+      ],
+      [
+        "Ln Chut",
+        "Zoom Out"
+      ],
+      [
+        "Lan Chuôt",
+        "Zoom In"
+      ],
+      [
+        "Quy Trình Kinh Doanh Tiền Tệ",
+        "ĐV Xử Lý Ngoại Tệ"
+      ],
+      [
+        "Chương Trình QLHSTT",
+        "Phụ Lục 1.4"
+      ],
+      [
+        "Foreign Currency Exchange",
+        "Mone"
+      ],
+      [
+        "Biu Tugng",
+        "So Do Ban Dau"
+      ],
+      [
+        "Cách 1",
+        "dé chut vi trí cän zoom"
+      ],
+      [
+        "Chut Xuöng",
+        "Zoom Out"
+      ],
+      [
+        "International Money Transfer",
+        "Mone"
+      ],
+      [
+        "Nguòi Dung",
+        "Screen"
+      ],
+      [
+        "Ni Dung",
+        "Sheet Chúa"
+      ],
+      [
+        "Chương Trình QLHSTT",
+        "Quy Trình Kinh Doanh Tiền Tệ"
+      ],
+      [
+        "Information",
+        "Screen"
+      ],
+      [
+        "Agent Portal",
+        "Omni"
+      ],
+      [
+        "Agent Portal",
+        "CKS"
+      ],
+      [
+        "ESC",
+        "Information"
+      ],
+      [
+        "Mone",
+        "Supplementary Changes"
+      ],
+      [
+        "Gi Phím",
+        "Zoom In"
+      ],
+      [
+        "BM-TTQT.CTNNMG.01",
+        "LCT Moneygram"
+      ],
+      [
+        "Nguòi Dung",
+        "Sheet Bang"
+      ]
+    ],
+    "count": 35,
+    "create_time": 1761551450,
+    "update_time": 1761551450,
+    "_id": "bbbeb685-2dff-489b-9748-f7d8a569563e"
+  },
+  "393da2b1-4423-478b-8216-c86f3d6753af": {
+    "relation_pairs": [
+      [
+        "Nguòi Dung",
+        "Screen"
+      ],
+      [
+        "Screen",
+        "information"
+      ],
+      [
+        "Nguòi Dung",
+        "Thu Nh"
+      ],
+      [
+        "Cách 1",
+        "dé chut vi trí cän zoom"
+      ],
+      [
+        "Agent Portal",
+        "CKS"
+      ],
+      [
+        "NHNNg",
+        "TT.NVNHGD"
+      ],
+      [
+        "Gi Phím",
+        "Zoom In"
+      ],
+      [
+        "KH",
+        "LCT Moneygram"
+      ],
+      [
+        "Chương Trình QLHSTT",
+        "Quy Trình Kinh Doanh Tiền Tệ"
+      ],
+      [
+        "B15",
+        "TT.NVNHGD"
+      ],
+      [
+        "International Money Transfer",
+        "Mone"
+      ],
+      [
+        "Action",
+        "ESC key"
+      ],
+      [
+        "Ni Dung",
+        "Sheet Chúa"
+      ],
+      [
+        "BM_TTQT.TT.01",
+        "QĐ 68/2019/QĐ-VBLQ"
+      ],
+      [
+        "ESC",
+        "Information"
+      ],
+      [
+        "Information",
+        "Screen"
+      ],
+      [
+        "ESC Key",
+        "Screen"
+      ],
+      [
+        "Ctrl",
+        "Zoom Out"
+      ],
+      [
+        "Quy Trình Kinh Doanh Tiền Tệ",
+        "ĐV Xử Lý Ngoại Tệ"
+      ],
+      [
+        "Quay",
+        "So Dò"
+      ],
+      [
+        "Lan Chuôt",
+        "Zoom In"
+      ],
+      [
+        "Agent Portal",
+        "Omni"
+      ],
+      [
+        "Chut Xuöng",
+        "Zoom Out"
+      ],
+      [
+        "KH",
+        "Lệnh Chuyển Tiền Bản Chính"
+      ],
+      [
+        "Màn Hình",
+        "Thông Tin"
+      ],
+      [
+        "Sheet Chúa",
+        "Thông Tin"
+      ],
+      [
+        "Nguòi Dung",
+        "Sheet Bang"
+      ],
+      [
+        "Ln Chut",
+        "Zoom Out"
+      ],
+      [
+        "Screen",
+        "Truòng HGP"
+      ],
+      [
+        "Foreign Currency Exchange",
+        "Time Period"
+      ],
+      [
+        "Chương Trình QLHSTT",
+        "Phụ Lục 1.4"
+      ],
+      [
+        "Biu Tugng",
+        "So Do Ban Dau"
+      ],
+      [
+        "NHNNg",
+        "Người Thụ Hưởng"
+      ],
+      [
+        "Foreign Currency Exchange",
+        "Mone"
+      ],
+      [
+        "Ctrl",
+        "Zoom In"
+      ],
+      [
+        "Nguòi Dung",
+        "Phóng To"
+      ],
+      [
+        "BM-TTQT.CTNNMG.01",
+        "LCT Moneygram"
+      ],
+      [
+        "Mone",
+        "Supplementary Changes"
+      ]
+    ],
+    "count": 38,
+    "create_time": 1761551827,
+    "update_time": 1761551827,
+    "_id": "393da2b1-4423-478b-8216-c86f3d6753af"
+  }
+}

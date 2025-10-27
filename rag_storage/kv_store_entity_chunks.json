@@ -1,0 +1,709 @@
+{
+  "Dé Chut": {
+    "chunk_ids": [
+      "chunk-4382c8937a6a52d21f7f5285dd961bc2"
+    ],
+    "count": 1,
+    "create_time": 1761551435,
+    "update_time": 1761551435,
+    "_id": "Dé Chut"
+  },
+  "Màn Hình": {
+    "chunk_ids": [
+      "chunk-4382c8937a6a52d21f7f5285dd961bc2",
+      "chunk-ed450b15f0722bdf7acae42fef965e48",
+      "chunk-fdcf314c9d580c07e09c016168732981",
+      "chunk-769b8472f084616a1b70eab5cd174693"
+    ],
+    "count": 4,
+    "update_time": 1761551803,
+    "_id": "Màn Hình"
+  },
+  "Cách 1": {
+    "chunk_ids": [
+      "chunk-4382c8937a6a52d21f7f5285dd961bc2"
+    ],
+    "count": 1,
+    "update_time": 1761551807,
+    "_id": "Cách 1"
+  },
+  "Agent Portal": {
+    "chunk_ids": [
+      "chunk-4315558e27e6856dc6beddeaf7e355d5"
+    ],
+    "count": 1,
+    "update_time": 1761551808,
+    "_id": "Agent Portal"
+  },
+  "Omni": {
+    "chunk_ids": [
+      "chunk-4315558e27e6856dc6beddeaf7e355d5"
+    ],
+    "count": 1,
+    "update_time": 1761551808,
+    "_id": "Omni"
+  },
+  "CKS": {
+    "chunk_ids": [
+      "chunk-4315558e27e6856dc6beddeaf7e355d5"
+    ],
+    "count": 1,
+    "update_time": 1761551808,
+    "_id": "CKS"
+  },
+  "Hóa Đơn": {
+    "chunk_ids": [
+      "chunk-4315558e27e6856dc6beddeaf7e355d5"
+    ],
+    "count": 1,
+    "create_time": 1761551435,
+    "update_time": 1761551435,
+    "_id": "Hóa Đơn"
+  },
+  "Sheet": {
+    "chunk_ids": [
+      "chunk-cfa1730612502cf2dbb126b0485fa84d",
+      "chunk-44a0d9a01e3da43f4dccffa397a76f2b"
+    ],
+    "count": 2,
+    "update_time": 1761551804,
+    "_id": "Sheet"
+  },
+  "Zoom": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95",
+      "chunk-80d993e1cdd4b70f28c20d8f4097fe32",
+      "chunk-d8703bbedbef288c86d7af2e707f9cd6"
+    ],
+    "count": 3,
+    "update_time": 1761551804,
+    "_id": "Zoom"
+  },
+  "Ctrl Key": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Ctrl Key"
+  },
+  "Mouse": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Mouse"
+  },
+  "Gi phím": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Gi phím"
+  },
+  "Đuôi chuột": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Đuôi chuột"
+  },
+  "Lan chuột": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Lan chuột"
+  },
+  "Mone": {
+    "chunk_ids": [
+      "chunk-3b5f0d68ec8164cfec89d9b10ff31cf5",
+      "chunk-62d66d586d7e1e0bf48b45b4a18ccad4"
+    ],
+    "count": 2,
+    "update_time": 1761551809,
+    "_id": "Mone"
+  },
+  "Money Transfer": {
+    "chunk_ids": [
+      "chunk-3b5f0d68ec8164cfec89d9b10ff31cf5",
+      "chunk-62d66d586d7e1e0bf48b45b4a18ccad4"
+    ],
+    "count": 2,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Money Transfer"
+  },
+  "Nhg Idung": {
+    "chunk_ids": [
+      "chunk-86d3d34f634e19166f7f21f6aa186ef7"
+    ],
+    "count": 1,
+    "update_time": 1761551811,
+    "_id": "Nhg Idung"
+  },
+  "Sheet Chúa": {
+    "chunk_ids": [
+      "chunk-86d3d34f634e19166f7f21f6aa186ef7",
+      "chunk-081816f49ab7daac4957d23d3694ce20"
+    ],
+    "count": 2,
+    "update_time": 1761551809,
+    "_id": "Sheet Chúa"
+  },
+  "Thng Tinkhi": {
+    "chunk_ids": [
+      "chunk-86d3d34f634e19166f7f21f6aa186ef7"
+    ],
+    "count": 1,
+    "update_time": 1761551812,
+    "_id": "Thng Tinkhi"
+  },
+  "Shi Th U Tuong": {
+    "chunk_ids": [
+      "chunk-86d3d34f634e19166f7f21f6aa186ef7"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Shi Th U Tuong"
+  },
+  "Bottom Right Corner of the Screen": {
+    "chunk_ids": [
+      "chunk-80d993e1cdd4b70f28c20d8f4097fe32"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Bottom Right Corner of the Screen"
+  },
+  "Method 2": {
+    "chunk_ids": [
+      "chunk-80d993e1cdd4b70f28c20d8f4097fe32"
+    ],
+    "count": 1,
+    "create_time": 1761551436,
+    "update_time": 1761551436,
+    "_id": "Method 2"
+  },
+  "NHNNg": {
+    "chunk_ids": [
+      "chunk-d571f3ce5a25b6e98a3b57119f7e0384"
+    ],
+    "count": 1,
+    "update_time": 1761551810,
+    "_id": "NHNNg"
+  },
+  "B15": {
+    "chunk_ids": [
+      "chunk-d571f3ce5a25b6e98a3b57119f7e0384"
+    ],
+    "count": 1,
+    "update_time": 1761551810,
+    "_id": "B15"
+  },
+  "TT.NVNHGD": {
+    "chunk_ids": [
+      "chunk-d571f3ce5a25b6e98a3b57119f7e0384"
+    ],
+    "count": 1,
+    "update_time": 1761551810,
+    "_id": "TT.NVNHGD"
+  },
+  "Người Thụ Hưởng": {
+    "chunk_ids": [
+      "chunk-d571f3ce5a25b6e98a3b57119f7e0384"
+    ],
+    "count": 1,
+    "update_time": 1761551810,
+    "_id": "Người Thụ Hưởng"
+  },
+  "Sheet Chúa Thông Tin": {
+    "chunk_ids": [
+      "chunk-081816f49ab7daac4957d23d3694ce20"
+    ],
+    "count": 1,
+    "create_time": 1761551437,
+    "update_time": 1761551437,
+    "_id": "Sheet Chúa Thông Tin"
+  },
+  "Ni Dung": {
+    "chunk_ids": [
+      "chunk-081816f49ab7daac4957d23d3694ce20"
+    ],
+    "count": 1,
+    "update_time": 1761551809,
+    "_id": "Ni Dung"
+  },
+  "Truòng HGP": {
+    "chunk_ids": [
+      "chunk-ed450b15f0722bdf7acae42fef965e48"
+    ],
+    "count": 1,
+    "update_time": 1761551811,
+    "_id": "Truòng HGP"
+  },
+  "Phím \"ESC\"": {
+    "chunk_ids": [
+      "chunk-ed450b15f0722bdf7acae42fef965e48"
+    ],
+    "count": 1,
+    "create_time": 1761551437,
+    "update_time": 1761551437,
+    "_id": "Phím \"ESC\""
+  },
+  "Thông Tin": {
+    "chunk_ids": [
+      "chunk-ed450b15f0722bdf7acae42fef965e48",
+      "chunk-fdcf314c9d580c07e09c016168732981",
+      "chunk-081816f49ab7daac4957d23d3694ce20"
+    ],
+    "count": 3,
+    "update_time": 1761551803,
+    "_id": "Thông Tin"
+  },
+  "Foreign Exchange": {
+    "chunk_ids": [
+      "chunk-62d66d586d7e1e0bf48b45b4a18ccad4"
+    ],
+    "count": 1,
+    "create_time": 1761551437,
+    "update_time": 1761551437,
+    "_id": "Foreign Exchange"
+  },
+  "So Dò": {
+    "chunk_ids": [
+      "chunk-1b84d42c36cdb0a2d72d1373f85a2b5a"
+    ],
+    "count": 1,
+    "update_time": 1761551810,
+    "_id": "So Dò"
+  },
+  "Chứng Từ": {
+    "chunk_ids": [
+      "chunk-0f0a62aa33d769deb24911fde6b5c7e5"
+    ],
+    "count": 1,
+    "update_time": 1761551802,
+    "_id": "Chứng Từ"
+  },
+  "B10": {
+    "chunk_ids": [
+      "chunk-0f0a62aa33d769deb24911fde6b5c7e5"
+    ],
+    "count": 1,
+    "update_time": 1761551802,
+    "_id": "B10"
+  },
+  "Phiếu Thu Thập Thông Tin": {
+    "chunk_ids": [
+      "chunk-0f0a62aa33d769deb24911fde6b5c7e5",
+      "chunk-c406bb91102f9258a9c6c9e77b63556d"
+    ],
+    "count": 2,
+    "update_time": 1761551802,
+    "_id": "Phiếu Thu Thập Thông Tin"
+  },
+  "Chương Trình QLHSTT": {
+    "chunk_ids": [
+      "chunk-e1871d2769fb5b1910df86692b7d4641"
+    ],
+    "count": 1,
+    "update_time": 1761551802,
+    "_id": "Chương Trình QLHSTT"
+  },
+  "ĐNTT": {
+    "chunk_ids": [
+      "chunk-e1871d2769fb5b1910df86692b7d4641"
+    ],
+    "count": 1,
+    "create_time": 1761551438,
+    "update_time": 1761551438,
+    "_id": "ĐNTT"
+  },
+  "Phụ Lục 1.4": {
+    "chunk_ids": [
+      "chunk-e1871d2769fb5b1910df86692b7d4641"
+    ],
+    "count": 1,
+    "update_time": 1761551802,
+    "_id": "Phụ Lục 1.4"
+  },
+  "Quy Trình Kinh Doanh Tiền Tệ": {
+    "chunk_ids": [
+      "chunk-e1871d2769fb5b1910df86692b7d4641"
+    ],
+    "count": 1,
+    "update_time": 1761551802,
+    "_id": "Quy Trình Kinh Doanh Tiền Tệ"
+  },
+  "HOME": {
+    "chunk_ids": [
+      "chunk-f4bdc90feff57354b29c23518ae2d563"
+    ],
+    "count": 1,
+    "update_time": 1761551802,
+    "_id": "HOME"
+  },
+  "ESC": {
+    "chunk_ids": [
+      "chunk-fdcf314c9d580c07e09c016168732981"
+    ],
+    "count": 1,
+    "update_time": 1761551803,
+    "_id": "ESC"
+  },
+  "Zoom In": {
+    "chunk_ids": [
+      "chunk-d8703bbedbef288c86d7af2e707f9cd6",
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 2,
+    "update_time": 1761551805,
+    "_id": "Zoom In"
+  },
+  "Zoom Out": {
+    "chunk_ids": [
+      "chunk-d8703bbedbef288c86d7af2e707f9cd6",
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 2,
+    "update_time": 1761551806,
+    "_id": "Zoom Out"
+  },
+  "KH": {
+    "chunk_ids": [
+      "chunk-63b126d1f5a7860561bec9e0655d8de2"
+    ],
+    "count": 1,
+    "update_time": 1761551806,
+    "_id": "KH"
+  },
+  "Lệnh Chuyển Tiền Bản Chính": {
+    "chunk_ids": [
+      "chunk-63b126d1f5a7860561bec9e0655d8de2"
+    ],
+    "count": 1,
+    "update_time": 1761551806,
+    "_id": "Lệnh Chuyển Tiền Bản Chính"
+  },
+  "Biu Tugng": {
+    "chunk_ids": [
+      "chunk-37716ef017944ffcab483a4e26cec2c8"
+    ],
+    "count": 1,
+    "update_time": 1761551803,
+    "_id": "Biu Tugng"
+  },
+  "So Do Ban Dau": {
+    "chunk_ids": [
+      "chunk-37716ef017944ffcab483a4e26cec2c8"
+    ],
+    "count": 1,
+    "update_time": 1761551803,
+    "_id": "So Do Ban Dau"
+  },
+  "Xác Nhận Của ĐV": {
+    "chunk_ids": [
+      "chunk-c406bb91102f9258a9c6c9e77b63556d"
+    ],
+    "count": 1,
+    "update_time": 1761551803,
+    "_id": "Xác Nhận Của ĐV"
+  },
+  "Phiếu Đề Xuất Hạn Mức Chuyển Tiền Ra Nước Ngoài": {
+    "chunk_ids": [
+      "chunk-c406bb91102f9258a9c6c9e77b63556d"
+    ],
+    "count": 1,
+    "update_time": 1761551804,
+    "_id": "Phiếu Đề Xuất Hạn Mức Chuyển Tiền Ra Nước Ngoài"
+  },
+  "BM-TTQT.TT.11": {
+    "chunk_ids": [
+      "chunk-c406bb91102f9258a9c6c9e77b63556d"
+    ],
+    "count": 1,
+    "update_time": 1761551804,
+    "_id": "BM-TTQT.TT.11"
+  },
+  "BM-TTQT.TT.06": {
+    "chunk_ids": [
+      "chunk-c406bb91102f9258a9c6c9e77b63556d"
+    ],
+    "count": 1,
+    "update_time": 1761551804,
+    "_id": "BM-TTQT.TT.06"
+  },
+  "Nguòi Dung": {
+    "chunk_ids": [
+      "chunk-769b8472f084616a1b70eab5cd174693"
+    ],
+    "count": 1,
+    "update_time": 1761551807,
+    "_id": "Nguòi Dung"
+  },
+  "Sheet Bảng": {
+    "chunk_ids": [
+      "chunk-769b8472f084616a1b70eab5cd174693"
+    ],
+    "count": 1,
+    "create_time": 1761551438,
+    "update_time": 1761551438,
+    "_id": "Sheet Bảng"
+  },
+  "LCT Moneygram": {
+    "chunk_ids": [
+      "chunk-63b126d1f5a7860561bec9e0655d8de2"
+    ],
+    "count": 1,
+    "update_time": 1761551806,
+    "_id": "LCT Moneygram"
+  },
+  "QĐ 68/2019/QĐ-VBLQ": {
+    "chunk_ids": [
+      "chunk-63b126d1f5a7860561bec9e0655d8de2"
+    ],
+    "count": 1,
+    "update_time": 1761551806,
+    "_id": "QĐ 68/2019/QĐ-VBLQ"
+  },
+  "BM_TTQT.TT.01": {
+    "chunk_ids": [
+      "chunk-63b126d1f5a7860561bec9e0655d8de2"
+    ],
+    "count": 1,
+    "update_time": 1761551806,
+    "_id": "BM_TTQT.TT.01"
+  },
+  "BM-TTQT.CTNNMG.01": {
+    "chunk_ids": [
+      "chunk-63b126d1f5a7860561bec9e0655d8de2"
+    ],
+    "count": 1,
+    "update_time": 1761551806,
+    "_id": "BM-TTQT.CTNNMG.01"
+  },
+  "Screen": {
+    "chunk_ids": [
+      "chunk-769b8472f084616a1b70eab5cd174693",
+      "chunk-ed450b15f0722bdf7acae42fef965e48",
+      "chunk-fdcf314c9d580c07e09c016168732981"
+    ],
+    "count": 3,
+    "update_time": 1761551803,
+    "_id": "Screen"
+  },
+  "Sheet Bang": {
+    "chunk_ids": [
+      "chunk-769b8472f084616a1b70eab5cd174693"
+    ],
+    "count": 1,
+    "update_time": 1761551807,
+    "_id": "Sheet Bang"
+  },
+  "Phóng To": {
+    "chunk_ids": [
+      "chunk-769b8472f084616a1b70eab5cd174693"
+    ],
+    "count": 1,
+    "update_time": 1761551807,
+    "_id": "Phóng To"
+  },
+  "Information": {
+    "chunk_ids": [
+      "chunk-44a0d9a01e3da43f4dccffa397a76f2b",
+      "chunk-fdcf314c9d580c07e09c016168732981"
+    ],
+    "count": 2,
+    "update_time": 1761551803,
+    "_id": "Information"
+  },
+  "Moneygram": {
+    "chunk_ids": [
+      "chunk-63b126d1f5a7860561bec9e0655d8de2"
+    ],
+    "count": 1,
+    "create_time": 1761551439,
+    "update_time": 1761551439,
+    "_id": "Moneygram"
+  },
+  "Thu Nh": {
+    "chunk_ids": [
+      "chunk-769b8472f084616a1b70eab5cd174693"
+    ],
+    "count": 1,
+    "update_time": 1761551807,
+    "_id": "Thu Nh"
+  },
+  "Văn Bản Sửa Đổi Bổ Sung": {
+    "chunk_ids": [
+      "chunk-2d52b6d9929158285c7b4c95de6e9bbe"
+    ],
+    "count": 1,
+    "update_time": 1761551807,
+    "_id": "Văn Bản Sửa Đổi Bổ Sung"
+  },
+  "dé chut vi trí cän zoom": {
+    "chunk_ids": [
+      "chunk-4382c8937a6a52d21f7f5285dd961bc2"
+    ],
+    "count": 1,
+    "update_time": 1761551808,
+    "_id": "dé chut vi trí cän zoom"
+  },
+  "Huóng Dẫn Sử Dụng": {
+    "chunk_ids": [
+      "chunk-d07afa07c1a72a6ae52bce055407213e"
+    ],
+    "count": 1,
+    "update_time": 1761551804,
+    "_id": "Huóng Dẫn Sử Dụng"
+  },
+  "văn bản sửa đổi bổ sung": {
+    "chunk_ids": [
+      "chunk-2d52b6d9929158285c7b4c95de6e9bbe"
+    ],
+    "count": 1,
+    "create_time": 1761551440,
+    "update_time": 1761551440,
+    "_id": "văn bản sửa đổi bổ sung"
+  },
+  "Ctrl": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "update_time": 1761551808,
+    "_id": "Ctrl"
+  },
+  "Lan Chuôt": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "update_time": 1761551808,
+    "_id": "Lan Chuôt"
+  },
+  "Chut Xuöng": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "update_time": 1761551809,
+    "_id": "Chut Xuöng"
+  },
+  "Gi Phím": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "update_time": 1761551809,
+    "_id": "Gi Phím"
+  },
+  "Ln Chut": {
+    "chunk_ids": [
+      "chunk-64d4659beb10d3805bca958968000f95"
+    ],
+    "count": 1,
+    "update_time": 1761551809,
+    "_id": "Ln Chut"
+  },
+  "International Money Transfer": {
+    "chunk_ids": [
+      "chunk-3b5f0d68ec8164cfec89d9b10ff31cf5"
+    ],
+    "count": 1,
+    "update_time": 1761551809,
+    "_id": "International Money Transfer"
+  },
+  "Supplementary Changes": {
+    "chunk_ids": [
+      "chunk-3b5f0d68ec8164cfec89d9b10ff31cf5"
+    ],
+    "count": 1,
+    "update_time": 1761551809,
+    "_id": "Supplementary Changes"
+  },
+  "Cách 2": {
+    "chunk_ids": [
+      "chunk-80d993e1cdd4b70f28c20d8f4097fe32"
+    ],
+    "count": 1,
+    "update_time": 1761551810,
+    "_id": "Cách 2"
+  },
+  "Lower Right Corner": {
+    "chunk_ids": [
+      "chunk-80d993e1cdd4b70f28c20d8f4097fe32"
+    ],
+    "count": 1,
+    "update_time": 1761551810,
+    "_id": "Lower Right Corner"
+  },
+  "Lién T D Sheet": {
+    "chunk_ids": [
+      "chunk-86d3d34f634e19166f7f21f6aa186ef7"
+    ],
+    "count": 1,
+    "update_time": 1761551811,
+    "_id": "Lién T D Sheet"
+  },
+  "D Shi Th U Tuong": {
+    "chunk_ids": [
+      "chunk-86d3d34f634e19166f7f21f6aa186ef7"
+    ],
+    "count": 1,
+    "update_time": 1761551813,
+    "_id": "D Shi Th U Tuong"
+  },
+  "ESC Key": {
+    "chunk_ids": [
+      "chunk-ed450b15f0722bdf7acae42fef965e48"
+    ],
+    "count": 1,
+    "update_time": 1761551811,
+    "_id": "ESC Key"
+  },
+  "Quay": {
+    "chunk_ids": [
+      "chunk-1b84d42c36cdb0a2d72d1373f85a2b5a"
+    ],
+    "count": 1,
+    "update_time": 1761551811,
+    "_id": "Quay"
+  },
+  "Foreign Currency Exchange": {
+    "chunk_ids": [
+      "chunk-62d66d586d7e1e0bf48b45b4a18ccad4"
+    ],
+    "count": 1,
+    "update_time": 1761551811,
+    "_id": "Foreign Currency Exchange"
+  },
+  "Time Period": {
+    "chunk_ids": [
+      "chunk-62d66d586d7e1e0bf48b45b4a18ccad4"
+    ],
+    "count": 1,
+    "update_time": 1761551811,
+    "_id": "Time Period"
+  },
+  "ĐV Xử Lý Ngoại Tệ": {
+    "chunk_ids": [
+      "chunk-e1871d2769fb5b1910df86692b7d4641"
+    ],
+    "count": 1,
+    "update_time": 1761551802,
+    "_id": "ĐV Xử Lý Ngoại Tệ"
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "chunk-d07afa07c1a72a6ae52bce055407213e": {
+    "tokens": 9,
+    "content": "# Huóng dån su dung:",
+    "chunk_order_index": 0,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:442574af4c9fff5c11b712396cf4f7d5",
+      "default:extract:8d58ac9f37171ff895e322f627731df5"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-d07afa07c1a72a6ae52bce055407213e",
+    "create_time": 0
+  },
+  "chunk-cfa1730612502cf2dbb126b0485fa84d": {
+    "tokens": 13,
+    "content": "# Di den sheet có thong tin lièn ket:",
+    "chunk_order_index": 1,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:01f5d62a6ce5aaf9ca901572a4642db6",
+      "default:extract:ab9e953f1320ef13e52495caca521b31"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-cfa1730612502cf2dbb126b0485fa84d",
+    "create_time": 0
+  },
+  "chunk-86d3d34f634e19166f7f21f6aa186ef7": {
+    "tokens": 27,
+    "content": "Nhg idung  lién t d sheet chúa thng tinkhi dua chut d shi th u tuong:",
+    "chunk_order_index": 2,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:d7dec9ffb183dc267c3f99cae50f5e19",
+      "default:extract:f12de01d4d689e3e271cb43a00c2b07c"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-86d3d34f634e19166f7f21f6aa186ef7",
+    "create_time": 0
+  },
+  "chunk-081816f49ab7daac4957d23d3694ce20": {
+    "tokens": 20,
+    "content": "Click chut vào ni dung dó se dân dén sheet chúa thông tin can tim.",
+    "chunk_order_index": 3,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:605f9d2e767ade4db4cff74df1812bd0",
+      "default:extract:92c86c07cfe44c964954f1a9caa85d41"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-081816f49ab7daac4957d23d3694ce20",
+    "create_time": 0
+  },
+  "chunk-1b84d42c36cdb0a2d72d1373f85a2b5a": {
+    "tokens": 10,
+    "content": "Quay tr lai So dò ban dau",
+    "chunk_order_index": 4,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:51beb4ab473de77a6b63552f56c81bea",
+      "default:extract:c10e943cf0a3c3c94d76041aaf22ddd9"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-1b84d42c36cdb0a2d72d1373f85a2b5a",
+    "create_time": 0
+  },
+  "chunk-f4bdc90feff57354b29c23518ae2d563": {
+    "tokens": 2,
+    "content": "# HOME",
+    "chunk_order_index": 5,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:d377a716825f117c25e3eba83a5ff3f9",
+      "default:extract:6759aeddea8164e8d51e8e21a51f31b1"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-f4bdc90feff57354b29c23518ae2d563",
+    "create_time": 0
+  },
+  "chunk-37716ef017944ffcab483a4e26cec2c8": {
+    "tokens": 14,
+    "content": "Click vào biu tugng quay ve so do ban dau.",
+    "chunk_order_index": 6,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:9f3f8da235af94691feaddc33102a516",
+      "default:extract:d1d9199f5226d6605e0e84def23a8817"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-37716ef017944ffcab483a4e26cec2c8",
+    "create_time": 0
+  },
+  "chunk-44a0d9a01e3da43f4dccffa397a76f2b": {
+    "tokens": 21,
+    "content": "phía trèn cùng góc trái các sheet chúra thông tin de",
+    "chunk_order_index": 7,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:8989e40916ce41914f762459a4942ab3",
+      "default:extract:25f1433288fbcd66bc8b6ea30c421700"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-44a0d9a01e3da43f4dccffa397a76f2b",
+    "create_time": 0
+  },
+  "chunk-d8703bbedbef288c86d7af2e707f9cd6": {
+    "tokens": 6,
+    "content": "# Zoom in / Zoom out",
+    "chunk_order_index": 8,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:7d5f2bcb2b934f5a04756c15a8ba26c0",
+      "default:extract:da19ebb5f734526b27c9d4a648b15512"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-d8703bbedbef288c86d7af2e707f9cd6",
+    "create_time": 0
+  },
+  "chunk-769b8472f084616a1b70eab5cd174693": {
+    "tokens": 42,
+    "content": "Nguòi dung có the zoom in (phóng to) /zoom out (thu nh) màn hinh dé thun tin xem các thông tin trong sheet bang cách:",
+    "chunk_order_index": 9,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:0b84a866738071778edffc7132eb86d0",
+      "default:extract:64fef9722762e2123672e04239ed26d7"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-769b8472f084616a1b70eab5cd174693",
+    "create_time": 0
+  },
+  "chunk-4382c8937a6a52d21f7f5285dd961bc2": {
+    "tokens": 22,
+    "content": "Cách 1: Dé chut  vi trí cän zoom trên màn hinh:",
+    "chunk_order_index": 10,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:a97d48d1bf8e84d7243a4b3d04c21957",
+      "default:extract:277f420d1394a6eb60b2183bfaa9c6ef"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-4382c8937a6a52d21f7f5285dd961bc2",
+    "create_time": 0
+  },
+  "chunk-64d4659beb10d3805bca958968000f95": {
+    "tokens": 39,
+    "content": "- Zoom in: Gir phím Ctrl $^ +$ Lan chuôt lèn.   \nZoom out: Gi phím Ctr $^ +$ Ln chut xuöng.",
+    "chunk_order_index": 11,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:ad4d867491859b3cde0e0dd6b0e86f0a",
+      "default:extract:97f94fafcb5768d2528a1c43b56d1edb"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-64d4659beb10d3805bca958968000f95",
+    "create_time": 0
+  },
+  "chunk-80d993e1cdd4b70f28c20d8f4097fe32": {
+    "tokens": 30,
+    "content": "Cách 2: Su dung chúc nng zoom ò góc phåi duói cung màn hình",
+    "chunk_order_index": 12,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:3694e4f58b0624b10a6b8373648fafef",
+      "default:extract:8aed9f62a60a5630a89d470c98ec8ddb"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-80d993e1cdd4b70f28c20d8f4097fe32",
+    "create_time": 0
+  },
+  "chunk-ed450b15f0722bdf7acae42fef965e48": {
+    "tokens": 51,
+    "content": "Truòng hgp click chut vào màn hinh nhieu lan làm toàn màn hinh trng, khòng hin thi thông tin $\\Rightarrow$ Nhân phím \"ESC\" dé hin thi lai thông tin.",
+    "chunk_order_index": 13,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:eb73914499ca06d35930c2f1b5d4642a",
+      "default:extract:1f6d930879989324a46f51c275a18b55"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-ed450b15f0722bdf7acae42fef965e48",
+    "create_time": 0
+  },
+  "chunk-0f0a62aa33d769deb24911fde6b5c7e5": {
+    "tokens": 26,
+    "content": "Chứng từ (\\*) tại B10: Phiếu thu thập thông tin (BM-TTQT.TT.",
+    "chunk_order_index": 14,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:a1e671038febb513a42b1b7f37e1719a",
+      "default:extract:5d16d101f4b35d22d2b41d79758dbaa0"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-0f0a62aa33d769deb24911fde6b5c7e5",
+    "create_time": 0
+  },
+  "chunk-fdcf314c9d580c07e09c016168732981": {
+    "tokens": 46,
+    "content": "click chut vào màn hinh nhieu lan làm toàn màn hinh trng, khòng hin thi thông tin $\\Rightarrow$ Nhân phím \"ESC\" dé hin thi lai thông tin.",
+    "chunk_order_index": 15,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:c75ddafa84b0edbe820e49333cd2708f",
+      "default:extract:547ae2b964a2da5272f40fe5de44e23c"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-fdcf314c9d580c07e09c016168732981",
+    "create_time": 0
+  },
+  "chunk-c406bb91102f9258a9c6c9e77b63556d": {
+    "tokens": 137,
+    "content": "Chứng từ (\\*) tại B10: Phiếu thu thập thông tin (BM-TTQT.TT.11)/Xác nhận của ĐV về việc KH đã được cấp tín dụng (mục đích bổ sung vốn lưu động/kinh doanh ngắn hạn)/Phiếu đề xuất hạn mức chuyển tiền ra nước ngoài (BM-TTQT.TT.06)/Phiếu đề xuất hạn mức chuyển tiền ra nước ngoài (Áp",
+    "chunk_order_index": 16,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:78aee3bff9e23d058c67bab13a55a9ba",
+      "default:extract:788a8a0c4711990b91eac73ed26d2f68"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-c406bb91102f9258a9c6c9e77b63556d",
+    "create_time": 0
+  },
+  "chunk-f7ae4823ca82d7a04086fac87b857c1a": {
+    "tokens": 7,
+    "content": "# từng thời k",
+    "chunk_order_index": 17,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:9e6bede614f94d9977413b28a1179205",
+      "default:extract:716c8cde2f2de02ae26b9195796459a6"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-f7ae4823ca82d7a04086fac87b857c1a",
+    "create_time": 0
+  },
+  "chunk-63b126d1f5a7860561bec9e0655d8de2": {
+    "tokens": 92,
+    "content": "B1: Yêu cầu chuyển tiền của KH trên kênh giao dịch trực tuyến thay thế Lệnh chuyển tiền bản chính (BM_TTQT.TT.01)/LCT Moneygram (BM-TTQT.CTNNMG.01 theo QĐ 68/2019/QĐ-VBLQ và/hoặc các",
+    "chunk_order_index": 18,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:e9bda21e6712dab093a6d2a92c937cb0",
+      "default:extract:1ba004f272567a93d0c5190b9568cb43"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-63b126d1f5a7860561bec9e0655d8de2",
+    "create_time": 0
+  },
+  "chunk-2d52b6d9929158285c7b4c95de6e9bbe": {
+    "tokens": 27,
+    "content": "văn bản sửa đổi bổ sung, thay thế trong từng thời kỳ).",
+    "chunk_order_index": 19,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:5dc6488af3bf03e63ccf1ab33648dd0b",
+      "default:extract:81468b68caa77499808d61814ab065c0"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-2d52b6d9929158285c7b4c95de6e9bbe",
+    "create_time": 0
+  },
+  "chunk-4315558e27e6856dc6beddeaf7e355d5": {
+    "tokens": 38,
+    "content": "tiền đi trên Agent Portal, xuất hóa đơn và lưu Omni (sau khi CKS kiểm tra hồ sơ phù hợp).",
+    "chunk_order_index": 20,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:730833573b2d998f84e0d0317b3e9f3b",
+      "default:extract:4d20026dbfa346b3e674f93a7ec62a80"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-4315558e27e6856dc6beddeaf7e355d5",
+    "create_time": 0
+  },
+  "chunk-3b5f0d68ec8164cfec89d9b10ff31cf5": {
+    "tokens": 36,
+    "content": "chuyển tiền ra nước ngoài qua Mone a đổi bổ sung, thay thế trong từng thời kỳ.",
+    "chunk_order_index": 21,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:e09886044a17550eca8ef726228a44dc",
+      "default:extract:774c39baf6817e033f22d085f3d66efb"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-3b5f0d68ec8164cfec89d9b10ff31cf5",
+    "create_time": 0
+  },
+  "chunk-d571f3ce5a25b6e98a3b57119f7e0384": {
+    "tokens": 60,
+    "content": "không phù hợp chính sách riêng của NHNNg, theo yêu cầu của người thụ hưởng…: ĐV được phân quyền/TT.NVNHGD thực hiện tại B15:",
+    "chunk_order_index": 24,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:ee7e297454994c9ab67c3b7eeb14af96",
+      "default:extract:22db4ee73032098c93e15b487780da1f"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-d571f3ce5a25b6e98a3b57119f7e0384",
+    "create_time": 0
+  },
+  "chunk-62d66d586d7e1e0bf48b45b4a18ccad4": {
+    "tokens": 33,
+    "content": "tiền ra nước ngoài qua Mone a đổi bổ sung, thay thế trong từng thời kỳ.",
+    "chunk_order_index": 23,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:e8c32941a6a2b8ba8f6f965cb9f91bb3",
+      "default:extract:57d4bca871ebd4f0e6f414331a7637a9"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-62d66d586d7e1e0bf48b45b4a18ccad4",
+    "create_time": 0
+  },
+  "chunk-e1871d2769fb5b1910df86692b7d4641": {
+    "tokens": 83,
+    "content": "Cập nhật trạng thái hồ sơ trên Chương trình QLHSTT và ĐNTT theo quy định tại Phụ lục 1.4.   \nĐV xử lý ngoại tệ trả về (nếu có) theo Quy trình Kinh doanh tiền tệ.",
+    "chunk_order_index": 25,
+    "full_doc_id": "393da2b1-4423-478b-8216-c86f3d6753af",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf",
+    "llm_cache_list": [
+      "default:extract:433f4b34fcf244ee42794090f4bab4a1",
+      "default:extract:0890152cb585e0df951ea091f4e1dde0"
+    ],
+    "update_time": 1761551802,
+    "_id": "chunk-e1871d2769fb5b1910df86692b7d4641",
+    "create_time": 0
+  },
+  "chunk-d41d8cd98f00b204e9800998ecf8427e": {
+    "tokens": 0,
+    "content": "",
+    "chunk_order_index": 0,
+    "full_doc_id": "072ac21f-e9ce-4788-8c1c-548cbec260a0",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/072ac21f-e9ce-4788-8c1c-548cbec260a0/test_doc.txt",
+    "llm_cache_list": [],
+    "update_time": 1761551799,
+    "_id": "chunk-d41d8cd98f00b204e9800998ecf8427e"
+  }
+}

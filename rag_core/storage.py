@@ -10,6 +10,8 @@ if TYPE_CHECKING:
 
 from .config import config
 from .schemas import EntityNode, EntityRelation
+from lightrag import operate as lightrag_operate
+from lightrag.base import TextChunkSchema
 
 logger = logging.getLogger(__name__)
 
@@ -500,7 +502,8 @@ class RedisCache:
         self.client.delete(key)
 
 class StorageManager:
-    def __init__(self):
+    def __init__(self, lightrag=None):
+        self.lightrag = lightrag
         self.graph = Neo4jGraph()
         self.vectors = QdrantVectorStore()
         self.cache = RedisCache()
@@ -525,11 +528,15 @@ class StorageManager:
     ):
         """Store chunk in graph and vector store"""
 
-        # Store in graph
+        # Store in graph (always use Neo4j for compatibility)
         await self.graph.create_chunk(chunk_id, content, doc_id, chunk_type, page_idx)
 
-        # Store vector if provided
-        if vector is not None:
+        # Store vector - use LightRAG VDB if available
+        if vector is not None and self.lightrag:
+            # Use LightRAG's chunks_vdb
+            await self._store_chunk_lightrag(chunk_id, content, doc_id, chunk_type, page_idx, vector)
+        elif vector is not None:
+            # Fallback to legacy vector storage
             await self.vectors.store_vectors(
                 collection="chunks",
                 vectors=[vector],
@@ -550,11 +557,14 @@ class StorageManager:
     ):
         """Store entity in graph and vector store following RAG-Anything approach"""
 
-        # Store in graph
+        # Store in graph (always use Neo4j for compatibility)
         await self.graph.create_entity(entity)
 
-        # Store vector if provided
-        if vector is not None:
+        # Store vector - use LightRAG VDB if available
+        if self.lightrag:
+            await self._store_entity_lightrag(entity, vector)
+        elif vector is not None:
+            # Fallback to legacy vector storage
             await self.vectors.store_vectors(
                 collection="entities",
                 vectors=[vector],
@@ -568,12 +578,15 @@ class StorageManager:
         vector: Optional[List[float]] = None
     ):
         """Store relation in graph and vector store"""
-        
-        # Store in graph
+
+        # Store in graph (always use Neo4j for compatibility)
         await self.graph.create_relation(relation)
-        
-        # Store vector if provided
-        if vector is not None:
+
+        # Store vector - use LightRAG VDB if available
+        if self.lightrag:
+            await self._store_relation_lightrag(relation, vector)
+        elif vector is not None:
+            # Fallback to legacy vector storage
             await self.vectors.store_vectors(
                 collection="relations",
                 vectors=[vector],
@@ -588,11 +601,16 @@ class StorageManager:
         limit: int = 10
     ) -> List[Dict[str, Any]]:
         """Search for similar entities"""
-        
+
+        # Use LightRAG's entities VDB if available
+        if self.lightrag:
+            return await self._search_similar_entities_lightrag(query_vector, entity_type, limit)
+
+        # Fallback to legacy vector search
         filter = None
         if entity_type:
             filter = {"entity_type": entity_type}
-        
+
         return await self.vectors.search_vectors(
             collection="entities",
             query_vector=query_vector,
@@ -629,6 +647,221 @@ class StorageManager:
         
         return context
 
+    async def _store_chunk_lightrag(
+        self,
+        chunk_id: str,
+        content: str,
+        doc_id: str,
+        chunk_type: str = "text",
+        page_idx: Optional[int] = None,
+        vector: Optional[List[float]] = None
+    ):
+        """Store chunk using LightRAG's vector database"""
+        if not self.lightrag:
+            return
+
+        try:
+            # Prepare chunk data for LightRAG's chunks_vdb
+            chunk_data = {
+                chunk_id: {
+                    "content": content,
+                    "full_doc_id": doc_id,
+                    "file_path": "",  # Will be set by LightRAG
+                    "chunk_order_index": 0,  # Will be set by LightRAG
+                }
+            }
+
+            # Insert into LightRAG's chunks VDB
+            await self.lightrag.chunks_vdb.upsert(chunk_data)
+
+        except Exception as e:
+            logger.warning(f"Failed to store chunk via LightRAG: {e}")
+            # Don't raise - this is supplementary to graph storage
+
+    async def _store_entity_lightrag(
+        self,
+        entity: EntityNode,
+        vector: Optional[List[float]] = None
+    ):
+        """Store entity using LightRAG's vector database"""
+        if not self.lightrag:
+            return
+
+        try:
+            # Prepare entity data for LightRAG's entities_vdb
+            entity_data = {
+                entity.entity_id: {
+                    "entity_name": entity.name,
+                    "entity_type": entity.entity_type,
+                    "description": entity.description,
+                    "source_id": entity.source_id,
+                    "file_path": entity.file_path,
+                }
+            }
+
+            # Insert into LightRAG's entities VDB
+            await self.lightrag.entities_vdb.upsert(entity_data)
+
+        except Exception as e:
+            logger.warning(f"Failed to store entity via LightRAG: {e}")
+            # Don't raise - this is supplementary to graph storage
+
+    async def _store_relation_lightrag(
+        self,
+        relation: EntityRelation,
+        vector: Optional[List[float]] = None
+    ):
+        """Store relation using LightRAG's vector database"""
+        if not self.lightrag:
+            return
+
+        try:
+            # Prepare relation data for LightRAG's relationships_vdb
+            relation_data = {
+                f"{relation.src_id}_{relation.tgt_id}": {
+                    "src_id": relation.src_id,
+                    "tgt_id": relation.tgt_id,
+                    "relation_type": relation.relation_type,
+                    "content": relation.description,
+                    "source_id": relation.source_id,
+                    "file_path": relation.file_path,
+                }
+            }
+
+            # Insert into LightRAG's relationships VDB
+            await self.lightrag.relationships_vdb.upsert(relation_data)
+
+        except Exception as e:
+            logger.warning(f"Failed to store relation via LightRAG: {e}")
+            # Don't raise - this is supplementary to graph storage
+
+    async def _search_similar_entities_lightrag(
+        self,
+        query_vector: List[float],
+        entity_type: Optional[str] = None,
+        limit: int = 10
+    ) -> List[Dict[str, Any]]:
+        """Search for similar entities using LightRAG's entities VDB"""
+        if not self.lightrag:
+            return []
+
+        try:
+            # Use LightRAG's entities VDB search
+            results = await self.lightrag.entities_vdb.query(
+                query="",  # Not used in vector search
+                top_k=limit,
+                query_embedding=query_vector
+            )
+
+            # Convert results to expected format
+            formatted_results = []
+            for result in results:
+                formatted_results.append({
+                    "id": result.get("id", ""),
+                    "score": result.get("score", 0.0),
+                    "payload": result.get("metadata", {})
+                })
+
+            # Apply entity type filter if specified
+            if entity_type:
+                formatted_results = [
+                    r for r in formatted_results
+                    if r.get("payload", {}).get("entity_type") == entity_type
+                ]
+
+            return formatted_results[:limit]
+
+        except Exception as e:
+            logger.warning(f"LightRAG entity search failed: {e}")
+            # Fallback to legacy search
+            filter = None
+            if entity_type:
+                filter = {"entity_type": entity_type}
+
+            return await self.vectors.search_vectors(
+                collection="entities",
+                query_vector=query_vector,
+                limit=limit,
+                filter=filter
+            )
+
+    async def _extract_and_store_entities_lightrag(
+        self,
+        content: str,
+        chunk_id: str,
+        doc_id: str,
+        file_path: str,
+        content_type: str = "text"
+    ):
+        """Extract entities using LightRAG's operate module"""
+        if not self.lightrag:
+            return []
+
+        try:
+            # Prepare chunk data for LightRAG's extract_entities
+            chunks = {
+                chunk_id: TextChunkSchema(
+                    tokens=0,  # Will be computed by LightRAG
+                    content=content,
+                    full_doc_id=doc_id,
+                    chunk_order_index=0
+                )
+            }
+
+            # Extract entities using LightRAG's operate module
+            chunk_results = await lightrag_operate.extract_entities(
+                chunks=chunks,
+                global_config=self.lightrag.__dict__,
+                pipeline_status=None,
+                pipeline_status_lock=None,
+                llm_response_cache=self.lightrag.llm_response_cache,
+                text_chunks_storage=self.lightrag.text_chunks,
+            )
+
+            # Process and store extracted entities
+            stored_entities = []
+            for chunk_id_key, entities in chunk_results.items():
+                for entity_data in entities:
+                    # Convert LightRAG entity format to our EntityNode format
+                    entity = EntityNode(
+                        entity_id=f"{entity_data['entity_name'].replace(' ', '_').lower()}_{chunk_id}",
+                        entity_type=entity_data.get('entity_type', 'unknown'),
+                        name=entity_data['entity_name'],
+                        description=entity_data.get('description', ''),
+                        source_id=chunk_id,
+                        file_path=file_path,
+                        created_at=time.time()
+                    )
+
+                    # Store entity in graph
+                    await self.graph.create_entity(entity)
+
+                    # Store in LightRAG's entities VDB (embeddings handled by LightRAG)
+                    await self._store_entity_lightrag(entity, None)
+
+                    stored_entities.append(entity)
+
+                    # Create relationship between chunk and entity
+                    relation = EntityRelation(
+                        src_id=chunk_id,
+                        tgt_id=entity.entity_id,
+                        relation_type="APPEARS_ON",
+                        description=f"Entity {entity.name} appears in chunk",
+                        keywords=f"{entity.name},{entity.entity_type}",
+                        source_id=chunk_id,
+                        weight=0.8,
+                        file_path=file_path
+                    )
+                    await self.graph.create_relation(relation)
+
+            logger.info(f"LightRAG extracted and stored {len(stored_entities)} entities from chunk {chunk_id}")
+            return stored_entities
+
+        except Exception as e:
+            logger.warning(f"LightRAG entity extraction failed: {e}")
+            # Fallback to custom extraction
+            return await self._fallback_entity_extraction(content, chunk_id, file_path)
+
     async def extract_and_store_entities(
         self,
         content: str,
@@ -642,7 +875,13 @@ class StorageManager:
             logger.debug("Graph database not available, skipping entity extraction")
             return []
 
-        # Use LLM to extract entities following RAG-Anything approach
+        # Use LightRAG's entity extraction if available
+        if self.lightrag:
+            return await self._extract_and_store_entities_lightrag(
+                content, chunk_id, doc_id, file_path, content_type
+            )
+
+        # Fallback to custom LLM-based extraction
         from .llm_unified import UnifiedLLM
 
         try:

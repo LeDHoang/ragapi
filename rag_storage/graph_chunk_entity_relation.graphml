@@ -1,0 +1,1314 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d13" for="edge" attr.name="truncate" attr.type="string"/>
+<key id="d12" for="edge" attr.name="created_at" attr.type="long"/>
+<key id="d11" for="edge" attr.name="file_path" attr.type="string"/>
+<key id="d10" for="edge" attr.name="source_id" attr.type="string"/>
+<key id="d9" for="edge" attr.name="keywords" attr.type="string"/>
+<key id="d8" for="edge" attr.name="description" attr.type="string"/>
+<key id="d7" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d6" for="node" attr.name="truncate" attr.type="string"/>
+<key id="d5" for="node" attr.name="created_at" attr.type="long"/>
+<key id="d4" for="node" attr.name="file_path" attr.type="string"/>
+<key id="d3" for="node" attr.name="source_id" attr.type="string"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="entity_type" attr.type="string"/>
+<key id="d0" for="node" attr.name="entity_id" attr.type="string"/>
+<graph edgedefault="undirected"><node id="Dé Chut">
+  <data key="d0">Dé Chut</data>
+  <data key="d1">method</data>
+  <data key="d2">Dé Chut is a method described for zooming in on a screen position.</data>
+  <data key="d3">chunk-4382c8937a6a52d21f7f5285dd961bc2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551435</data>
+  <data key="d6"></data>
+</node>
+<node id="Màn Hình">
+  <data key="d0">Màn Hình</data>
+  <data key="d1">other</data>
+  <data key="d2">Màn Hình refers to a screen or display that serves as the primary interface for user interactions. It facilitates various actions, including the ability to zoom in and out, enabling users to adjust the view to see details more clearly. Màn Hình is characterized as the screen on which actions are performed, including adjustments to the zoom position, providing a dynamic environment for displaying information and facilitating user engagement.
+
+As a display, Màn Hình plays a crucial role in the overall user experience by allowing interaction with content presented on the screen. The screen is integral to performing tasks, enhancing the user's ability to manipulate and explore the information displayed. In summary, Màn Hình is the interactive screen essential for user actions and information visualization.</data>
+  <data key="d3">chunk-4382c8937a6a52d21f7f5285dd961bc2&lt;SEP&gt;chunk-ed450b15f0722bdf7acae42fef965e48&lt;SEP&gt;chunk-fdcf314c9d580c07e09c016168732981&lt;SEP&gt;chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551808</data>
+  <data key="d6"></data>
+</node>
+<node id="Cách 1">
+  <data key="d0">Cách 1</data>
+  <data key="d1">concept</data>
+  <data key="d2">Cách 1 refers to a specific method or step described for an action related to zooming on a screen.&lt;SEP&gt;Cách 1 refers to a method or way to adjust the zoom position on a screen.&lt;SEP&gt;Cách 1 refers to a method or way to adjust the zoom position on a screen.</data>
+  <data key="d3">chunk-4382c8937a6a52d21f7f5285dd961bc2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551807</data>
+  <data key="d6"></data>
+</node>
+<node id="Agent Portal">
+  <data key="d0">Agent Portal</data>
+  <data key="d1">other</data>
+  <data key="d2">The Agent Portal is a digital platform utilized for processing transactions including invoice issuance and document management.&lt;SEP&gt;Agent Portal is a platform or system used for processing tasks such as issuance of invoices and documentation.&lt;SEP&gt;Agent Portal is a platform or system used for processing tasks such as issuance of invoices and documentation.</data>
+  <data key="d3">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551808</data>
+  <data key="d6"></data>
+</node>
+<node id="Omni">
+  <data key="d0">Omni</data>
+  <data key="d1">other</data>
+  <data key="d2">Omni refers to a system or service related to document storage and management, used after a review process by CKS.&lt;SEP&gt;Omni is a reference to a system or database where invoices and documents are stored after verification.&lt;SEP&gt;Omni is a reference to a system or database where invoices and documents are stored after verification.</data>
+  <data key="d3">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551808</data>
+  <data key="d6"></data>
+</node>
+<node id="CKS">
+  <data key="d0">CKS</data>
+  <data key="d1">other</data>
+  <data key="d2">CKS appears to be an overseeing entity or individual responsible for verifying the suitability of documents before processing.&lt;SEP&gt;CKS is an entity responsible for verifying the accuracy and appropriateness of records before further processing.&lt;SEP&gt;CKS is an entity responsible for verifying the accuracy and appropriateness of records before further processing.</data>
+  <data key="d3">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551808</data>
+  <data key="d6"></data>
+</node>
+<node id="Hóa Đơn">
+  <data key="d0">Hóa Đơn</data>
+  <data key="d1">other</data>
+  <data key="d2">Hóa Đơn refers to an invoice that is generated in the Agent Portal as part of the transaction process.</data>
+  <data key="d3">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551435</data>
+  <data key="d6"></data>
+</node>
+<node id="Sheet">
+  <data key="d0">Sheet</data>
+  <data key="d1">other</data>
+  <data key="d2">The Sheet contains information related to connections or links, but details are not provided in the text.&lt;SEP&gt;Sheet refers to a document or electronic sheet that contains information.&lt;SEP&gt;The Sheet contains information related to connections or links, but details are not provided in the text.&lt;SEP&gt;Sheet refers to a flat surface used for storing information, commonly found in documents or spreadsheets.&lt;SEP&gt;Sheet refers to a flat surface used for storing information, commonly found in documents or spreadsheets.&lt;SEP&gt;The Sheet contains information related to connections or links, but details are not provided in the text.</data>
+  <data key="d3">chunk-cfa1730612502cf2dbb126b0485fa84d&lt;SEP&gt;chunk-44a0d9a01e3da43f4dccffa397a76f2b</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551804</data>
+  <data key="d6"></data>
+</node>
+<node id="Zoom">
+  <data key="d0">Zoom</data>
+  <data key="d1">concept</data>
+  <data key="d2">Zoom refers to a digital tool or method for adjusting the field of view in visual media, including applications for virtual meetings and presentations.&lt;SEP&gt;Zoom is a video conferencing platform used for online meetings and virtual communication.&lt;SEP&gt;Zoom refers to the action of adjusting the view in a graphical user interface, often involving the keyboard and mouse.&lt;SEP&gt;Zoom refers to a video conferencing software platform that allows users to communicate remotely through video and audio, often used for meetings and webinars.&lt;SEP&gt;Zoom is a digital platform that provides video conferencing services.&lt;SEP&gt;Zoom refers to a video conferencing software platform that allows users to communicate remotely through video and audio, often used for meetings and webinars.&lt;SEP&gt;Zoom is a digital platform that provides video conferencing services.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95&lt;SEP&gt;chunk-80d993e1cdd4b70f28c20d8f4097fe32&lt;SEP&gt;chunk-d8703bbedbef288c86d7af2e707f9cd6</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551804</data>
+  <data key="d6"></data>
+</node>
+<node id="Ctrl Key">
+  <data key="d0">Ctrl Key</data>
+  <data key="d1">artifact</data>
+  <data key="d2">The Ctrl key is a modifier key on computer keyboards, used in combination with other keys to perform various commands.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Mouse">
+  <data key="d0">Mouse</data>
+  <data key="d1">artifact</data>
+  <data key="d2">A mouse is a pointing device used to interact with a computer's graphical user interface.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Gi phím">
+  <data key="d0">Gi phím</data>
+  <data key="d1">other</data>
+  <data key="d2">Gi phím is a Vietnamese term referring to a key action, specifically related to keyboard functions.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Đuôi chuột">
+  <data key="d0">Đuôi chuột</data>
+  <data key="d1">other</data>
+  <data key="d2">Đuôi chuột translates to the action of using a mouse but is specific to Vietnamese language instructions.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Lan chuột">
+  <data key="d0">Lan chuột</data>
+  <data key="d1">method</data>
+  <data key="d2">Lan chuột refers to the action of using a mouse to scroll or adjust the view in a graphical interface, particularly noted in Vietnamese instructions involving zooming out.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Mone">
+  <data key="d0">Mone</data>
+  <data key="d1">organization</data>
+  <data key="d2">Mone is a service that facilitates the transfer of money abroad and offers supplementary or alternative options at different periods.&lt;SEP&gt;Mone is an entity involved in transferring money abroad, suggesting a financial or currency-related service.&lt;SEP&gt;Mone is an organization involved in facilitating international money transfers, offering services that may change over time.&lt;SEP&gt;Mone is an entity associated with foreign currency exchange, specifically in the context of remittances or money transfers abroad.&lt;SEP&gt;Mone is an entity associated with foreign currency exchange, specifically in the context of remittances or money transfers abroad.&lt;SEP&gt;Mone is an organization involved in facilitating international money transfers, offering services that may change over time.</data>
+  <data key="d3">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5&lt;SEP&gt;chunk-62d66d586d7e1e0bf48b45b4a18ccad4</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="Money Transfer">
+  <data key="d0">Money Transfer</data>
+  <data key="d1">concept</data>
+  <data key="d2">Money transfer refers to the act of transferring money from one entity to another, often across borders and utilizing various services including Mone.&lt;SEP&gt;Money transfer refers to the process of sending money from one location to another, often facilitated by organizations like Mone.</data>
+  <data key="d3">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5&lt;SEP&gt;chunk-62d66d586d7e1e0bf48b45b4a18ccad4</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Nhg Idung">
+  <data key="d0">Nhg Idung</data>
+  <data key="d1">other</data>
+  <data key="d2">Nhg idung appears to be a name or term, but without context, it is unclear what it specifically refers to.&lt;SEP&gt;Nhg idung appears to be a phrase or keyword related to a specific context that is unclear from the given text.&lt;SEP&gt;Nhg idung appears to be a phrase or keyword related to a specific context that is unclear from the given text.</data>
+  <data key="d3">chunk-86d3d34f634e19166f7f21f6aa186ef7</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551811</data>
+  <data key="d6"></data>
+</node>
+<node id="Sheet Chúa">
+  <data key="d0">Sheet Chúa</data>
+  <data key="d1">other</data>
+  <data key="d2">Sheet Chúa seems to be a term or name related to a concept but lacks clear context or definition in this instance.&lt;SEP&gt;Sheet Chúa is a term referring to a document or format where relevant information is organized or stored.&lt;SEP&gt;Sheet Chúa is a term referring to a document or format where relevant information is organized or stored.</data>
+  <data key="d3">chunk-86d3d34f634e19166f7f21f6aa186ef7&lt;SEP&gt;chunk-081816f49ab7daac4957d23d3694ce20</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="Thng Tinkhi">
+  <data key="d0">Thng Tinkhi</data>
+  <data key="d1">other</data>
+  <data key="d2">Thng Tinkhi appears to be a name or term that is difficult to classify without additional information.&lt;SEP&gt;Thng tinkhi could potentially denote a concept or topic relevant to the subject matter, though its meaning is not clearly defined.&lt;SEP&gt;Thng tinkhi could potentially denote a concept or topic relevant to the subject matter, though its meaning is not clearly defined.</data>
+  <data key="d3">chunk-86d3d34f634e19166f7f21f6aa186ef7</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551812</data>
+  <data key="d6"></data>
+</node>
+<node id="Shi Th U Tuong">
+  <data key="d0">Shi Th U Tuong</data>
+  <data key="d1">other</data>
+  <data key="d2">Shi Th U Tuong seems to describe a concept or term but lacks clear context for accurate classification or description.</data>
+  <data key="d3">chunk-86d3d34f634e19166f7f21f6aa186ef7</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Bottom Right Corner of the Screen">
+  <data key="d0">Bottom Right Corner of the Screen</data>
+  <data key="d1">location</data>
+  <data key="d2">The bottom right corner of the screen refers to a specific area where certain features or options may be accessed in software interfaces.</data>
+  <data key="d3">chunk-80d993e1cdd4b70f28c20d8f4097fe32</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="Method 2">
+  <data key="d0">Method 2</data>
+  <data key="d1">method</data>
+  <data key="d2">Method 2 refers to a specific approach for utilizing the Zoom platform as mentioned in the context.</data>
+  <data key="d3">chunk-80d993e1cdd4b70f28c20d8f4097fe32</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551436</data>
+  <data key="d6"></data>
+</node>
+<node id="NHNNg">
+  <data key="d0">NHNNg</data>
+  <data key="d1">organization</data>
+  <data key="d2">NHNNg is an organization associated with financial policy and is referenced in relation to compliance with regulations.&lt;SEP&gt;NHNNg is an organization involved in policy enforcement related to financial procedures.&lt;SEP&gt;NHNNg is an organization associated with financial policy and is referenced in relation to compliance with regulations.</data>
+  <data key="d3">chunk-d571f3ce5a25b6e98a3b57119f7e0384</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551810</data>
+  <data key="d6"></data>
+</node>
+<node id="B15">
+  <data key="d0">B15</data>
+  <data key="d1">location</data>
+  <data key="d2">B15 is a specific location related to the implementation of certain responsibilities within the NHNNg.&lt;SEP&gt;B15 refers to a specific location related to the implementation of tasks or responsibilities within the organization.&lt;SEP&gt;B15 is a specific location related to the implementation of certain responsibilities within the NHNNg.</data>
+  <data key="d3">chunk-d571f3ce5a25b6e98a3b57119f7e0384</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551810</data>
+  <data key="d6"></data>
+</node>
+<node id="TT.NVNHGD">
+  <data key="d0">TT.NVNHGD</data>
+  <data key="d1">organization</data>
+  <data key="d2">TT.NVNHGD refers to a department or unit within NHNNg tasked with carrying out delegated responsibilities.&lt;SEP&gt;TT.NVNHGD refers to a department or unit within NHNNg tasked with carrying out delegated responsibilities.</data>
+  <data key="d3">chunk-d571f3ce5a25b6e98a3b57119f7e0384</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551810</data>
+  <data key="d6"></data>
+</node>
+<node id="Người Thụ Hưởng">
+  <data key="d0">Người Thụ Hưởng</data>
+  <data key="d1">person</data>
+  <data key="d2">Người Thụ Hưởng refers to the beneficiary of certain actions or policies related to NHNNg.&lt;SEP&gt;Người Thụ Hưởng is a person who is a beneficiary involved in the context of financial or policy requirements.&lt;SEP&gt;Người Thụ Hưởng refers to the beneficiary of certain actions or policies related to NHNNg.</data>
+  <data key="d3">chunk-d571f3ce5a25b6e98a3b57119f7e0384</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551810</data>
+  <data key="d6"></data>
+</node>
+<node id="Sheet Chúa Thông Tin">
+  <data key="d0">Sheet Chúa Thông Tin</data>
+  <data key="d1">other</data>
+  <data key="d2">Sheet Chúa Thông Tin is referenced as a destination for information related to a specified content.</data>
+  <data key="d3">chunk-081816f49ab7daac4957d23d3694ce20</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551437</data>
+  <data key="d6"></data>
+</node>
+<node id="Ni Dung">
+  <data key="d0">Ni Dung</data>
+  <data key="d1">other</data>
+  <data key="d2">Ni Dung refers to the content mentioned that directs to the destination known as Sheet Chúa Thông Tin.&lt;SEP&gt;Ni Dung refers to the content or subject matter that is to be directed towards the sheet for organizing information.&lt;SEP&gt;Ni Dung refers to the content or subject matter that is to be directed towards the sheet for organizing information.</data>
+  <data key="d3">chunk-081816f49ab7daac4957d23d3694ce20</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="Truòng HGP">
+  <data key="d0">Truòng HGP</data>
+  <data key="d1">other</data>
+  <data key="d2">Truòng HGP is a subject mentioned in the text, likely indicating a person or entity attempting to interact with a digital interface.&lt;SEP&gt;Truòng HGP is a name mentioned in the context of performing an action on the computer screen.&lt;SEP&gt;Truòng HGP is a name mentioned in the context of performing an action on the computer screen.</data>
+  <data key="d3">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551811</data>
+  <data key="d6"></data>
+</node>
+<node id="Phím &quot;ESC&quot;">
+  <data key="d0">Phím "ESC"</data>
+  <data key="d1">other</data>
+  <data key="d2">Phím "ESC" is a key on the keyboard that is referenced for restoring the information on the screen.</data>
+  <data key="d3">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551437</data>
+  <data key="d6"></data>
+</node>
+<node id="Thông Tin">
+  <data key="d0">Thông Tin</data>
+  <data key="d1">other</data>
+  <data key="d2">Thông Tin refers to the information displayed on the screen, which is mentioned as not initially visible.&lt;SEP&gt;Thông Tin refers to the information displayed on the screen, which is initially not visible and can be retrieved by pressing the "ESC" key.&lt;SEP&gt;Thông Tin is a term meaning information, which is suggested to be organized in the referenced sheet.&lt;SEP&gt;Thông Tin translates to information, which is intended to be displayed on the screen.&lt;SEP&gt;Thông Tin is a term meaning information, which is suggested to be organized in the referenced sheet.&lt;SEP&gt;Thông Tin translates to information, which is intended to be displayed on the screen.</data>
+  <data key="d3">chunk-ed450b15f0722bdf7acae42fef965e48&lt;SEP&gt;chunk-fdcf314c9d580c07e09c016168732981&lt;SEP&gt;chunk-081816f49ab7daac4957d23d3694ce20</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551803</data>
+  <data key="d6"></data>
+</node>
+<node id="Foreign Exchange">
+  <data key="d0">Foreign Exchange</data>
+  <data key="d1">concept</data>
+  <data key="d2">Foreign exchange involves the conversion of one currency into another, which is a key aspect of money transfer services.</data>
+  <data key="d3">chunk-62d66d586d7e1e0bf48b45b4a18ccad4</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551437</data>
+  <data key="d6"></data>
+</node>
+<node id="So Dò">
+  <data key="d0">So Dò</data>
+  <data key="d1">other</data>
+  <data key="d2">So Dò is mentioned in the text, but no specific description is provided regarding its nature or significance.&lt;SEP&gt;So Dò appears to be a name or title, but further context is needed to define its attributes and activities.&lt;SEP&gt;So Dò appears to be a name or title, but further context is needed to define its attributes and activities.</data>
+  <data key="d3">chunk-1b84d42c36cdb0a2d72d1373f85a2b5a</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551810</data>
+  <data key="d6"></data>
+</node>
+<node id="Chứng Từ">
+  <data key="d0">Chứng Từ</data>
+  <data key="d1">other</data>
+  <data key="d2">Chứng Từ is a document referenced in the context of collecting information.&lt;SEP&gt;Chứng Từ refers to a document or receipt mentioned in the context of gathering information.&lt;SEP&gt;Chứng Từ refers to a document or receipt mentioned in the context of gathering information.</data>
+  <data key="d3">chunk-0f0a62aa33d769deb24911fde6b5c7e5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="B10">
+  <data key="d0">B10</data>
+  <data key="d1">other</data>
+  <data key="d2">B10 appears to be a location or section associated with Chứng Từ, possibly indicating a specific area of reference.&lt;SEP&gt;B10 denotes a specific identifier or location in the context of the documentation referred to in the text.&lt;SEP&gt;B10 denotes a specific identifier or location in the context of the documentation referred to in the text.</data>
+  <data key="d3">chunk-0f0a62aa33d769deb24911fde6b5c7e5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="Phiếu Thu Thập Thông Tin">
+  <data key="d0">Phiếu Thu Thập Thông Tin</data>
+  <data key="d1">other</data>
+  <data key="d2">Phiếu Thu Thập Thông Tin refers to a specific form or template used for collecting information (BM-TTQT.TT).&lt;SEP&gt;Phiếu thu thập thông tin is a form used to gather information in financial contexts.&lt;SEP&gt;Phiếu Thu Thập Thông Tin is a form used to collect information, indicated by the abbreviation BM-TTQT.TT.&lt;SEP&gt;Phiếu thu thập thông tin is a document used for collecting information in a specific context.&lt;SEP&gt;Phiếu Thu Thập Thông Tin is a form used to collect information, indicated by the abbreviation BM-TTQT.TT.&lt;SEP&gt;Phiếu thu thập thông tin is a document used for collecting information in a specific context.</data>
+  <data key="d3">chunk-0f0a62aa33d769deb24911fde6b5c7e5&lt;SEP&gt;chunk-c406bb91102f9258a9c6c9e77b63556d</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="Chương Trình QLHSTT">
+  <data key="d0">Chương Trình QLHSTT</data>
+  <data key="d1">concept</data>
+  <data key="d2">Chương Trình QLHSTT is likely a program related to managing a specific system or process.&lt;SEP&gt;Chương Trình QLHSTT refers to a program related to the status update of profiles and systems.&lt;SEP&gt;Chương Trình QLHSTT refers to a program related to the status update of profiles and systems.</data>
+  <data key="d3">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="ĐNTT">
+  <data key="d0">ĐNTT</data>
+  <data key="d1">other</data>
+  <data key="d2">ĐNTT appears to be a component or aspect involved in a particular program or process.</data>
+  <data key="d3">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551438</data>
+  <data key="d6"></data>
+</node>
+<node id="Phụ Lục 1.4">
+  <data key="d0">Phụ Lục 1.4</data>
+  <data key="d1">document</data>
+  <data key="d2">Phụ Lục 1.4 refers to a specific appendix that contains regulations pertaining to the update of profile statuses.&lt;SEP&gt;Phụ Lục 1.4 is a reference document that outlines regulations pertaining to specific processes.&lt;SEP&gt;Phụ Lục 1.4 is a reference document that outlines regulations pertaining to specific processes.</data>
+  <data key="d3">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="Quy Trình Kinh Doanh Tiền Tệ">
+  <data key="d0">Quy Trình Kinh Doanh Tiền Tệ</data>
+  <data key="d1">method</data>
+  <data key="d2">Quy Trình Kinh Doanh Tiền Tệ is a currency business process, which is involved in the handling of foreign currency returns.&lt;SEP&gt;Quy Trình Kinh Doanh Tiền Tệ describes the process for handling monetary transactions and foreign exchange returns.&lt;SEP&gt;Quy Trình Kinh Doanh Tiền Tệ describes the process for handling monetary transactions and foreign exchange returns.</data>
+  <data key="d3">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="HOME">
+  <data key="d0">HOME</data>
+  <data key="d1">other</data>
+  <data key="d2">HOME is a term that often signifies a place of residence or origin, typically serving as a central focal point in various contexts.&lt;SEP&gt;HOME refers to a general term or conceptual category, but does not specify any particular entity, person, or organization with distinct attributes.&lt;SEP&gt;HOME refers to a general term or conceptual category, but does not specify any particular entity, person, or organization with distinct attributes.</data>
+  <data key="d3">chunk-f4bdc90feff57354b29c23518ae2d563</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="ESC">
+  <data key="d0">ESC</data>
+  <data key="d1">other</data>
+  <data key="d2">ESC is a key on the keyboard that can be pressed to display information again.&lt;SEP&gt;The key "ESC" is referenced as a function to restore information on the screen.&lt;SEP&gt;The key "ESC" is referenced as a function to restore information on the screen.</data>
+  <data key="d3">chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551803</data>
+  <data key="d6"></data>
+</node>
+<node id="Zoom In">
+  <data key="d0">Zoom In</data>
+  <data key="d1">method</data>
+  <data key="d2">Zoom In is an action or function that allows users to magnify or enlarge a view, often used in applications such as maps or images.&lt;SEP&gt;Zoom in is a method to increase the view of an item on a screen using keyboard shortcuts.&lt;SEP&gt;Zoom In is a method of magnifying an image or area in digital content to see finer details.&lt;SEP&gt;Zoom In is an action or function that allows users to magnify or enlarge a view, often used in applications such as maps or images.&lt;SEP&gt;Zoom in is a method to increase the view of an item on a screen using keyboard shortcuts.</data>
+  <data key="d3">chunk-d8703bbedbef288c86d7af2e707f9cd6&lt;SEP&gt;chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551805</data>
+  <data key="d6"></data>
+</node>
+<node id="Zoom Out">
+  <data key="d0">Zoom Out</data>
+  <data key="d1">method</data>
+  <data key="d2">Zoom Out is an action or function that allows users to reduce or minimize a view, commonly used in applications to see a broader perspective.&lt;SEP&gt;Zoom out is a method to decrease the view of an item on a screen using keyboard shortcuts.&lt;SEP&gt;Zoom Out is a method of reducing the magnification of an image or area in digital content to view a wider perspective.&lt;SEP&gt;Zoom Out is an action or function that allows users to reduce or minimize a view, commonly used in applications to see a broader perspective.&lt;SEP&gt;Zoom out is a method to decrease the view of an item on a screen using keyboard shortcuts.</data>
+  <data key="d3">chunk-d8703bbedbef288c86d7af2e707f9cd6&lt;SEP&gt;chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551806</data>
+  <data key="d6"></data>
+</node>
+<node id="KH">
+  <data key="d0">KH</data>
+  <data key="d1">person</data>
+  <data key="d2">KH refers to a customer making a money transfer request via online transaction channels.&lt;SEP&gt;KH refers to a customer involved in a request for money transfer through an online transaction channel.&lt;SEP&gt;KH refers to a customer making a money transfer request via online transaction channels.</data>
+  <data key="d3">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551806</data>
+  <data key="d6"></data>
+</node>
+<node id="Lệnh Chuyển Tiền Bản Chính">
+  <data key="d0">Lệnh Chuyển Tiền Bản Chính</data>
+  <data key="d1">document</data>
+  <data key="d2">Lệnh Chuyển Tiền Bản Chính is a document type representing formal money transfer instructions.&lt;SEP&gt;Lệnh Chuyển Tiền Bản Chính is a formal method for transferring money, specifically referenced in a financial context.&lt;SEP&gt;Lệnh Chuyển Tiền Bản Chính is a document type representing formal money transfer instructions.</data>
+  <data key="d3">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551806</data>
+  <data key="d6"></data>
+</node>
+<node id="Biu Tugng">
+  <data key="d0">Biu Tugng</data>
+  <data key="d1">other</data>
+  <data key="d2">Biu Tugng is a term or concept mentioned in the context of returning to a map or initial layout.&lt;SEP&gt;Biu Tugng is a term or concept mentioned in the context of returning to a map or initial layout.&lt;SEP&gt;Biu Tugng is a term or concept mentioned in the context of returning to a map or initial layout.</data>
+  <data key="d3">chunk-37716ef017944ffcab483a4e26cec2c8</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551803</data>
+  <data key="d6"></data>
+</node>
+<node id="So Do Ban Dau">
+  <data key="d0">So Do Ban Dau</data>
+  <data key="d1">other</data>
+  <data key="d2">So Do Ban Dau refers to an initial layout or map that is being referenced in the statement.&lt;SEP&gt;So Do Ban Dau refers to an initial layout or map that is being referenced in the statement.&lt;SEP&gt;So Do Ban Dau refers to an initial layout or map that is being referenced in the statement.</data>
+  <data key="d3">chunk-37716ef017944ffcab483a4e26cec2c8</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551803</data>
+  <data key="d6"></data>
+</node>
+<node id="Xác Nhận Của ĐV">
+  <data key="d0">Xác Nhận Của ĐV</data>
+  <data key="d1">other</data>
+  <data key="d2">Xác nhận của ĐV refers to a confirmation document regarding the provision of credit to customers for working capital or short-term business purposes.&lt;SEP&gt;Xác nhận của ĐV is a confirmation document regarding credit allocation for operational or short-term business purposes.&lt;SEP&gt;Xác nhận của ĐV is a confirmation document regarding credit allocation for operational or short-term business purposes.</data>
+  <data key="d3">chunk-c406bb91102f9258a9c6c9e77b63556d</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551803</data>
+  <data key="d6"></data>
+</node>
+<node id="Phiếu Đề Xuất Hạn Mức Chuyển Tiền Ra Nước Ngoài">
+  <data key="d0">Phiếu Đề Xuất Hạn Mức Chuyển Tiền Ra Nước Ngoài</data>
+  <data key="d1">other</data>
+  <data key="d2">Phiếu đề xuất hạn mức chuyển tiền ra nước ngoài is a form that proposes limits for transferring money abroad.&lt;SEP&gt;Phiếu đề xuất hạn mức chuyển tiền ra nước ngoài is a document proposing limits on transferring money abroad.&lt;SEP&gt;Phiếu đề xuất hạn mức chuyển tiền ra nước ngoài is a document proposing limits on transferring money abroad.</data>
+  <data key="d3">chunk-c406bb91102f9258a9c6c9e77b63556d</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551804</data>
+  <data key="d6"></data>
+</node>
+<node id="BM-TTQT.TT.11">
+  <data key="d0">BM-TTQT.TT.11</data>
+  <data key="d1">other</data>
+  <data key="d2">BM-TTQT.TT.11 is a specific code designation for a type of document or form within the financial sector.&lt;SEP&gt;BM-TTQT.TT.11 is likely a form or document code related to credit information collection.&lt;SEP&gt;BM-TTQT.TT.11 is likely a form or document code related to credit information collection.</data>
+  <data key="d3">chunk-c406bb91102f9258a9c6c9e77b63556d</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551804</data>
+  <data key="d6"></data>
+</node>
+<node id="BM-TTQT.TT.06">
+  <data key="d0">BM-TTQT.TT.06</data>
+  <data key="d1">other</data>
+  <data key="d2">BM-TTQT.TT.06 is a specific code designation for a different type of document related to financial transactions.&lt;SEP&gt;BM-TTQT.TT.06 refers to another specific form or document code related to proposing transfer limits.&lt;SEP&gt;BM-TTQT.TT.06 refers to another specific form or document code related to proposing transfer limits.</data>
+  <data key="d3">chunk-c406bb91102f9258a9c6c9e77b63556d</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551804</data>
+  <data key="d6"></data>
+</node>
+<node id="Nguòi Dung">
+  <data key="d0">Nguòi Dung</data>
+  <data key="d1">person</data>
+  <data key="d2">Nguòi Dung refers to the user who can perform actions such as zooming in and out on a screen to view information in a sheet.&lt;SEP&gt;Nguòi Dung refers to the user who can manipulate the screen display for viewing information in a spreadsheet.&lt;SEP&gt;Nguòi Dung refers to the user who can manipulate the screen display for viewing information in a spreadsheet.</data>
+  <data key="d3">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551807</data>
+  <data key="d6"></data>
+</node>
+<node id="Sheet Bảng">
+  <data key="d0">Sheet Bảng</data>
+  <data key="d1">other</data>
+  <data key="d2">Sheet Bảng is the display area where information is presented and can be zoomed in or out for better visibility.</data>
+  <data key="d3">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551438</data>
+  <data key="d6"></data>
+</node>
+<node id="LCT Moneygram">
+  <data key="d0">LCT Moneygram</data>
+  <data key="d1">organization</data>
+  <data key="d2">LCT Moneygram is an organization associated with the facilitation of money transfers.&lt;SEP&gt;LCT Moneygram is an organization associated with the facilitation of money transfers.</data>
+  <data key="d3">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551806</data>
+  <data key="d6"></data>
+</node>
+<node id="QĐ 68/2019/QĐ-VBLQ">
+  <data key="d0">QĐ 68/2019/QĐ-VBLQ</data>
+  <data key="d1">regulation</data>
+  <data key="d2">QĐ 68/2019/QĐ-VBLQ is a regulation relevant to the procedures and formats for money transfers.&lt;SEP&gt;QĐ 68/2019/QĐ-VBLQ is a document that likely contains regulations or guidelines affecting money transfer processes.&lt;SEP&gt;QĐ 68/2019/QĐ-VBLQ is a regulation relevant to the procedures and formats for money transfers.</data>
+  <data key="d3">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551806</data>
+  <data key="d6"></data>
+</node>
+<node id="BM_TTQT.TT.01">
+  <data key="d0">BM_TTQT.TT.01</data>
+  <data key="d1">document</data>
+  <data key="d2">BM_TTQT.TT.01 is a document form related to international money transfers.&lt;SEP&gt;BM_TTQT.TT.01 is likely a code or identifier related to money transfer documentation.&lt;SEP&gt;BM_TTQT.TT.01 is a document form related to international money transfers.</data>
+  <data key="d3">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551806</data>
+  <data key="d6"></data>
+</node>
+<node id="BM-TTQT.CTNNMG.01">
+  <data key="d0">BM-TTQT.CTNNMG.01</data>
+  <data key="d1">document</data>
+  <data key="d2">BM-TTQT.CTNNMG.01 is a specific form associated with Moneygram money transfers.&lt;SEP&gt;BM-TTQT.CTNNMG.01 is another code or identifier related to Moneygram services in money transfer.&lt;SEP&gt;BM-TTQT.CTNNMG.01 is a specific form associated with Moneygram money transfers.</data>
+  <data key="d3">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551806</data>
+  <data key="d6"></data>
+</node>
+<node id="Screen">
+  <data key="d0">Screen</data>
+  <data key="d1">other</data>
+  <data key="d2">The screen is the display device that users can zoom in or zoom out on to view information.&lt;SEP&gt;The screen refers to the display where information is displayed and can be interacted with by the user.&lt;SEP&gt;The screen is a display area that can become blank and is involved in the interaction described.&lt;SEP&gt;The screen refers to the display where information is displayed and can be interacted with by the user.&lt;SEP&gt;The screen is a display area that can become blank and is involved in the interaction described.&lt;SEP&gt;The screen is the display device that users can zoom in or zoom out on to view information.</data>
+  <data key="d3">chunk-769b8472f084616a1b70eab5cd174693&lt;SEP&gt;chunk-ed450b15f0722bdf7acae42fef965e48&lt;SEP&gt;chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551803</data>
+  <data key="d6"></data>
+</node>
+<node id="Sheet Bang">
+  <data key="d0">Sheet Bang</data>
+  <data key="d1">content</data>
+  <data key="d2">Sheet Bang likely refers to a data sheet or table containing information that the user wishes to view.&lt;SEP&gt;Sheet Bang likely refers to a data sheet or table containing information that the user wishes to view.</data>
+  <data key="d3">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551807</data>
+  <data key="d6"></data>
+</node>
+<node id="Phóng To">
+  <data key="d0">Phóng To</data>
+  <data key="d1">method</data>
+  <data key="d2">Phóng To refers to the action of zooming in on the screen to enlarge the display for better viewing.&lt;SEP&gt;Phóng To refers to the action of zooming in on the screen to enlarge the display for better viewing.</data>
+  <data key="d3">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551807</data>
+  <data key="d6"></data>
+</node>
+<node id="Information">
+  <data key="d0">Information</data>
+  <data key="d1">other</data>
+  <data key="d2">Information pertains to the data or content that is housed within the sheets.&lt;SEP&gt;Information refers to data or knowledge communicated or received regarding a specific subject or topic.&lt;SEP&gt;Information refers to the data that is displayed but may become hidden when the screen is blank.&lt;SEP&gt;Information refers to data or knowledge communicated or received regarding a specific subject or topic.&lt;SEP&gt;Information refers to the data that is displayed but may become hidden when the screen is blank.</data>
+  <data key="d3">chunk-44a0d9a01e3da43f4dccffa397a76f2b&lt;SEP&gt;chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551803</data>
+  <data key="d6"></data>
+</node>
+<node id="Moneygram">
+  <data key="d0">Moneygram</data>
+  <data key="d1">organization</data>
+  <data key="d2">Moneygram is a financial services company providing money transfer services, referenced here as a method of transfer.</data>
+  <data key="d3">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551439</data>
+  <data key="d6"></data>
+</node>
+<node id="Thu Nh">
+  <data key="d0">Thu Nh</data>
+  <data key="d1">method</data>
+  <data key="d2">Thu Nh refers to the action of zooming out on the screen to reduce the display size for better viewing.&lt;SEP&gt;Thu Nh refers to the action of zooming out on the screen to reduce the display size for better viewing.</data>
+  <data key="d3">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551807</data>
+  <data key="d6"></data>
+</node>
+<node id="Văn Bản Sửa Đổi Bổ Sung">
+  <data key="d0">Văn Bản Sửa Đổi Bổ Sung</data>
+  <data key="d1">other</data>
+  <data key="d2">Văn bản sửa đổi bổ sung refers to legislative or regulatory texts that are amended or replaced over time.&lt;SEP&gt;Văn bản sửa đổi bổ sung refers to legislative or regulatory texts that are amended or replaced over time.</data>
+  <data key="d3">chunk-2d52b6d9929158285c7b4c95de6e9bbe</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551807</data>
+  <data key="d6"></data>
+</node>
+<node id="dé chut vi trí cän zoom">
+  <data key="d0">dé chut vi trí cän zoom</data>
+  <data key="d1">method</data>
+  <data key="d2">Dé chut vi trí cän zoom is a specific technique for modifying the zoom position on a display.&lt;SEP&gt;Dé chut vi trí cän zoom is a specific technique for modifying the zoom position on a display.</data>
+  <data key="d3">chunk-4382c8937a6a52d21f7f5285dd961bc2</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551808</data>
+  <data key="d6"></data>
+</node>
+<node id="Huóng Dẫn Sử Dụng">
+  <data key="d0">Huóng Dẫn Sử Dụng</data>
+  <data key="d1">other</data>
+  <data key="d2">Huóng Dẫn Sử Dụng appears to be a title or reference to a guide or instruction, but lacks further context or description within the input text.&lt;SEP&gt;Huóng Dẫn Sử Dụng appears to be a title or reference to a guide or instruction, but lacks further context or description within the input text.&lt;SEP&gt;Huóng Dẫn Sử Dụng appears to be a title or reference to a guide or instruction, but lacks further context or description within the input text.</data>
+  <data key="d3">chunk-d07afa07c1a72a6ae52bce055407213e</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551804</data>
+  <data key="d6"></data>
+</node>
+<node id="văn bản sửa đổi bổ sung">
+  <data key="d0">văn bản sửa đổi bổ sung</data>
+  <data key="d1">content</data>
+  <data key="d2">Văn bản sửa đổi bổ sung refers to a modified text that has been supplemented or replaced over different periods.</data>
+  <data key="d3">chunk-2d52b6d9929158285c7b4c95de6e9bbe</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551440</data>
+  <data key="d6"></data>
+</node>
+<node id="Ctrl">
+  <data key="d0">Ctrl</data>
+  <data key="d1">other</data>
+  <data key="d2">Ctrl is a keyboard key used in combination with others for commands such as zooming in or out.&lt;SEP&gt;Ctrl is a keyboard key used in combination with others for commands such as zooming in or out.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551808</data>
+  <data key="d6"></data>
+</node>
+<node id="Lan Chuôt">
+  <data key="d0">Lan Chuôt</data>
+  <data key="d1">other</data>
+  <data key="d2">Lan chuôt refers to a mouse action used in conjunction with keyboard shortcuts for zooming.&lt;SEP&gt;Lan chuôt refers to a mouse action used in conjunction with keyboard shortcuts for zooming.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551808</data>
+  <data key="d6"></data>
+</node>
+<node id="Chut Xuöng">
+  <data key="d0">Chut Xuöng</data>
+  <data key="d1">other</data>
+  <data key="d2">Chut xuöng refers to an action related to mouse usage in zooming out functions.&lt;SEP&gt;Chut xuöng refers to an action related to mouse usage in zooming out functions.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="Gi Phím">
+  <data key="d0">Gi Phím</data>
+  <data key="d1">other</data>
+  <data key="d2">Gi phím refers to a keyboard action used in combination with other keys for commands such as zooming.&lt;SEP&gt;Gi phím refers to a keyboard action used in combination with other keys for commands such as zooming.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="Ln Chut">
+  <data key="d0">Ln Chut</data>
+  <data key="d1">other</data>
+  <data key="d2">Ln chut is part of the commands involving mouse action to facilitate zooming out.&lt;SEP&gt;Ln chut is part of the commands involving mouse action to facilitate zooming out.</data>
+  <data key="d3">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="International Money Transfer">
+  <data key="d0">International Money Transfer</data>
+  <data key="d1">concept</data>
+  <data key="d2">International money transfer refers to the process of sending money from one country to another, potentially using platforms like Mone.&lt;SEP&gt;International money transfer refers to the process of sending money from one country to another, potentially using platforms like Mone.</data>
+  <data key="d3">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="Supplementary Changes">
+  <data key="d0">Supplementary Changes</data>
+  <data key="d1">concept</data>
+  <data key="d2">Supplementary changes may involve adjustments or modifications in the services offered for money transfers at different periods.&lt;SEP&gt;Supplementary changes may involve adjustments or modifications in the services offered for money transfers at different periods.</data>
+  <data key="d3">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551809</data>
+  <data key="d6"></data>
+</node>
+<node id="Cách 2">
+  <data key="d0">Cách 2</data>
+  <data key="d1">method</data>
+  <data key="d2">Cách 2 is a method related to using features in Zoom accessible through the lower right corner of the screen.&lt;SEP&gt;Cách 2 is a method related to using features in Zoom accessible through the lower right corner of the screen.</data>
+  <data key="d3">chunk-80d993e1cdd4b70f28c20d8f4097fe32</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551810</data>
+  <data key="d6"></data>
+</node>
+<node id="Lower Right Corner">
+  <data key="d0">Lower Right Corner</data>
+  <data key="d1">location</data>
+  <data key="d2">The lower right corner is a specific area of the screen where certain Zoom features can be accessed.&lt;SEP&gt;The lower right corner is a specific area of the screen where certain Zoom features can be accessed.</data>
+  <data key="d3">chunk-80d993e1cdd4b70f28c20d8f4097fe32</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551810</data>
+  <data key="d6"></data>
+</node>
+<node id="Lién T D Sheet">
+  <data key="d0">Lién T D Sheet</data>
+  <data key="d1">other</data>
+  <data key="d2">Lién t d sheet seems to refer to a type of document or material, but its specific meaning is ambiguous in the provided text.&lt;SEP&gt;Lién t d sheet seems to refer to a type of document or material, but its specific meaning is ambiguous in the provided text.</data>
+  <data key="d3">chunk-86d3d34f634e19166f7f21f6aa186ef7</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551811</data>
+  <data key="d6"></data>
+</node>
+<node id="money transfer">
+  <data key="d0">money transfer</data>
+  <data key="d3">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5</data>
+  <data key="d2">Mone is involved in facilitating money transfer abroad, providing additional options as needed.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d5">1761551442</data>
+  <data key="d6"></data>
+</node>
+<node id="D Shi Th U Tuong">
+  <data key="d0">D Shi Th U Tuong</data>
+  <data key="d1">other</data>
+  <data key="d2">D shi th u tuong appears to be an expression or idea related to the context, but it is not explicitly clear from the text.&lt;SEP&gt;D shi th u tuong appears to be an expression or idea related to the context, but it is not explicitly clear from the text.</data>
+  <data key="d3">chunk-86d3d34f634e19166f7f21f6aa186ef7</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551813</data>
+  <data key="d6"></data>
+</node>
+<node id="ESC Key">
+  <data key="d0">ESC Key</data>
+  <data key="d1">other</data>
+  <data key="d2">The ESC key is a keyboard input used to perform a specific action in restoring the display of information on the screen.&lt;SEP&gt;The ESC key is a keyboard input used to perform a specific action in restoring the display of information on the screen.</data>
+  <data key="d3">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551811</data>
+  <data key="d6"></data>
+</node>
+<node id="Quay">
+  <data key="d0">Quay</data>
+  <data key="d1">other</data>
+  <data key="d2">Quay is mentioned in relation to So Dò and may represent a title, location, or concept, but further context is required for specific attributes and activities.&lt;SEP&gt;Quay is mentioned in relation to So Dò and may represent a title, location, or concept, but further context is required for specific attributes and activities.</data>
+  <data key="d3">chunk-1b84d42c36cdb0a2d72d1373f85a2b5a</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551811</data>
+  <data key="d6"></data>
+</node>
+<node id="Foreign Currency Exchange">
+  <data key="d0">Foreign Currency Exchange</data>
+  <data key="d1">concept</data>
+  <data key="d2">Foreign currency exchange refers to the process and system involving the conversion of one currency into another, often involving various rates across different periods.&lt;SEP&gt;Foreign currency exchange refers to the process and system involving the conversion of one currency into another, often involving various rates across different periods.</data>
+  <data key="d3">chunk-62d66d586d7e1e0bf48b45b4a18ccad4</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551811</data>
+  <data key="d6"></data>
+</node>
+<node id="Time Period">
+  <data key="d0">Time Period</data>
+  <data key="d1">concept</data>
+  <data key="d2">Time period refers to specific durations during which foreign currency exchange activities may be affected or adjusted.&lt;SEP&gt;Time period refers to specific durations during which foreign currency exchange activities may be affected or adjusted.</data>
+  <data key="d3">chunk-62d66d586d7e1e0bf48b45b4a18ccad4</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551811</data>
+  <data key="d6"></data>
+</node>
+<node id="ĐV Xử Lý Ngoại Tệ">
+  <data key="d0">ĐV Xử Lý Ngoại Tệ</data>
+  <data key="d1">organization</data>
+  <data key="d2">ĐV Xử Lý Ngoại Tệ refers to the entity responsible for processing foreign exchange transactions.&lt;SEP&gt;ĐV Xử Lý Ngoại Tệ refers to the entity responsible for processing foreign exchange transactions.</data>
+  <data key="d3">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d5">1761551802</data>
+  <data key="d6"></data>
+</node>
+<node id="information">
+  <data key="d0">information</data>
+  <data key="d3">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d2">The screen fails to display information when interacted with.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf</data>
+  <data key="d5">1761551448</data>
+  <data key="d6"></data>
+</node>
+<node id="Action">
+  <data key="d0">Action</data>
+  <data key="d3">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d2">Pressing the ESC key is suggested to restore information on the screen.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf</data>
+  <data key="d5">1761551448</data>
+  <data key="d6"></data>
+</node>
+<node id="ESC key">
+  <data key="d0">ESC key</data>
+  <data key="d3">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d2">Pressing the ESC key is suggested to restore information on the screen.</data>
+  <data key="d1">UNKNOWN</data>
+  <data key="d4">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf</data>
+  <data key="d5">1761551449</data>
+  <data key="d6"></data>
+</node>
+<edge source="Dé Chut" target="Cách 1">
+  <data key="d7">1.0</data>
+  <data key="d8">Cách 1 involves the method Dé Chut for performing a zooming action on a screen position.</data>
+  <data key="d9">method application,zooming technique</data>
+  <data key="d10">chunk-4382c8937a6a52d21f7f5285dd961bc2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551441</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Màn Hình" target="Truòng HGP">
+  <data key="d7">1.0</data>
+  <data key="d8">Truòng HGP clicks on the screen multiple times, indicating an attempt to interact with the display.</data>
+  <data key="d9">interaction,user interface</data>
+  <data key="d10">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551443</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Màn Hình" target="Phím &quot;ESC&quot;">
+  <data key="d7">1.0</data>
+  <data key="d8">The ESC key is mentioned as a means to restore the information displayed on the screen.</data>
+  <data key="d9">functionality,user action</data>
+  <data key="d10">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551444</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Màn Hình" target="Thông Tin">
+  <data key="d7">4.0</data>
+  <data key="d8">Màn Hình is supposed to display Thông Tin when clicked but initially does not.&lt;SEP&gt;The information is not displayed on the screen as indicated in the text.&lt;SEP&gt;The Màn Hình displays Thông Tin, which can become hidden based on user actions.&lt;SEP&gt;The Màn Hình displays Thông Tin, which can become hidden based on user actions.</data>
+  <data key="d9">data visibility,display interaction,information display,screen content,user interface,visibility</data>
+  <data key="d10">chunk-ed450b15f0722bdf7acae42fef965e48&lt;SEP&gt;chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551814</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Màn Hình" target="Nguòi Dung">
+  <data key="d7">1.0</data>
+  <data key="d8">Nguòi Dung can manipulate the Màn Hình by zooming in and out to see the information better.</data>
+  <data key="d9">screen manipulation,user interaction</data>
+  <data key="d10">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551446</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Màn Hình" target="ESC">
+  <data key="d7">1.0</data>
+  <data key="d8">Clicking on Màn Hình multiple times leads to an empty display, necessitating the use of ESC to show Thông Tin again.</data>
+  <data key="d9">information retrieval,user interaction</data>
+  <data key="d10">chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551447</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Cách 1" target="dé chut vi trí cän zoom">
+  <data key="d7">2.0</data>
+  <data key="d8">Cách 1 is a method describing how to adjust the zoom position on a màn hình.&lt;SEP&gt;Cách 1 is a method describing how to adjust the zoom position on a màn hình.</data>
+  <data key="d9">adjustment technique,method description</data>
+  <data key="d10">chunk-4382c8937a6a52d21f7f5285dd961bc2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551821</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Agent Portal" target="Omni">
+  <data key="d7">3.0</data>
+  <data key="d8">The Agent Portal is used to access Omni for managing invoices and storing documents.&lt;SEP&gt;The Agent Portal facilitates the issuance of invoices and ensures they are stored in Omni after verification.&lt;SEP&gt;The Agent Portal facilitates the issuance of invoices and ensures they are stored in Omni after verification.</data>
+  <data key="d9">document management,document storage,process,system interaction</data>
+  <data key="d10">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551821</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Agent Portal" target="CKS">
+  <data key="d7">3.0</data>
+  <data key="d8">CKS checks the documents for compliance before they are processed through the Agent Portal.&lt;SEP&gt;CKS checks the suitability of records on the Agent Portal before they are processed.&lt;SEP&gt;CKS checks the suitability of records on the Agent Portal before they are processed.</data>
+  <data key="d9">document compliance,task oversight,verification,verification process</data>
+  <data key="d10">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551822</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Agent Portal" target="Hóa Đơn">
+  <data key="d7">1.0</data>
+  <data key="d8">The Agent Portal is used to issue invoices as part of its functionalities.</data>
+  <data key="d9">invoice generation,transaction process</data>
+  <data key="d10">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551443</data>
+  <data key="d13"></data>
+</edge>
+<edge source="CKS" target="Hóa Đơn">
+  <data key="d7">1.0</data>
+  <data key="d8">CKS verifies the Hóa Đơn for compliance before it is processed in the Agent Portal.</data>
+  <data key="d9">compliance check,verification process</data>
+  <data key="d10">chunk-4315558e27e6856dc6beddeaf7e355d5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551441</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom" target="Ctrl Key">
+  <data key="d7">1.0</data>
+  <data key="d8">Zooming in and out involves using the Ctrl key in combination with mouse actions to alter the visual display.</data>
+  <data key="d9">interface interaction,keyboard shortcut</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551441</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom" target="Mouse">
+  <data key="d7">1.0</data>
+  <data key="d8">The mouse is used to facilitate zooming actions in a graphical user interface.</data>
+  <data key="d9">device usage,interface navigation</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551442</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Ctrl Key" target="Lan chuột">
+  <data key="d7">1.0</data>
+  <data key="d8">The Ctrl key is used together with the action of lan chuột to facilitate zooming out in a graphical user interface.</data>
+  <data key="d9">interface interaction,keyboard action</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551442</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mone" target="money transfer">
+  <data key="d7">1.0</data>
+  <data key="d8">Mone is involved in facilitating money transfer abroad, providing additional options as needed.</data>
+  <data key="d9">facilitation,financial service</data>
+  <data key="d10">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551443</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mone" target="Money Transfer">
+  <data key="d7">1.0</data>
+  <data key="d8">Mone facilitates the operation of money transfer across borders.</data>
+  <data key="d9">financial service,operation</data>
+  <data key="d10">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551443</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mone" target="International Money Transfer">
+  <data key="d7">2.0</data>
+  <data key="d8">Mone provides services for international money transfers, emphasizing changes in their offerings over time.&lt;SEP&gt;Mone provides services for international money transfers, emphasizing changes in their offerings over time.</data>
+  <data key="d9">financial transactions,service provision</data>
+  <data key="d10">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551823</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mone" target="Supplementary Changes">
+  <data key="d7">2.0</data>
+  <data key="d8">Mone experiences supplementary changes that adapt its money transfer processes to meet different periods' requirements.&lt;SEP&gt;Mone experiences supplementary changes that adapt its money transfer processes to meet different periods' requirements.</data>
+  <data key="d9">adaptability,service evolution</data>
+  <data key="d10">chunk-3b5f0d68ec8164cfec89d9b10ff31cf5</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551824</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Mone" target="Foreign Currency Exchange">
+  <data key="d7">2.0</data>
+  <data key="d8">Mone facilitates foreign currency exchange for users looking to transfer money internationally.&lt;SEP&gt;Mone facilitates foreign currency exchange for users looking to transfer money internationally.</data>
+  <data key="d9">financial service,transaction facilitation</data>
+  <data key="d10">chunk-62d66d586d7e1e0bf48b45b4a18ccad4</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551825</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Sheet Chúa" target="Thông Tin">
+  <data key="d7">2.0</data>
+  <data key="d8">Thông Tin is directed to be organized in the Sheet Chúa for accessibility.&lt;SEP&gt;Thông Tin is directed to be organized in the Sheet Chúa for accessibility.</data>
+  <data key="d9">information management,organization</data>
+  <data key="d10">chunk-081816f49ab7daac4957d23d3694ce20</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551823</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Sheet Chúa" target="Ni Dung">
+  <data key="d7">2.0</data>
+  <data key="d8">Ni Dung is intended to be directed into the Sheet Chúa for the purpose of organization of information.&lt;SEP&gt;Ni Dung is intended to be directed into the Sheet Chúa for the purpose of organization of information.</data>
+  <data key="d9">content management,organization</data>
+  <data key="d10">chunk-081816f49ab7daac4957d23d3694ce20</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551824</data>
+  <data key="d13"></data>
+</edge>
+<edge source="NHNNg" target="TT.NVNHGD">
+  <data key="d7">2.0</data>
+  <data key="d8">NHNNg delegates responsibilities to the TT.NVNHGD for implementation.&lt;SEP&gt;NHNNg delegates responsibilities to the TT.NVNHGD for implementation.</data>
+  <data key="d9">delegation,organizational relationship</data>
+  <data key="d10">chunk-d571f3ce5a25b6e98a3b57119f7e0384</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551824</data>
+  <data key="d13"></data>
+</edge>
+<edge source="NHNNg" target="Người Thụ Hưởng">
+  <data key="d7">2.0</data>
+  <data key="d8">NHNNg's policies must comply with the requirements of the Người Thụ Hưởng.&lt;SEP&gt;NHNNg's policies must comply with the requirements of the Người Thụ Hưởng.</data>
+  <data key="d9">beneficiary,policy compliance</data>
+  <data key="d10">chunk-d571f3ce5a25b6e98a3b57119f7e0384</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551825</data>
+  <data key="d13"></data>
+</edge>
+<edge source="B15" target="TT.NVNHGD">
+  <data key="d7">2.0</data>
+  <data key="d8">TT.NVNHGD carries out its responsibilities at B15.&lt;SEP&gt;TT.NVNHGD carries out its responsibilities at B15.</data>
+  <data key="d9">implementation site,responsibility</data>
+  <data key="d10">chunk-d571f3ce5a25b6e98a3b57119f7e0384</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551825</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Sheet Chúa Thông Tin" target="Ni Dung">
+  <data key="d7">1.0</data>
+  <data key="d8">The content referred to as Ni Dung leads to the destination known as Sheet Chúa Thông Tin.</data>
+  <data key="d9">content destination</data>
+  <data key="d10">chunk-081816f49ab7daac4957d23d3694ce20</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551443</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Truòng HGP" target="Screen">
+  <data key="d7">2.0</data>
+  <data key="d8">Truòng HGP interacts with the screen by clicking multiple times, affecting the display of information.&lt;SEP&gt;Truòng HGP interacts with the screen by clicking multiple times, affecting the display of information.</data>
+  <data key="d9">computer operation,user interaction</data>
+  <data key="d10">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551824</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Thông Tin" target="ESC">
+  <data key="d7">1.0</data>
+  <data key="d8">Pressing the ESC key is a method to retrieve and display Thông Tin again.</data>
+  <data key="d9">information retrieval,user action</data>
+  <data key="d10">chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551444</data>
+  <data key="d13"></data>
+</edge>
+<edge source="So Dò" target="Quay">
+  <data key="d7">2.0</data>
+  <data key="d8">There is a mention of Quay in relation to So Dò, but the nature of the relationship is unclear without additional context.&lt;SEP&gt;There is a mention of Quay in relation to So Dò, but the nature of the relationship is unclear without additional context.</data>
+  <data key="d9">undefined</data>
+  <data key="d10">chunk-1b84d42c36cdb0a2d72d1373f85a2b5a</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551824</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Chương Trình QLHSTT" target="Phụ Lục 1.4">
+  <data key="d7">2.0</data>
+  <data key="d8">Chương Trình QLHSTT operates under the regulations set forth in Phụ Lục 1.4.&lt;SEP&gt;Chương Trình QLHSTT operates under the regulations set forth in Phụ Lục 1.4.</data>
+  <data key="d9">program regulation,status update</data>
+  <data key="d10">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551814</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Chương Trình QLHSTT" target="Quy Trình Kinh Doanh Tiền Tệ">
+  <data key="d7">2.0</data>
+  <data key="d8">Quy Trình Kinh Doanh Tiền Tệ relates to the handling of foreign exchange returns as part of Chương Trình QLHSTT.&lt;SEP&gt;Quy Trình Kinh Doanh Tiền Tệ relates to the handling of foreign exchange returns as part of Chương Trình QLHSTT.</data>
+  <data key="d9">foreign exchange,process association</data>
+  <data key="d10">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551820</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Quy Trình Kinh Doanh Tiền Tệ" target="ĐV Xử Lý Ngoại Tệ">
+  <data key="d7">2.0</data>
+  <data key="d8">Quy Trình Kinh Doanh Tiền Tệ defines the role of ĐV Xử Lý Ngoại Tệ in managing foreign exchange processes.&lt;SEP&gt;Quy Trình Kinh Doanh Tiền Tệ defines the role of ĐV Xử Lý Ngoại Tệ in managing foreign exchange processes.</data>
+  <data key="d9">foreign exchange,processing role</data>
+  <data key="d10">chunk-e1871d2769fb5b1910df86692b7d4641</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551814</data>
+  <data key="d13"></data>
+</edge>
+<edge source="ESC" target="Information">
+  <data key="d7">2.0</data>
+  <data key="d8">The "ESC" key is used to restore information that is currently not visible on the screen.&lt;SEP&gt;The "ESC" key is used to restore information that is currently not visible on the screen.</data>
+  <data key="d9">functionality,user action</data>
+  <data key="d10">chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551821</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom In" target="Ctrl">
+  <data key="d7">2.0</data>
+  <data key="d8">Zoom in is performed using the Ctrl key to enhance the display on the screen.&lt;SEP&gt;Zoom in is performed using the Ctrl key to enhance the display on the screen.</data>
+  <data key="d9">keyboard command,screen manipulation</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551822</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom In" target="Lan Chuôt">
+  <data key="d7">2.0</data>
+  <data key="d8">Zooming in involves using a mouse action along with the keyboard shortcut.&lt;SEP&gt;Zooming in involves using a mouse action along with the keyboard shortcut.</data>
+  <data key="d9">mouse action,screen manipulation</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551822</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom In" target="Gi Phím">
+  <data key="d7">2.0</data>
+  <data key="d8">Zooming in is executed by using keyboard actions in conjunction with specific keys.&lt;SEP&gt;Zooming in is executed by using keyboard actions in conjunction with specific keys.</data>
+  <data key="d9">keyboard command,screen manipulation</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551823</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom Out" target="Chut Xuöng">
+  <data key="d7">2.0</data>
+  <data key="d8">Zooming out incorporates a specific mouse action to decrease the view size.&lt;SEP&gt;Zooming out incorporates a specific mouse action to decrease the view size.</data>
+  <data key="d9">mouse action,screen manipulation</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551822</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom Out" target="Ctrl">
+  <data key="d7">2.0</data>
+  <data key="d8">Zoom out is executed with the Ctrl key to reduce the display size on the screen.&lt;SEP&gt;Zoom out is executed with the Ctrl key to reduce the display size on the screen.</data>
+  <data key="d9">keyboard command,screen manipulation</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551823</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Zoom Out" target="Ln Chut">
+  <data key="d7">2.0</data>
+  <data key="d8">Zooming out is performed with mouse actions intertwined with keyboard commands.&lt;SEP&gt;Zooming out is performed with mouse actions intertwined with keyboard commands.</data>
+  <data key="d9">mouse action,screen manipulation</data>
+  <data key="d10">chunk-64d4659beb10d3805bca958968000f95</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551823</data>
+  <data key="d13"></data>
+</edge>
+<edge source="KH" target="Lệnh Chuyển Tiền Bản Chính">
+  <data key="d7">3.0</data>
+  <data key="d8">KH is making a request for a money transfer using Lệnh Chuyển Tiền Bản Chính.&lt;SEP&gt;KH's money transfer request is formalized through the Lệnh Chuyển Tiền Bản Chính document.&lt;SEP&gt;KH's money transfer request is formalized through the Lệnh Chuyển Tiền Bản Chính document.</data>
+  <data key="d9">document usage,money transfer request,payment method,transaction request</data>
+  <data key="d10">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551814</data>
+  <data key="d13"></data>
+</edge>
+<edge source="KH" target="Moneygram">
+  <data key="d7">1.0</data>
+  <data key="d8">KH is utilizing Moneygram for the execution of the money transfer request.</data>
+  <data key="d9">financial services,money transfer</data>
+  <data key="d10">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551445</data>
+  <data key="d13"></data>
+</edge>
+<edge source="KH" target="LCT Moneygram">
+  <data key="d7">2.0</data>
+  <data key="d8">KH is utilizing LCT Moneygram's services for making a money transfer.&lt;SEP&gt;KH is utilizing LCT Moneygram's services for making a money transfer.</data>
+  <data key="d9">customer organization,money transfer</data>
+  <data key="d10">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551821</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Lệnh Chuyển Tiền Bản Chính" target="BM_TTQT.TT.01">
+  <data key="d7">1.0</data>
+  <data key="d8">Lệnh Chuyển Tiền Bản Chính is associated with the documentation code BM_TTQT.TT.01 for money transfers.</data>
+  <data key="d9">documentation code,transfer method</data>
+  <data key="d10">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551445</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Biu Tugng" target="So Do Ban Dau">
+  <data key="d7">3.0</data>
+  <data key="d8">Biu Tugng is associated with navigating back to the initial layout or map.&lt;SEP&gt;Biu Tugng is associated with navigating back to the initial layout or map.&lt;SEP&gt;Biu Tugng is associated with navigating back to the initial layout or map.</data>
+  <data key="d9">navigation,reference</data>
+  <data key="d10">chunk-37716ef017944ffcab483a4e26cec2c8</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551814</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Nguòi Dung" target="Sheet Bảng">
+  <data key="d7">1.0</data>
+  <data key="d8">Nguòi Dung zooms in or out on the Sheet Bảng to access different details.</data>
+  <data key="d9">information access,viewing detail</data>
+  <data key="d10">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551444</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Nguòi Dung" target="Screen">
+  <data key="d7">2.0</data>
+  <data key="d8">Nguòi Dung interacts with the screen to zoom in and out for better information visibility.&lt;SEP&gt;Nguòi Dung interacts with the screen to zoom in and out for better information visibility.</data>
+  <data key="d9">display manipulation,user interaction</data>
+  <data key="d10">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551821</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Nguòi Dung" target="Sheet Bang">
+  <data key="d7">2.0</data>
+  <data key="d8">Nguòi Dung uses the screen to view information in the Sheet Bang.&lt;SEP&gt;Nguòi Dung uses the screen to view information in the Sheet Bang.</data>
+  <data key="d9">data viewing,information access</data>
+  <data key="d10">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551822</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Nguòi Dung" target="Phóng To">
+  <data key="d7">2.0</data>
+  <data key="d8">Nguòi Dung can use Phóng To to enhance viewing of information on the screen.&lt;SEP&gt;Nguòi Dung can use Phóng To to enhance viewing of information on the screen.</data>
+  <data key="d9">screen manipulation,viewing enhancement</data>
+  <data key="d10">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551823</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Nguòi Dung" target="Thu Nh">
+  <data key="d7">2.0</data>
+  <data key="d8">Nguòi Dung can use Thu Nh to adjust the viewing size of information on the screen.&lt;SEP&gt;Nguòi Dung can use Thu Nh to adjust the viewing size of information on the screen.</data>
+  <data key="d9">screen manipulation,viewing adjustment</data>
+  <data key="d10">chunk-769b8472f084616a1b70eab5cd174693</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551824</data>
+  <data key="d13"></data>
+</edge>
+<edge source="LCT Moneygram" target="BM-TTQT.CTNNMG.01">
+  <data key="d7">2.0</data>
+  <data key="d8">BM-TTQT.CTNNMG.01 is associated with LCT Moneygram for processing money transfers.&lt;SEP&gt;BM-TTQT.CTNNMG.01 is associated with LCT Moneygram for processing money transfers.</data>
+  <data key="d9">form association,service facilitation</data>
+  <data key="d10">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551820</data>
+  <data key="d13"></data>
+</edge>
+<edge source="QĐ 68/2019/QĐ-VBLQ" target="BM_TTQT.TT.01">
+  <data key="d7">3.0</data>
+  <data key="d8">BM_TTQT.TT.01 is referenced under the guidelines set by QĐ 68/2019/QĐ-VBLQ.&lt;SEP&gt;BM_TTQT.TT.01 adheres to the guidelines set forth by QĐ 68/2019/QĐ-VBLQ.&lt;SEP&gt;BM_TTQT.TT.01 adheres to the guidelines set forth by QĐ 68/2019/QĐ-VBLQ.</data>
+  <data key="d9">document guideline,money transfer,regulatory compliance,regulatory reference</data>
+  <data key="d10">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551820</data>
+  <data key="d13"></data>
+</edge>
+<edge source="BM-TTQT.CTNNMG.01" target="Moneygram">
+  <data key="d7">1.0</data>
+  <data key="d8">Moneygram is identified by the code BM-TTQT.CTNNMG.01 for specific transfer actions.</data>
+  <data key="d9">service identification,transaction identifier</data>
+  <data key="d10">chunk-63b126d1f5a7860561bec9e0655d8de2</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/eca7733e-3dce-4bbe-81f4-f9495f0aa534/first5sheets_auto.pdf</data>
+  <data key="d12">1761551445</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Screen" target="information">
+  <data key="d7">2.0</data>
+  <data key="d8">The screen fails to display information when interacted with.&lt;SEP&gt;The screen fails to display information when interacted with.</data>
+  <data key="d9">display content,user feedback</data>
+  <data key="d10">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551825</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Screen" target="ESC Key">
+  <data key="d7">2.0</data>
+  <data key="d8">The ESC key is used to restore the display of information on the screen after it has been altered.&lt;SEP&gt;The ESC key is used to restore the display of information on the screen after it has been altered.</data>
+  <data key="d9">functionality,restoration</data>
+  <data key="d10">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551826</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Screen" target="Information">
+  <data key="d7">2.0</data>
+  <data key="d8">The screen displays information that can become hidden due to user interaction.&lt;SEP&gt;The screen displays information that can become hidden due to user interaction.</data>
+  <data key="d9">display interaction,visibility</data>
+  <data key="d10">chunk-fdcf314c9d580c07e09c016168732981</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551814</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Foreign Currency Exchange" target="Time Period">
+  <data key="d7">2.0</data>
+  <data key="d8">Foreign currency exchange rates can vary based on time periods and market conditions.&lt;SEP&gt;Foreign currency exchange rates can vary based on time periods and market conditions.</data>
+  <data key="d9">currency fluctuation,market dynamics</data>
+  <data key="d10">chunk-62d66d586d7e1e0bf48b45b4a18ccad4</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551825</data>
+  <data key="d13"></data>
+</edge>
+<edge source="Action" target="ESC key">
+  <data key="d7">2.0</data>
+  <data key="d8">Pressing the ESC key is suggested to restore information on the screen.&lt;SEP&gt;Pressing the ESC key is suggested to restore information on the screen.</data>
+  <data key="d9">keyboard input,screen reset</data>
+  <data key="d10">chunk-ed450b15f0722bdf7acae42fef965e48</data>
+  <data key="d11">/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/bbbeb685-2dff-489b-9748-f7d8a569563e/first5sheets_auto.pdf&lt;SEP&gt;/Users/hoangleduc/Desktop/Coding Project/ragapi/uploads/393da2b1-4423-478b-8216-c86f3d6753af/first5sheets_auto.pdf</data>
+  <data key="d12">1761551824</data>
+  <data key="d13"></data>
+</edge>
+</graph></graphml>

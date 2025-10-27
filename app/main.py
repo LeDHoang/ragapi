@@ -6,16 +6,37 @@ import uuid
 from pathlib import Path
 import asyncio
 import time
+from typing import List
 
 from rag_core.config import config
 from rag_core.pipeline import RAGPipeline
 from rag_core.query import QueryProcessor
+from rag_core.advanced_query import AdvancedQueryProcessor
 from rag_core.schemas import (
     ProcessingStatus,
     DocumentMetadata,
     QueryRequest,
     QueryResponse
 )
+from pydantic import BaseModel
+from typing import Optional
+
+class SemanticSearchRequest(BaseModel):
+    query: str
+    limit: int = 10
+    entity_type: Optional[str] = None
+    threshold: float = 0.7
+
+class HybridSearchRequest(BaseModel):
+    query: str
+    vector_weight: float = 0.7
+    graph_weight: float = 0.3
+    limit: int = 10
+
+class MultiHopRequest(BaseModel):
+    start_entity: str
+    max_hops: int = 3
+    relationship_types: Optional[List[str]] = None
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -39,7 +60,8 @@ app.add_middleware(
 
 # Initialize processors
 pipeline = RAGPipeline()
-query_processor = QueryProcessor()
+legacy_query_processor = QueryProcessor()
+advanced_query_processor = AdvancedQueryProcessor(pipeline.lightrag)
 
 # Task management
 processing_tasks = {}
@@ -154,9 +176,14 @@ async def get_processing_status(task_id: str):
 @app.post("/query", response_model=QueryResponse)
 async def query_knowledge(request: QueryRequest):
     """Query the knowledge base"""
-    
+
     try:
-        return await query_processor.process_query(request)
+        # Use advanced query processor if LightRAG is available and enabled
+        if pipeline.lightrag and config.LIGHTRAG_ENABLED:
+            return await advanced_query_processor.process_query_lightrag(request)
+        else:
+            # Fallback to legacy query processor
+            return await legacy_query_processor.process_query(request)
     except Exception as e:
         logger.error(f"Query failed: {str(e)}")
         raise HTTPException(
@@ -246,17 +273,166 @@ async def delete_document(doc_id: str):
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
-    
+
     return {
         "status": "healthy",
         "version": "1.0.0",
         "active_tasks": len(processing_tasks),
+        "lightrag_enabled": config.LIGHTRAG_ENABLED and pipeline.lightrag is not None,
         "config": {
             "max_file_size": config.MAX_FILE_SIZE_MB,
             "parser": config.PARSER,
             "embedding_model": config.EMBEDDING_MODEL
         }
     }
+
+# Advanced LightRAG endpoints
+@app.post("/query/advanced")
+async def advanced_query(request: QueryRequest):
+    """Advanced query using LightRAG's enhanced capabilities"""
+
+    try:
+        if not pipeline.lightrag or not config.LIGHTRAG_ENABLED:
+            raise HTTPException(
+                status_code=503,
+                detail="LightRAG not available. Please ensure LightRAG is enabled and initialized."
+            )
+
+        return await advanced_query_processor.process_query_lightrag(request)
+    except Exception as e:
+        logger.error(f"Advanced query failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Advanced query failed: {str(e)}"
+        )
+
+@app.post("/query/semantic-search")
+async def semantic_similarity_search(request: SemanticSearchRequest):
+    """Semantic similarity search using LightRAG's vector databases"""
+
+    try:
+        if not pipeline.lightrag or not config.LIGHTRAG_ENABLED:
+            raise HTTPException(
+                status_code=503,
+                detail="LightRAG not available. Please ensure LightRAG is enabled and initialized."
+            )
+
+        results = await advanced_query_processor.semantic_similarity_search(
+            query=request.query,
+            limit=request.limit,
+            entity_type=request.entity_type,
+            threshold=request.threshold
+        )
+
+        return {
+            "query": request.query,
+            "results": results,
+            "count": len(results),
+            "lightrag_enabled": True
+        }
+    except Exception as e:
+        logger.error(f"Semantic search failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Semantic search failed: {str(e)}"
+        )
+
+@app.post("/query/hybrid-search")
+async def hybrid_search(request: HybridSearchRequest):
+    """Hybrid search combining vector and graph search using LightRAG"""
+
+    try:
+        if not pipeline.lightrag or not config.LIGHTRAG_ENABLED:
+            raise HTTPException(
+                status_code=503,
+                detail="LightRAG not available. Please ensure LightRAG is enabled and initialized."
+            )
+
+        results = await advanced_query_processor.hybrid_search(
+            query=request.query,
+            vector_weight=request.vector_weight,
+            graph_weight=request.graph_weight,
+            limit=request.limit
+        )
+
+        return {
+            "query": request.query,
+            "results": results,
+            "lightrag_enabled": True
+        }
+    except Exception as e:
+        logger.error(f"Hybrid search failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Hybrid search failed: {str(e)}"
+        )
+
+@app.post("/query/multi-hop")
+async def multi_hop_traversal(request: MultiHopRequest):
+    """Multi-hop graph traversal using LightRAG"""
+
+    try:
+        if not pipeline.lightrag or not config.LIGHTRAG_ENABLED:
+            raise HTTPException(
+                status_code=503,
+                detail="LightRAG not available. Please ensure LightRAG is enabled and initialized."
+            )
+
+        results = await advanced_query_processor.multi_hop_traversal(
+            start_entity=request.start_entity,
+            max_hops=request.max_hops,
+            relationship_types=request.relationship_types
+        )
+
+        return {
+            "start_entity": request.start_entity,
+            "results": results,
+            "lightrag_enabled": True
+        }
+    except Exception as e:
+        logger.error(f"Multi-hop traversal failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Multi-hop traversal failed: {str(e)}"
+        )
+
+@app.get("/query/entity-relationships/{entity_id}")
+async def get_entity_relationships(
+    entity_id: str,
+    max_depth: int = 2,
+    relationship_types: str = None  # Comma-separated string
+):
+    """Get entity relationships using LightRAG's graph traversal"""
+
+    try:
+        if not pipeline.lightrag or not config.LIGHTRAG_ENABLED:
+            raise HTTPException(
+                status_code=503,
+                detail="LightRAG not available. Please ensure LightRAG is enabled and initialized."
+            )
+
+        # Parse relationship types if provided
+        rel_types = None
+        if relationship_types:
+            rel_types = [rt.strip() for rt in relationship_types.split(",")]
+
+        results = await advanced_query_processor.get_entity_relationships(
+            entity_id=entity_id,
+            max_depth=max_depth,
+            relationship_types=rel_types
+        )
+
+        return {
+            "entity_id": entity_id,
+            "results": results,
+            "lightrag_enabled": True
+        }
+    except Exception as e:
+        logger.error(f"Entity relationships query failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Entity relationships query failed: {str(e)}"
+        )
 
 async def process_document_background(
     task_id: str,

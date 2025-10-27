@@ -17,3 +17,4 @@ pydantic-settings
 mineru[core]
 docling
 PyPDF2
+lightrag-hku>=1.4.9,<1.5
