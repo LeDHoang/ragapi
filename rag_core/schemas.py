@@ -1,75 +1,85 @@
 from pydantic import BaseModel, Field
-from typing import List, Dict, Any, Optional, Literal
-from datetime import datetime
+from typing import List, Dict, Optional, Any
+from enum import Enum
 
-class IngestOptions(BaseModel):
-    """Options for document ingestion"""
-    enable_images: bool = True
-    enable_tables: bool = True
-    enable_equations: bool = True
-    export_layout_overlay: bool = False
-    parser: str = "auto"  # "auto", "mineru", "docling"
-    parse_method: str = "auto"  # "auto", "ocr", "txt"
-    
-    # Additional fields that pipeline expects
-    lang: Optional[str] = None
-    start_page: Optional[int] = None
-    end_page: Optional[int] = None
-    enable_formula: bool = True  # Alias for enable_equations
-    enable_table: bool = True    # Alias for enable_tables
-    enable_image: bool = True    # Alias for enable_images
-    backend: Optional[str] = None
-    source: Optional[str] = None
-    excel_native_summary: bool = False
+class ContentType(str, Enum):
+    TEXT = "text"
+    IMAGE = "image"
+    TABLE = "table"
+    EQUATION = "equation"
 
-class IngestResponse(BaseModel):
-    """Response from document ingestion"""
+class TextContent(BaseModel):
+    type: str = ContentType.TEXT
+    text: str
+    text_level: int = 0  # 0=paragraph, 1=h1, 2=h2, etc.
+    page_idx: int
+
+class ImageContent(BaseModel):
+    type: str = ContentType.IMAGE
+    img_path: str
+    image_caption: Optional[List[str]] = None
+    image_footnote: Optional[List[str]] = None
+    page_idx: int
+
+class TableContent(BaseModel):
+    type: str = ContentType.TABLE
+    table_body: str
+    table_caption: Optional[List[str]] = None
+    table_footnote: Optional[List[str]] = None
+    page_idx: int
+
+class EquationContent(BaseModel):
+    type: str = ContentType.EQUATION
+    latex: str
+    text: Optional[str] = None
+    page_idx: int
+
+class ProcessingStatus(BaseModel):
+    task_id: str
+    status: str  # "processing", "completed", "failed"
+    progress: float = 0.0
+    error: Optional[str] = None
+    doc_id: Optional[str] = None
+    chunks_created: Optional[int] = None
+    entities_found: Optional[int] = None
+
+class DocumentMetadata(BaseModel):
     doc_id: str
-    file_name: str  # Changed from filename to file_name to match pipeline
-    file_size: int
-    total_blocks: int
-    by_type: Dict[str, int]
-    processed_at: datetime
-    success: bool = True
-    message: Optional[str] = None
-    overlay_path: Optional[str] = None
-    notes: Optional[str] = None  # Add notes field that pipeline uses
-    is_duplicate: bool = False  # Add duplicate detection fields
-    duplicate_doc_id: Optional[str] = None
+    file_path: str
+    file_type: str
+    total_pages: int
+    processed_at: float
+    chunks_count: int
+    entities_count: int
 
 class QueryRequest(BaseModel):
-    """Request for querying the RAG system"""
-    query: str
-    mode: Literal["text", "multimodal", "auto"] = "auto"
-    k: int = 10  # Number of search results to retrieve
-    max_hits: int = 10
-    include_images: bool = True
-    include_tables: bool = True
-    include_equations: bool = True
+    query: str = Field(..., description="Query text")
+    query_type: str = "text"  # "text", "multimodal", "vlm_enhanced"
+    multimodal_content: Optional[List[Dict[str, Any]]] = None
+    mode: str = "hybrid"  # "local", "global", "hybrid", "naive"
 
 class QueryResponse(BaseModel):
-    """Response from querying the RAG system"""
-    answer: str
-    hits: List[Dict[str, Any]]
-    used_mode: str
-    processing_time: Optional[float] = None
+    result: str
+    query_type: str
+    processing_time: float
+    entities_found: List[str] = []
+    multimodal_context: List[str] = []
 
-class StatusResponse(BaseModel):
-    """System status response"""
-    docs_indexed: int
-    chunks_indexed: int
-    status: str = "healthy"
+class EntityNode(BaseModel):
+    entity_id: str
+    entity_type: str
+    name: str
+    description: str
+    source_id: str
+    file_path: str
+    created_at: float
 
-class DocumentInfo(BaseModel):
-    """Information about a specific document"""
-    doc_id: str
-    filename: str
-    file_size: int
-    total_blocks: int
-    by_type: Dict[str, int]
-    processed_at: datetime
-
-class DocumentListResponse(BaseModel):
-    """Response for listing documents"""
-    documents: List[DocumentInfo]
-    total: int
+class EntityRelation(BaseModel):
+    src_id: str
+    tgt_id: str
+    relation_type: str
+    description: str
+    keywords: str
+    source_id: str
+    weight: float
+    file_path: str

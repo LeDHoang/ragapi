@@ -1,137 +1,218 @@
-# rag_core/utils.py
+from typing import Dict, Any, List, Optional, Tuple
+import logging
+import json
 import hashlib
+import base64
+import time
 from pathlib import Path
-from typing import Dict, List, Any
+import numpy as np
+from .config import config
 
-def calculate_file_hash(file_path: Path) -> str:
-    """Calculate SHA-256 hash of a file for duplicate detection"""
-    hash_sha256 = hashlib.sha256()
-    try:
-        with open(file_path, "rb") as f:
-            for chunk in iter(lambda: f.read(8192), b""):
-                hash_sha256.update(chunk)
-        return hash_sha256.hexdigest()
-    except (IOError, OSError):
-        return ""
+logger = logging.getLogger(__name__)
 
-def file_mtime(p: Path) -> float:
-    return p.stat().st_mtime
+def compute_mdhash_id(content: str, prefix: str = "") -> str:
+    """Compute MD5 hash ID for content"""
+    hash_md5 = hashlib.md5(content.encode()).hexdigest()
+    return f"{prefix}{hash_md5}"
 
-def md5_hex(s: str) -> str:
-    return hashlib.md5(s.encode("utf-8")).hexdigest()
+def save_numpy_array(array: np.ndarray, file_path: Path):
+    """Save numpy array to file"""
+    np.save(str(file_path), array)
 
-def cache_key(path: Path, parser: str, method: str, **kwargs) -> str:
-    payload = {
-        "path": str(path.resolve()),
-        "mtime": file_mtime(path),
-        "parser": parser,
-        "parse_method": method,
-        "opts": {k: v for k, v in kwargs.items() if v is not None}
-    }
-    return md5_hex(str(payload))
+def load_numpy_array(file_path: Path) -> np.ndarray:
+    """Load numpy array from file"""
+    return np.load(str(file_path))
 
-def cache_key_with_overlay(path: Path, parser: str, method: str, **kwargs) -> str:
-    """Enhanced cache key that includes overlay settings"""
-    payload = {
-        "path": str(path.resolve()),
-        "mtime": file_mtime(path),
-        "parser": parser,
-        "parse_method": method,
-        "opts": {k: v for k, v in kwargs.items() if v is not None},
-        "overlay": kwargs.get("export_overlay", False)
-    }
-    return md5_hex(str(payload))
+def encode_image_to_base64(image_path: str) -> str:
+    """Encode image to base64"""
+    with open(image_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-def content_doc_id(content_list: List[Dict[str, Any]]) -> str:
-    sig_parts = []
-    for item in content_list:
-        t = item.get("type")
-        if t == "text" and item.get("text"):
-            sig_parts.append(str(item["text"][:5000]))
-        elif t == "image" and item.get("img_path"):
-            sig_parts.append(f"image:{item['img_path']}")
-        elif t == "table" and item.get("table_body"):
-            sig_parts.append(f"table:{str(item['table_body'])[:5000]}")
-        elif t == "equation" and item.get("text"):
-            sig_parts.append(f"equation:{str(item['text'])}")
+def save_json(data: Any, file_path: Path):
+    """Save data as JSON"""
+    with open(file_path, "w") as f:
+        json.dump(data, f, indent=2)
+
+def load_json(file_path: Path) -> Any:
+    """Load data from JSON"""
+    with open(file_path) as f:
+        return json.load(f)
+
+class VectorIndex:
+    def __init__(self, vectors_dir: Path):
+        self.vectors_dir = vectors_dir
+        self.vectors_file = vectors_dir / "vectors.npy"
+        self.meta_file = vectors_dir / "meta.jsonl"
+        self.vectors = None
+        self.metadata = []
+        self._load_index()
+    
+    def _load_index(self):
+        """Load vector index from disk"""
+        if self.vectors_file.exists():
+            self.vectors = load_numpy_array(self.vectors_file)
+        
+        if self.meta_file.exists():
+            with open(self.meta_file) as f:
+                self.metadata = [json.loads(line) for line in f]
+    
+    def add_vectors(
+        self,
+        vectors: List[List[float]],
+        metadata: List[Dict[str, Any]]
+    ):
+        """Add vectors to index"""
+        vectors_array = np.array(vectors)
+        
+        if self.vectors is None:
+            self.vectors = vectors_array
         else:
-            sig_parts.append(str(item))
-    return "doc-" + md5_hex("\n".join(sig_parts))
-
-def _coerce_str_list(v) -> List[str]:
-    if not v:
-        return []
-    if isinstance(v, list):
-        return [x if isinstance(x, str) else ("" if x is None else str(x)) for x in v]
-    # single string or other type
-    return [v] if isinstance(v, str) else [str(v)]
-
-def _safe_join_str(v) -> str:
-    return " | ".join(_coerce_str_list(v))
-
-# --- multimodal chunk templating (clean output for each type)
-def template_chunk(item: Dict[str, Any], description: str) -> str:
-    t = item.get("type")
-    page_info = f"page={item.get('page_idx', 0)}" if item.get('page_idx') is not None else ""
-
-    if t == "image":
-        cap = _safe_join_str(item.get("image_caption"))
-        foot = _safe_join_str(item.get("image_footnote"))
-        bbox_info = ""
-        if item.get("bbox"):
-            x1, y1, x2, y2 = item["bbox"]
-            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
-
-        return (
-            f"[IMAGE] {bbox_info}{page_info}\n"
-            f"path={item.get('img_path','')}\n"
-            f"caption={cap}\n"
-            f"footnote={foot}\n"
-            f"summary={description or ''}\n"
+            self.vectors = np.vstack([self.vectors, vectors_array])
+        
+        self.metadata.extend(metadata)
+        
+        # Save to disk
+        save_numpy_array(self.vectors, self.vectors_file)
+        with open(self.meta_file, "a") as f:
+            for meta in metadata:
+                f.write(json.dumps(meta) + "\n")
+    
+    def search(
+        self,
+        query_vector: List[float],
+        limit: int = 10,
+        threshold: float = 0.7
+    ) -> List[Dict[str, Any]]:
+        """Search for similar vectors"""
+        if self.vectors is None or len(self.vectors) == 0:
+            return []
+        
+        # Convert query to numpy array
+        query = np.array(query_vector)
+        
+        # Calculate cosine similarity
+        similarities = np.dot(self.vectors, query) / (
+            np.linalg.norm(self.vectors, axis=1) * np.linalg.norm(query)
         )
-    if t == "table":
-        cap = _safe_join_str(item.get("table_caption"))
-        foot = _safe_join_str(item.get("table_footnote"))
-        body = item.get("table_body", "")
-        body = body if isinstance(body, str) else ("" if body is None else str(body))
+        
+        # Get top matches
+        top_indices = np.argsort(similarities)[-limit:][::-1]
+        
+        results = []
+        for idx in top_indices:
+            score = float(similarities[idx])
+            if score >= threshold:
+                results.append({
+                    "score": score,
+                    "metadata": self.metadata[idx]
+                })
+        
+        return results
 
-        # Truncate if too long
-        max_chars = 5000  # Configurable via environment
-        if len(body) > max_chars:
-            body = body[:max_chars] + "..."
+class ChunkManager:
+    def __init__(self, chunks_dir: Path):
+        self.chunks_dir = chunks_dir
+        self.index_file = chunks_dir / "index.jsonl"
+        self.index = {}
+        self._load_index()
+    
+    def _load_index(self):
+        """Load chunk index from disk"""
+        if self.index_file.exists():
+            with open(self.index_file) as f:
+                for line in f:
+                    chunk = json.loads(line)
+                    self.index[chunk["id"]] = chunk
+    
+    def add_chunk(
+        self,
+        chunk_id: str,
+        content: str,
+        metadata: Dict[str, Any]
+    ):
+        """Add chunk to storage"""
+        chunk_data = {
+            "id": chunk_id,
+            "content": content,
+            **metadata
+        }
+        
+        # Save chunk
+        chunk_file = self.chunks_dir / f"{chunk_id}.txt"
+        with open(chunk_file, "w") as f:
+            f.write(content)
+        
+        # Update index
+        self.index[chunk_id] = chunk_data
+        with open(self.index_file, "a") as f:
+            f.write(json.dumps(chunk_data) + "\n")
+    
+    def get_chunk(self, chunk_id: str) -> Optional[Dict[str, Any]]:
+        """Get chunk by ID"""
+        if chunk_id not in self.index:
+            return None
+        
+        chunk_data = self.index[chunk_id]
+        chunk_file = self.chunks_dir / f"{chunk_id}.txt"
+        
+        if chunk_file.exists():
+            with open(chunk_file) as f:
+                chunk_data["content"] = f.read()
+            return chunk_data
+        
+        return None
+    
+    def get_chunks_by_doc(self, doc_id: str) -> List[Dict[str, Any]]:
+        """Get all chunks for a document"""
+        return [
+            self.get_chunk(chunk_id)
+            for chunk_id, chunk in self.index.items()
+            if chunk.get("doc_id") == doc_id
+        ]
 
-        bbox_info = ""
-        if item.get("bbox"):
-            x1, y1, x2, y2 = item["bbox"]
-            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
-
-        return (
-            f"[TABLE] {bbox_info}{page_info}\n"
-            f"caption={cap}\n"
-            f"body=\n{body}\n"
-            f"footnote={foot}\n"
-            f"summary={description or ''}\n"
-        )
-    if t == "equation":
-        fmt = item.get("text_format") or "plain"
-        expr = item.get("text","")
-        expr = expr if isinstance(expr, str) else ("" if expr is None else str(expr))
-
-        bbox_info = ""
-        if item.get("bbox"):
-            x1, y1, x2, y2 = item["bbox"]
-            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
-
-        return f"[EQUATION] {bbox_info}{page_info}\nformat={fmt}\nexpr={expr}\nsummary={description or ''}\n"
-    if t == "text":
-        text = item.get("text", "")
-        text = text if isinstance(text, str) else ("" if text is None else str(text))
-
-        bbox_info = ""
-        if item.get("bbox"):
-            x1, y1, x2, y2 = item["bbox"]
-            bbox_info = f"bbox=[{x1},{y1},{x2},{y2}] "
-
-        return f"[TEXT] {bbox_info}{page_info}\ncontent=\n{text}\nsummary={description or ''}\n"
-    # generic fallback
-    return f"[{str(t).upper()}] {page_info}\nsummary={description or ''}\n"
+class DocumentRegistry:
+    def __init__(self, registry_dir: Path):
+        self.registry_dir = registry_dir
+        self.registry_file = registry_dir / "document_registry.json"
+        self.registry = {}
+        self._load_registry()
+    
+    def _load_registry(self):
+        """Load document registry from disk"""
+        if self.registry_file.exists():
+            self.registry = load_json(self.registry_file)
+    
+    def _save_registry(self):
+        """Save document registry to disk"""
+        save_json(self.registry, self.registry_file)
+    
+    def register_document(
+        self,
+        doc_id: str,
+        file_path: str,
+        metadata: Dict[str, Any]
+    ):
+        """Register a document"""
+        self.registry[doc_id] = {
+            "file_path": file_path,
+            "registered_at": time.time(),
+            **metadata
+        }
+        self._save_registry()
+    
+    def get_document(self, doc_id: str) -> Optional[Dict[str, Any]]:
+        """Get document metadata"""
+        return self.registry.get(doc_id)
+    
+    def list_documents(self) -> List[Dict[str, Any]]:
+        """List all registered documents"""
+        return [
+            {"doc_id": doc_id, **metadata}
+            for doc_id, metadata in self.registry.items()
+        ]
+    
+    def remove_document(self, doc_id: str):
+        """Remove document from registry"""
+        if doc_id in self.registry:
+            del self.registry[doc_id]
+            self._save_registry()

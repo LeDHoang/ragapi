@@ -1,182 +1,231 @@
-from __future__ import annotations
-from dataclasses import dataclass
-from typing import Dict, Any, Optional
+from typing import List, Dict, Any, Tuple, Optional
+import logging
 from pathlib import Path
-from rag_core.config import AppConfig
-from rag_core.llm_unified import UnifiedLLM
-from rag_core.context_extractor import ContextExtractor
+import json
+import base64
+from PIL import Image
+import io
 
-SYSTEM_CAPTION = (
-    "You help create short, faithful captions/summaries for RAG chunks. "
-    "Keep them concise and factual. Do not invent data."
-)
+from .config import config
+from .schemas import ContentType
+from .context_extractor import ContextExtractor
 
-SYSTEM_IMAGE_ANALYSIS = (
-    "You are an expert image analyst. Analyze this image considering the surrounding context. "
-    "Provide a comprehensive but concise description that captures the key visual elements, "
-    "data, and insights. If text is visible in the image, include important textual content."
-)
+logger = logging.getLogger(__name__)
 
-SYSTEM_TABLE_ANALYSIS = (
-    "You are an expert data analyst. Analyze this table considering the surrounding context. "
-    "Summarize the key findings, trends, and important data points. Include relevant metrics, "
-    "units, and time ranges when present."
-)
-
-SYSTEM_EQUATION_ANALYSIS = (
-    "You are a mathematics expert. Analyze this equation considering the surrounding context. "
-    "Explain what this equation represents and its key components. If this is part of a larger "
-    "mathematical concept or derivation, explain the context."
-)
-
-@dataclass
-class ModalProcessors:
-    cfg: AppConfig
-    llm: Optional[UnifiedLLM] = None
-    context_extractor: Optional[ContextExtractor] = None
-
-    @staticmethod
-    def from_config(cfg: AppConfig, llm: Optional[UnifiedLLM] = None, tokenizer=None) -> "ModalProcessors":
-        context_extractor = ContextExtractor(cfg, tokenizer) if cfg else None
-        return ModalProcessors(cfg, llm, context_extractor)
-
-    async def describe_item(self, item: Dict[str,Any], context: Optional[str] = None) -> str:
-        t = item.get("type","text")
-
-        # Use LLM for multimodal content if available
-        if self.llm:
-            if t == "image":
-                return await self._describe_image_with_llm(item, context)
-            elif t == "table":
-                return await self._describe_table_with_llm(item, context)
-            elif t == "equation":
-                return await self._describe_equation_with_llm(item, context)
-
-        # Fallback descriptions
-        return self._get_fallback_description(item)
-
-    async def _describe_image_with_llm(self, item: Dict[str,Any], context: Optional[str] = None) -> str:
-        """Generate image description using LLM with vision capabilities"""
-        if not self.llm:
-            return self._get_fallback_description(item)
-
-        # Check if image path exists
+class ContentProcessor:
+    def __init__(self):
+        self.config = config
+        self.context_extractor = ContextExtractor()
+    
+    def separate_content(
+        self,
+        content_list: List[Dict[str, Any]]
+    ) -> Tuple[str, List[Dict[str, Any]]]:
+        """Separate text and multimodal content"""
+        
+        text_parts = []
+        multimodal_items = []
+        
+        for item in content_list:
+            raw_type = item.get("type", "text")
+            content_type = raw_type.value if hasattr(raw_type, "value") else str(raw_type)
+            
+            if content_type == ContentType.TEXT.value:
+                text_content = item.get("text", "").strip()
+                if text_content:
+                    # Add heading markers for structure
+                    text_level = item.get("text_level", 0)
+                    if text_level > 0:
+                        text_content = f"{'#' * text_level} {text_content}"
+                    
+                    text_parts.append(text_content)
+            else:
+                # Process and enhance multimodal content
+                enhanced_item = self._enhance_multimodal_item(item)
+                if enhanced_item:
+                    multimodal_items.append(enhanced_item)
+        
+        # Combine all text with double newlines
+        full_text = "\n\n".join(text_parts)
+        
+        # Log content distribution
+        type_counts = {}
+        for item in multimodal_items:
+            item_type = item.get("type", "unknown")
+            type_counts[item_type] = type_counts.get(item_type, 0) + 1
+        
+        logger.info(f"Content separated: {len(full_text)} chars text, {len(multimodal_items)} multimodal items")
+        logger.info(f"Multimodal distribution: {type_counts}")
+        
+        return full_text, multimodal_items
+    
+    def _enhance_multimodal_item(
+        self,
+        item: Dict[str, Any]
+    ) -> Optional[Dict[str, Any]]:
+        """Enhance multimodal content with additional context and metadata"""
+        
+        raw_type = item.get("type")
+        content_type = raw_type.value if hasattr(raw_type, "value") else str(raw_type)
+        
+        if content_type == ContentType.IMAGE.value:
+            return self._enhance_image_item(item)
+        elif content_type == ContentType.TABLE.value:
+            return self._enhance_table_item(item)
+        elif content_type == ContentType.EQUATION.value:
+            return self._enhance_equation_item(item)
+        
+        return item
+    
+    def _enhance_image_item(self, item: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """Enhance image content with additional metadata"""
+        
         img_path = item.get("img_path")
         if not img_path or not Path(img_path).exists():
-            return f"Image on page {item.get('page_idx', 0)} (file not found)."
-
-        # Build prompt with context
-        prompt_parts = ["Analyze this image:"]
-
-        # Add captions and footnotes
-        captions = item.get('image_caption', [])
-        footnotes = item.get('image_footnote', [])
-        if captions:
-            prompt_parts.append(f"Caption: {'; '.join(captions)}")
-        if footnotes:
-            prompt_parts.append(f"Footnote: {'; '.join(footnotes)}")
-
-        # Add surrounding context
-        if context:
-            prompt_parts.append(f"Context: {context}")
-
-        prompt_parts.append("Provide a detailed but concise visual description focusing on:")
-        prompt_parts.extend([
-            "- Main subject and key elements",
-            "- Any visible text or data",
-            "- Visual characteristics and layout",
-            "- Important details for understanding the content"
-        ])
-
-        user_prompt = "\n".join(prompt_parts)
-
+            return None
+        
         try:
-            # Use vision-capable LLM
-            return self.llm.generate_with_image(SYSTEM_IMAGE_ANALYSIS, user_prompt, img_path)
+            # Get image metadata
+            with Image.open(img_path) as img:
+                width, height = img.size
+                format = img.format
+                mode = img.mode
+            
+            # Add metadata to item
+            enhanced_item = item.copy()
+            enhanced_item.update({
+                "image_metadata": {
+                    "width": width,
+                    "height": height,
+                    "format": format,
+                    "mode": mode,
+                    "aspect_ratio": width / height
+                }
+            })
+            
+            # Add base64 preview for small images
+            if width * height < 1000000:  # Less than 1MP
+                enhanced_item["image_preview"] = self._get_image_preview(img_path)
+            
+            return enhanced_item
+            
         except Exception as e:
-            # Fallback if vision fails
-            return self._get_fallback_description(item)
-
-    async def _describe_table_with_llm(self, item: Dict[str,Any], context: Optional[str] = None) -> str:
-        """Generate table description using LLM"""
-        if not self.llm:
-            return self._get_fallback_description(item)
-
-        body = item.get("table_body","")
-
-        # Truncate if too long
-        if len(body) > self.cfg.table_body_max_chars:
-            body = body[:self.cfg.table_body_max_chars] + "..."
-
-        prompt_parts = ["Analyze this table data:"]
-
-        # Add caption
-        captions = item.get('table_caption', [])
-        if captions:
-            prompt_parts.append(f"Caption: {'; '.join(captions)}")
-
-        # Add context
-        if context:
-            prompt_parts.append(f"Context: {context}")
-
-        prompt_parts.append("Table data:")
-        prompt_parts.append(body)
-        prompt_parts.append("\nSummarize the key findings and insights from this table.")
-
-        user_prompt = "\n".join(prompt_parts)
-
+            logger.warning(f"Failed to enhance image {img_path}: {str(e)}")
+            return item
+    
+    def _enhance_table_item(self, item: Dict[str, Any]) -> Dict[str, Any]:
+        """Enhance table content with additional metadata"""
+        
+        enhanced_item = item.copy()
+        table_body = item.get("table_body", "")
+        
+        # Extract table dimensions
+        rows = table_body.strip().split("\n")
+        if rows:
+            cols = len(rows[0].split("|"))
+            enhanced_item["table_metadata"] = {
+                "rows": len(rows),
+                "columns": cols - 2  # Account for markdown table syntax
+            }
+        
+        return enhanced_item
+    
+    def _enhance_equation_item(self, item: Dict[str, Any]) -> Dict[str, Any]:
+        """Enhance equation content with additional metadata"""
+        
+        enhanced_item = item.copy()
+        latex = item.get("latex", "")
+        
+        # Add basic equation metadata
+        enhanced_item["equation_metadata"] = {
+            "length": len(latex),
+            "complexity": self._estimate_equation_complexity(latex)
+        }
+        
+        return enhanced_item
+    
+    def _get_image_preview(self, image_path: str, max_size: int = 300) -> str:
+        """Create base64 preview of image"""
+        
         try:
-            return self.llm.generate(SYSTEM_TABLE_ANALYSIS, user_prompt)
+            with Image.open(image_path) as img:
+                # Resize if needed
+                if img.width > max_size or img.height > max_size:
+                    ratio = min(max_size / img.width, max_size / img.height)
+                    new_size = (int(img.width * ratio), int(img.height * ratio))
+                    img = img.resize(new_size, Image.Resampling.LANCZOS)
+                
+                # Convert to RGB if needed
+                if img.mode in ('RGBA', 'LA'):
+                    background = Image.new('RGB', img.size, (255, 255, 255))
+                    background.paste(img, mask=img.split()[-1])
+                    img = background
+                elif img.mode != 'RGB':
+                    img = img.convert('RGB')
+                
+                # Convert to base64
+                buffer = io.BytesIO()
+                img.save(buffer, format='JPEG', quality=85)
+                return base64.b64encode(buffer.getvalue()).decode()
+                
         except Exception as e:
-            return self._get_fallback_description(item)
+            logger.warning(f"Failed to create image preview: {str(e)}")
+            return ""
+    
+    def _estimate_equation_complexity(self, latex: str) -> int:
+        """Estimate equation complexity based on LaTeX content"""
+        
+        # This is a simple heuristic - you might want to make it more sophisticated
+        complexity = 1
+        
+        # Special characters indicate complexity
+        special_chars = ['\\sum', '\\int', '\\prod', '\\lim', '\\frac']
+        for char in special_chars:
+            if char in latex:
+                complexity += 1
+        
+        # Nested brackets indicate complexity
+        depth = 0
+        max_depth = 0
+        for char in latex:
+            if char in '{([':
+                depth += 1
+                max_depth = max(max_depth, depth)
+            elif char in '})]':
+                depth = max(0, depth - 1)
+        
+        complexity += max_depth
+        
+        return complexity
 
-    async def _describe_equation_with_llm(self, item: Dict[str,Any], context: Optional[str] = None) -> str:
-        """Generate equation description using LLM"""
-        if not self.llm:
-            return self._get_fallback_description(item)
-
-        eq_text = item.get("text", "")
-        eq_format = item.get("text_format", "plain")
-
-        prompt_parts = ["Analyze this mathematical expression:"]
-
-        # Add context
-        if context:
-            prompt_parts.append(f"Context: {context}")
-
-        prompt_parts.append(f"Expression ({eq_format}): {eq_text}")
-        prompt_parts.append("\nExplain what this equation represents and its significance.")
-
-        user_prompt = "\n".join(prompt_parts)
-
-        try:
-            return self.llm.generate(SYSTEM_EQUATION_ANALYSIS, user_prompt)
-        except Exception as e:
-            return self._get_fallback_description(item)
-
-    def _get_fallback_description(self, item: Dict[str,Any]) -> str:
-        """Generate fallback descriptions when LLM is not available"""
-        t = item.get("type","text")
-
-        if t == "image":
-            page = item.get('page_idx', 0)
-            caps = item.get('image_caption', [])
-            cap_text = '; '.join(caps) if caps else 'No caption'
-            return f"Figure on page {page + 1}: {cap_text}"
-
-        if t == "table":
-            body = item.get("table_body","")
-            rows = len(body.splitlines()) if body else 0
-            caps = item.get('table_caption', [])
-            cap_text = '; '.join(caps) if caps else 'No caption'
-            return f"Table on page {item.get('page_idx', 0) + 1}: {cap_text} ({rows} rows)"
-
-        if t == "equation":
-            eq_text = item.get("text", "")
-            return f"Equation on page {item.get('page_idx', 0) + 1}: {eq_text[:100]}"
-
-        if t == "text":
-            txt = item.get("text","")
-            return f"Text on page {item.get('page_idx', 0) + 1} ({len(txt)} chars)"
-
-        return f"{t.title()} content"
+class ContentSeparator:
+    def __init__(self):
+        self.processor = ContentProcessor()
+    
+    async def process_document_content(
+        self,
+        content_list: List[Dict[str, Any]],
+        doc_id: str
+    ) -> Tuple[str, List[Dict[str, Any]], Dict[str, Any]]:
+        """Process and separate document content"""
+        
+        # Extract document structure
+        context_extractor = ContextExtractor()
+        doc_structure = context_extractor.analyze_document_structure(content_list)
+        
+        # Separate content
+        full_text, multimodal_items = self.processor.separate_content(content_list)
+        
+        # Extract references between items
+        references = context_extractor.extract_references(content_list)
+        
+        # Create processing summary
+        summary = {
+            "doc_id": doc_id,
+            "structure": doc_structure,
+            "text_length": len(full_text),
+            "multimodal_count": len(multimodal_items),
+            "references": references
+        }
+        
+        return full_text, multimodal_items, summary

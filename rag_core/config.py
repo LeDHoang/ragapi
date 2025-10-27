@@ -1,61 +1,90 @@
+from pydantic_settings import BaseSettings
+from typing import Optional, Dict, Any
 import os
-from dataclasses import dataclass, field
-from dotenv import load_dotenv
-from typing import List
+from pathlib import Path
 
-load_dotenv()
+class RAGConfig(BaseSettings):
+    # Base paths
+    WORKING_DIR: str = "./rag_storage"
+    UPLOAD_DIR: str = "./uploads"
+    
+    # Parser configuration
+    PARSER: str = "docling"  # or "mineru"
+    PARSE_METHOD: str = "auto"  # "auto", "ocr", "txt"
+    
+    # AWS Configuration
+    AWS_ACCESS_KEY_ID: Optional[str] = None
+    AWS_SECRET_ACCESS_KEY: Optional[str] = None
+    AWS_REGION: str = "us-east-1"
+    BEDROCK_MODEL_ID: str = "anthropic.claude-v2"
+    
+    # OpenAI Configuration
+    OPENAI_API_KEY: Optional[str] = None
+    OPENAI_BASE_URL: str = "https://api.openai.com/v1"
+    
+    # Model Configuration
+    EMBEDDING_MODEL: str = "text-embedding-3-large"
+    EMBEDDING_DIM: int = 3072
+    LLM_MODEL: str = "gpt-4o-mini"
+    VISION_MODEL: str = "gpt-4o-mini"
+    
+    # Processing Configuration
+    MAX_FILE_SIZE_MB: int = 100
+    MAX_WORKERS: int = 4
+    CHUNK_SIZE: int = 1000
+    CHUNK_OVERLAP: int = 200
+    
+    # Database Configuration
+    VECTOR_DB: str = "local://vectors"  # Use local storage instead of Qdrant
+    GRAPH_DB: str = "neo4j://localhost:7687"
+    GRAPH_DB_USER: str = ""  # No authentication for testing
+    GRAPH_DB_PASSWORD: str = ""
+    CACHE_DB: str = "redis://localhost:6379"
+    
+    # Content Processing
+    ENABLE_IMAGES: bool = True
+    ENABLE_TABLES: bool = True
+    ENABLE_EQUATIONS: bool = True
+    
+    class Config:
+        env_file = ".env"
+        case_sensitive = True
+        extra = "ignore"  # Ignore extra fields from environment
 
-@dataclass
-class AppConfig:
-    working_dir: str = field(default=os.getenv("WORKING_DIR", "./rag_storage"))
-    output_dir: str  = field(default=os.getenv("OUTPUT_DIR", "./output"))
-    parser: str      = field(default=os.getenv("PARSER", "docling"))   # docling|mineru
-    parse_method: str= field(default=os.getenv("PARSE_METHOD", "auto"))
+    def get_working_dir(self) -> Path:
+        return Path(self.WORKING_DIR).absolute()
+    
+    def get_upload_dir(self) -> Path:
+        return Path(self.UPLOAD_DIR).absolute()
+    
+    def get_parser_config(self) -> Dict[str, Any]:
+        return {
+            "parser": self.PARSER,
+            "method": self.PARSE_METHOD,
+            "enable_images": self.ENABLE_IMAGES,
+            "enable_tables": self.ENABLE_TABLES,
+            "enable_equations": self.ENABLE_EQUATIONS
+        }
+    
+    def get_model_config(self) -> Dict[str, Any]:
+        return {
+            "embedding_model": self.EMBEDDING_MODEL,
+            "embedding_dim": self.EMBEDDING_DIM,
+            "llm_model": self.LLM_MODEL,
+            "vision_model": self.VISION_MODEL
+        }
+    
+    def get_processing_config(self) -> Dict[str, Any]:
+        return {
+            "max_file_size": self.MAX_FILE_SIZE_MB * 1024 * 1024,
+            "max_workers": self.MAX_WORKERS,
+            "chunk_size": self.CHUNK_SIZE,
+            "chunk_overlap": self.CHUNK_OVERLAP
+        }
 
-    enable_image_processing: bool = field(default=os.getenv("ENABLE_IMAGE_PROCESSING","true").lower()=="true")
-    enable_table_processing: bool = field(default=os.getenv("ENABLE_TABLE_PROCESSING","true").lower()=="true")
-    enable_equation_processing: bool = field(default=os.getenv("ENABLE_EQUATION_PROCESSING","true").lower()=="true")
+# Create global config instance
+config = RAGConfig()
 
-    # Multimodal processing options
-    context_window: int = field(default=int(os.getenv("CONTEXT_WINDOW", "1")))
-    context_mode: str   = field(default=os.getenv("CONTEXT_MODE","page"))
-    max_context_tokens: int = field(default=int(os.getenv("MAX_CONTEXT_TOKENS", "2000")))
-    include_headers: bool   = field(default=os.getenv("INCLUDE_HEADERS","true").lower()=="true")
-    include_captions: bool  = field(default=os.getenv("INCLUDE_CAPTIONS","true").lower()=="true")
-    context_filter_content_types: List[str] = field(
-        default_factory=lambda: os.getenv("CONTEXT_FILTER_CONTENT_TYPES","text").split(",")
-    )
-
-    # Large document processing
-    parse_chunk_size_pages: int = field(default=int(os.getenv("PARSE_CHUNK_SIZE_PAGES", "0")))
-    table_body_max_chars: int = field(default=int(os.getenv("TABLE_BODY_MAX_CHARS", "5000")))
-
-    # Layout overlay options
-    export_layout_overlay: bool = field(default=os.getenv("EXPORT_LAYOUT_OVERLAY","false").lower()=="true")
-    overlay_dpi: int = field(default=int(os.getenv("OVERLAY_DPI", "144")))
-    overlay_dir: str = field(default=os.getenv("OVERLAY_DIR", "./output/layout_overlays"))
-
-    # LLM Provider selection - auto-detect based on available credentials
-    llm_provider: str = field(default_factory=lambda: os.getenv("LLM_PROVIDER",
-        "openai" if os.getenv("OPENAI_API_KEY") else "bedrock"))  # bedrock|openai
-
-    # Bedrock model configuration
-    bedrock_region: str = field(default_factory=lambda: os.getenv("BEDROCK_REGION", "us-east-1"))
-    bedrock_llm_model_id: str = field(default_factory=lambda: os.getenv("BEDROCK_LLM_MODEL_ID", "anthropic.claude-3-haiku-20240307-v1:0"))
-    bedrock_vision_model_id: str = field(default_factory=lambda: os.getenv("BEDROCK_VISION_MODEL_ID", "anthropic.claude-3-haiku-20240307-v1:0"))
-    bedrock_embedding_model_id: str = field(default_factory=lambda: os.getenv("BEDROCK_EMBEDDING_MODEL_ID", "amazon.titan-embed-text-v2:0"))
-    bedrock_embedding_dim: int = field(default_factory=lambda: int(os.getenv("BEDROCK_EMBEDDING_DIM", "1024")))
-
-    # OpenAI model configuration
-    openai_api_key: str = field(default_factory=lambda: os.getenv("OPENAI_API_KEY", ""))
-    openai_base_url: str = field(default_factory=lambda: os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1"))
-    openai_llm_model: str = field(default_factory=lambda: os.getenv("OPENAI_LLM_MODEL", "gpt-4o-mini"))
-    openai_vision_model: str = field(default_factory=lambda: os.getenv("OPENAI_VISION_MODEL", "gpt-4o-mini"))
-    openai_embedding_model: str = field(default_factory=lambda: os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-large"))
-    openai_embedding_dim: int = field(default_factory=lambda: int(os.getenv("OPENAI_EMBEDDING_DIM", "3072")))
-
-    top_k: int = field(default_factory=lambda: int(os.getenv("TOP_K", "8")))
-
-    @staticmethod
-    def from_env() -> "AppConfig":
-        return AppConfig()
+# Ensure directories exist
+os.makedirs(config.get_working_dir(), exist_ok=True)
+os.makedirs(config.get_upload_dir(), exist_ok=True)

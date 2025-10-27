@@ -1,165 +1,223 @@
-from __future__ import annotations
-from typing import List, Dict, Any, Optional
-from rag_core.config import AppConfig
-import re
+from typing import List, Dict, Any, Optional, Tuple
+import logging
+from pathlib import Path
+from .config import config
+from .schemas import ContentType
+
+logger = logging.getLogger(__name__)
 
 class ContextExtractor:
-    """Extract context around multimodal content for better descriptions"""
-
-    def __init__(self, cfg: AppConfig, tokenizer=None):
-        self.cfg = cfg
-        self.tokenizer = tokenizer
-
-    def extract_context(self, content_source: List[Dict[str, Any]], current_item: Dict[str, Any],
-                       content_format: str = "auto") -> str:
+    def __init__(self, config_params: Optional[Dict[str, Any]] = None):
+        self.config = config_params or config.get_processing_config()
+        self.context_window = 2  # Pages before/after for context
+        self.max_context_tokens = 1000  # Max tokens for context
+    
+    def extract_context(
+        self,
+        content_source: List[Dict[str, Any]],
+        current_item: Dict[str, Any],
+        content_format: str = "auto"
+    ) -> str:
         """Extract context around current multimodal item"""
-
-        current_page = current_item.get("page_idx")
-        if current_page is None:
-            # If no page info, return empty context
-            return ""
-
-        window_size = self.cfg.context_window
+        
+        current_page = current_item.get("page_idx", 0)
+        window_size = self.context_window
+        
         start_page = max(0, current_page - window_size)
         end_page = current_page + window_size + 1
-
+        
         context_parts = []
-
+        
         for item in content_source:
-            item_page = item.get("page_idx")
-            if item_page is None:
-                continue
+            item_page = item.get("page_idx", 0)
             item_type = item.get("type", "")
-
-            # Check if within context window and matches filter
-            if (start_page <= item_page < end_page and
-                item_type in self.cfg.context_filter_content_types):
-
+            
+            # Check if within context window
+            if start_page <= item_page < end_page:
                 text_content = self._extract_text_from_item(item)
                 if text_content:
                     if item_page != current_page:
-                        context_parts.append(f"[Page {item_page + 1}] {text_content}")
+                        context_parts.append(f"[Page {item_page}] {text_content}")
                     else:
                         context_parts.append(text_content)
-
-        context_text = "\n".join(context_parts)
-
-        # Truncate by tokens if tokenizer available
-        if self.tokenizer and self.cfg.max_context_tokens > 0:
-            try:
-                tokens = self.tokenizer.encode(context_text)
-                if len(tokens) > self.cfg.max_context_tokens:
-                    context_text = self.tokenizer.decode(tokens[:self.cfg.max_context_tokens])
-            except:
-                # Fallback to character limit
-                if len(context_text) > self.cfg.max_context_tokens * 4:  # Rough token estimation
-                    context_text = context_text[:self.cfg.max_context_tokens * 4]
-
-        return context_text
-
-    def _extract_text_from_item(self, item: Dict[str, Any]) -> str:
+        
+        return "\n".join(context_parts)
+    
+    def _extract_text_from_item(self, item: Dict[str, Any]) -> Optional[str]:
         """Extract text content from different item types"""
+        
         item_type = item.get("type", "")
-
-        if item_type == "text":
-            text = item.get("text", "")
-            # Include headers if available and enabled
-            if self.cfg.include_headers and item.get("headers"):
-                headers = " > ".join(item["headers"])
-                text = f"{headers}\n{text}"
-            return text
-
-        elif item_type == "table":
+        
+        if item_type == ContentType.TEXT:
+            return item.get("text", "")
+        elif item_type == ContentType.IMAGE:
+            captions = item.get("image_caption", [])
+            footnotes = item.get("image_footnote", [])
             parts = []
-            if self.cfg.include_captions and item.get("table_caption"):
-                parts.extend(item["table_caption"])
-            if item.get("table_body"):
-                # Extract first few rows for context
-                lines = item["table_body"].split('\n')[:5]
-                parts.append("Table data: " + " | ".join(lines))
-            return " | ".join(parts)
+            if captions:
+                parts.append(f"Image Caption: {' '.join(captions)}")
+            if footnotes:
+                parts.append(f"Image Footnote: {' '.join(footnotes)}")
+            return " | ".join(parts) if parts else None
+        elif item_type == ContentType.TABLE:
+            captions = item.get("table_caption", [])
+            return f"Table: {' '.join(captions)}" if captions else None
+        elif item_type == ContentType.EQUATION:
+            return item.get("text", None)
+        return None
 
-        elif item_type == "image":
-            parts = []
-            if self.cfg.include_captions and item.get("image_caption"):
-                parts.extend(item["image_caption"])
-            if item.get("image_footnote"):
-                parts.extend(item["image_footnote"])
-            return " | ".join(parts)
-
-        elif item_type == "equation":
-            text = item.get("text", "")
-            if item.get("text_format") == "latex":
-                return f"LaTeX equation: {text}"
-            return f"Equation: {text}"
-
-        return ""
-
-    def extract_latex_equations(self, text_items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """Extract LaTeX equations from text items and create separate equation items"""
-        equations = []
-
-        for item in text_items:
-            text = item.get("text", "")
-            if not text:
-                continue
-
-            # Find LaTeX patterns
-            patterns = [
-                (r'\$\$(.*?)\$\$', 'display'),  # Display math
-                (r'\\\[(.*?)\\\]', 'display'),  # Display math alternative
-                (r'\\begin\{equation\}(.*?)\\end\{equation\}', 'equation'),  # Equation environment
-                (r'\$(.*?)\$', 'inline')        # Inline math
-            ]
-
-            for pattern, math_type in patterns:
-                matches = re.findall(pattern, text, re.DOTALL)
-                for match in matches:
-                    # Create equation item
-                    equation_item = {
-                        "type": "equation",
-                        "text": match.strip(),
-                        "text_format": "latex",
-                        "page_idx": item.get("page_idx"),
-                        "bbox": item.get("bbox"),
-                        "page_size": item.get("page_size")
-                    }
-
-                    # Estimate position in text (rough approximation)
-                    match_start = text.find(match)
-                    if match_start >= 0 and item.get("bbox"):
-                        # This is a very rough approximation - in practice you'd want
-                        # the actual text position within the page
-                        pass
-
-                    equations.append(equation_item)
-
-        return equations
-
-    def build_page_context_map(self, content_list: List[Dict[str, Any]]) -> Dict[int, List[Dict[str, Any]]]:
-        """Build a map of page index to content items for efficient context extraction"""
-        page_map = {}
+    def analyze_document_structure(
+        self,
+        content_list: List[Dict[str, Any]]
+    ) -> Dict[str, Any]:
+        """Analyze document structure and extract metadata"""
+        
+        structure = {
+            "total_pages": 0,
+            "content_types": {},
+            "heading_structure": [],
+            "sections": []
+        }
+        
+        current_section = None
+        
         for item in content_list:
-            page_idx = item.get("page_idx")
-            if page_idx is None:
-                # Skip items without page information
-                continue
+            # Update page count
+            page_idx = item.get("page_idx", 0)
+            structure["total_pages"] = max(structure["total_pages"], page_idx + 1)
+            
+            # Count content types
+            content_type = item.get("type", "unknown")
+            structure["content_types"][content_type] = structure["content_types"].get(content_type, 0) + 1
+            
+            # Analyze text structure
+            if content_type == ContentType.TEXT:
+                text_level = item.get("text_level", 0)
+                text = item.get("text", "").strip()
+                
+                if text_level > 0:  # This is a heading
+                    structure["heading_structure"].append({
+                        "level": text_level,
+                        "text": text,
+                        "page": page_idx
+                    })
+                    
+                    # Start new section
+                    if current_section:
+                        structure["sections"].append(current_section)
+                    
+                    current_section = {
+                        "heading": text,
+                        "level": text_level,
+                        "start_page": page_idx,
+                        "content": []
+                    }
+                
+                # Add to current section if exists
+                if current_section:
+                    current_section["content"].append(item)
+        
+        # Add last section
+        if current_section:
+            structure["sections"].append(current_section)
+        
+        return structure
 
-            if page_idx not in page_map:
-                page_map[page_idx] = []
-            page_map[page_idx].append(item)
+    def get_section_context(
+        self,
+        content_list: List[Dict[str, Any]],
+        target_page: int
+    ) -> Optional[Dict[str, Any]]:
+        """Get section context for a specific page"""
+        
+        structure = self.analyze_document_structure(content_list)
+        
+        for section in structure["sections"]:
+            # Find content from this section on target page
+            section_content = [
+                item for item in section["content"]
+                if item.get("page_idx", 0) == target_page
+            ]
+            
+            if section_content:
+                return {
+                    "section_heading": section["heading"],
+                    "section_level": section["level"],
+                    "section_content": section_content
+                }
+        
+        return None
 
-        # Sort items within each page by their position (if bbox available)
-        for page_idx in page_map:
-            items = page_map[page_idx]
-            # Sort by y-coordinate (top to bottom), then x-coordinate (left to right)
-            items.sort(key=lambda x: (
-                (x.get("bbox", [0, 0, 0, 0])[1] if x.get("bbox") else 0),  # y1 coordinate
-                (x.get("bbox", [0, 0, 0, 0])[0] if x.get("bbox") else 0)   # x1 coordinate
-            ))
-
-        return page_map
-
-def create_context_extractor(cfg: AppConfig, tokenizer=None) -> ContextExtractor:
-    """Factory function to create context extractor"""
-    return ContextExtractor(cfg, tokenizer)
+    def extract_references(
+        self,
+        content_list: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        """Extract cross-references between content items"""
+        
+        references = []
+        
+        for i, item1 in enumerate(content_list):
+            item1_page = item1.get("page_idx", 0)
+            item1_type = item1.get("type", "")
+            
+            for j, item2 in enumerate(content_list[i+1:], i+1):
+                item2_page = item2.get("page_idx", 0)
+                item2_type = item2.get("type", "")
+                
+                # Check for potential references
+                if abs(item1_page - item2_page) <= self.context_window:
+                    if self._items_are_related(item1, item2):
+                        references.append({
+                            "source": self._get_item_identifier(item1),
+                            "target": self._get_item_identifier(item2),
+                            "type": "contextual",
+                            "confidence": 0.8
+                        })
+        
+        return references
+    
+    def _items_are_related(self, item1: Dict[str, Any], item2: Dict[str, Any]) -> bool:
+        """Check if two items are potentially related"""
+        # This is a simplified check - in practice you'd want more sophisticated logic
+        
+        # Same page items are likely related
+        if item1.get("page_idx") == item2.get("page_idx"):
+            return True
+        
+        # Check for caption references
+        if item1.get("type") == ContentType.IMAGE:
+            captions = item1.get("image_caption", [])
+            if any(self._text_references_item(caption, item2) for caption in captions):
+                return True
+        
+        if item2.get("type") == ContentType.IMAGE:
+            captions = item2.get("image_caption", [])
+            if any(self._text_references_item(caption, item1) for caption in captions):
+                return True
+        
+        return False
+    
+    def _text_references_item(self, text: str, item: Dict[str, Any]) -> bool:
+        """Check if text references another item"""
+        # This is a simplified check - in practice you'd want more sophisticated logic
+        if item.get("type") == ContentType.IMAGE:
+            return "figure" in text.lower() or "image" in text.lower()
+        elif item.get("type") == ContentType.TABLE:
+            return "table" in text.lower()
+        return False
+    
+    def _get_item_identifier(self, item: Dict[str, Any]) -> str:
+        """Get a unique identifier for an item"""
+        item_type = item.get("type", "unknown")
+        page = item.get("page_idx", 0)
+        
+        if item_type == ContentType.IMAGE:
+            return f"image_{page}_{Path(item.get('img_path', '')).stem}"
+        elif item_type == ContentType.TABLE:
+            caption = "_".join(item.get("table_caption", [])[:50])
+            return f"table_{page}_{caption}"
+        elif item_type == ContentType.TEXT:
+            text = item.get("text", "")[:50]
+            return f"text_{page}_{text}"
+        
+        return f"{item_type}_{page}"
