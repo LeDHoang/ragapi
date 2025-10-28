@@ -3,6 +3,7 @@ import logging
 import json
 import boto3
 import openai
+from openai import AsyncClient
 from .config import config
 
 logger = logging.getLogger(__name__)
@@ -11,12 +12,22 @@ class UnifiedLLM:
     def __init__(self):
         self.config = config
         self.openai_client = self._init_openai()
+        self.openai_async_client = self._init_openai_async()
         self.bedrock_client = self._init_bedrock()
         
     def _init_openai(self):
         """Initialize OpenAI client"""
         if self.config.OPENAI_API_KEY:
             return openai.Client(
+                api_key=self.config.OPENAI_API_KEY,
+                base_url=self.config.OPENAI_BASE_URL
+            )
+        return None
+
+    def _init_openai_async(self):
+        """Initialize async OpenAI client"""
+        if self.config.OPENAI_API_KEY:
+            return AsyncClient(
                 api_key=self.config.OPENAI_API_KEY,
                 base_url=self.config.OPENAI_BASE_URL
             )
@@ -57,16 +68,34 @@ class UnifiedLLM:
         model: str
     ) -> List[List[float]]:
         """Get embeddings from OpenAI"""
-        
-        if not self.openai_client:
-            raise ValueError("OpenAI client not initialized")
-        
+
+        if not self.openai_async_client:
+            raise ValueError("OpenAI async client not initialized")
+
         try:
-            response = self.openai_client.embeddings.create(
+            # Filter out empty texts and ensure valid input
+            valid_texts = [text.strip() for text in texts if text and text.strip()]
+            if not valid_texts:
+                logger.warning("No valid texts provided for embedding")
+                return [[0.0] * self.config.EMBEDDING_DIM for _ in texts]
+
+            response = await self.openai_async_client.embeddings.create(
                 model=model,
-                input=texts
+                input=valid_texts
             )
-            return [item.embedding for item in response.data]
+            embeddings = [item.embedding for item in response.data]
+
+            # Pad with zeros if some texts were filtered out
+            result = []
+            text_idx = 0
+            for text in texts:
+                if text and text.strip():
+                    result.append(embeddings[text_idx])
+                    text_idx += 1
+                else:
+                    result.append([0.0] * self.config.EMBEDDING_DIM)
+
+            return result
         except Exception as e:
             logger.error(f"OpenAI embedding failed: {str(e)}")
             raise
@@ -135,17 +164,17 @@ class UnifiedLLM:
         max_tokens: Optional[int]
     ) -> str:
         """Generate text using OpenAI"""
-        
-        if not self.openai_client:
-            raise ValueError("OpenAI client not initialized")
-        
+
+        if not self.openai_async_client:
+            raise ValueError("OpenAI async client not initialized")
+
         messages = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
         messages.append({"role": "user", "content": prompt})
-        
+
         try:
-            response = self.openai_client.chat.completions.create(
+            response = await self.openai_async_client.chat.completions.create(
                 model=model,
                 messages=messages,
                 temperature=temperature,
@@ -227,14 +256,14 @@ class UnifiedLLM:
         system_prompt: Optional[str]
     ) -> str:
         """Analyze image using OpenAI Vision"""
-        
-        if not self.openai_client:
-            raise ValueError("OpenAI client not initialized")
-        
+
+        if not self.openai_async_client:
+            raise ValueError("OpenAI async client not initialized")
+
         messages = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
-        
+
         messages.append({
             "role": "user",
             "content": [
@@ -247,9 +276,9 @@ class UnifiedLLM:
                 }
             ]
         })
-        
+
         try:
-            response = self.openai_client.chat.completions.create(
+            response = await self.openai_async_client.chat.completions.create(
                 model=model,
                 messages=messages,
                 max_tokens=1000

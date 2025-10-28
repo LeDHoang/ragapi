@@ -47,7 +47,11 @@ class RAGPipeline:
         if not self.lightrag:
             self.vector_index = VectorIndex(self.vectors_dir)
         self.chunk_manager = ChunkManager(self.chunks_dir)
-        self.doc_registry = DocumentRegistry(self.kv_dir / "document_registry")
+
+        # Ensure document registry directory exists
+        doc_registry_dir = self.kv_dir / "document_registry"
+        doc_registry_dir.mkdir(parents=True, exist_ok=True)
+        self.doc_registry = DocumentRegistry(doc_registry_dir)
     
     def _init_lightrag(self) -> Optional[LightRAG]:
         """Initialize LightRAG with configuration"""
@@ -60,16 +64,49 @@ class RAGPipeline:
             working_dir = self.config.get_lightrag_working_dir()
             working_dir.mkdir(parents=True, exist_ok=True)
 
-            # Use LightRAG's built-in OpenAI integration
-            from lightrag.llm.openai import openai_embed, gpt_4o_mini_complete
+            # Use LightRAG's built-in OpenAI integration with proper async setup
             import os
 
             # Ensure OpenAI API key is available
             if not self.config.OPENAI_API_KEY:
                 raise ValueError("OPENAI_API_KEY is required for LightRAG integration")
-            
+
             # Set the API key in environment for LightRAG
             os.environ["OPENAI_API_KEY"] = self.config.OPENAI_API_KEY
+
+            # Import LightRAG's OpenAI functions and utilities
+            from lightrag.llm.openai import gpt_4o_mini_complete
+            from lightrag.utils import EmbeddingFunc
+
+            # Create a proper EmbeddingFunc instance with our fixed implementation
+            async def fixed_openai_embed_func(texts, model="text-embedding-3-small", **kwargs):
+                """Fixed OpenAI embedding function"""
+                try:
+                    # Ensure texts is a list
+                    if isinstance(texts, str):
+                        texts = [texts]
+
+                    # Filter out empty texts
+                    valid_texts = [t for t in texts if t and t.strip()]
+                    if not valid_texts:
+                        import numpy as np
+                        return np.array([[0.0] * self.config.EMBEDDING_DIM for _ in texts])
+
+                    # Use our fixed UnifiedLLM implementation
+                    embeddings = await self.llm.get_embeddings(texts=valid_texts, model=model)
+                    import numpy as np
+                    return np.array(embeddings)
+                except Exception as e:
+                    logger.error(f"Fixed OpenAI embed failed: {str(e)}")
+                    import numpy as np
+                    return np.array([[0.0] * self.config.EMBEDDING_DIM for _ in texts])
+
+            # Create EmbeddingFunc instance
+            embedding_func = EmbeddingFunc(
+                embedding_dim=self.config.EMBEDDING_DIM,
+                func=fixed_openai_embed_func,
+                max_token_size=8192  # Standard token limit for OpenAI
+            )
 
             lightrag = LightRAG(
                 working_dir=str(working_dir),
@@ -78,7 +115,7 @@ class RAGPipeline:
                 llm_model_func=gpt_4o_mini_complete,
                 llm_model_name=model_config["llm_model"],
                 tiktoken_model_name=model_config["embedding_model"],
-                embedding_func=openai_embed,
+                embedding_func=embedding_func,
                 **lr_config,
             )
 

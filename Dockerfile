@@ -42,7 +42,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY . .
 
 # Create necessary directories with proper permissions
-RUN mkdir -p /app/uploads /app/rag_storage /app/input /app/output && \
+RUN mkdir -p /app/uploads /app/rag_storage /app/input /app/output /app/rag_storage/kv/document_registry && \
     chmod -R 755 /app/uploads /app/rag_storage /app/input /app/output
 
 # Create non-root user for security
@@ -57,5 +57,5 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-# Run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+# Run the application with optimized settings for async operations
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--loop", "asyncio", "--http", "httptools"]

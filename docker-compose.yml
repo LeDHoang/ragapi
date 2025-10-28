@@ -24,12 +24,18 @@ services:
       - LIGHTRAG_ENABLED=${LIGHTRAG_ENABLED:-true}
       - MAX_FILE_SIZE_MB=${MAX_FILE_SIZE_MB:-100}
       - MAX_WORKERS=${MAX_WORKERS:-4}
+      - EMBEDDING_DIM=${EMBEDDING_DIM:-1536}
+      - CHUNK_SIZE=${CHUNK_SIZE:-1000}
+      - CHUNK_OVERLAP=${CHUNK_OVERLAP:-200}
+      - ENABLE_IMAGES=${ENABLE_IMAGES:-true}
+      - ENABLE_TABLES=${ENABLE_TABLES:-true}
+      - ENABLE_EQUATIONS=${ENABLE_EQUATIONS:-true}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
       interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 45s
     restart: unless-stopped
 
   # Optional: Neo4j for graph database (uncomment if needed)
