@@ -2985,19 +2985,106 @@
       "processing_end_time": 1761708793
     }
   },
-  "a79c2e69-13fd-4fc3-9980-357d61f2cd22": {
-    "status": "failed",
-    "error_msg": "RetryError[C[548/643]: chunk-967552a58c83c94f33b0b39f29526252: <Future at 0x3102bff40 state=finished raised RateLimitError>]",
-    "content_summary": "# Huóng dan sur dung:\n\n# Di dën sheet có thông tin lién kêt:\n\nNhng ni dung có lièn kêt dén sheet chúa thòng tin khi dua chut dën s hin thi bi€u\n\ntugng:\n\nClick chut vào ni dung dó se dn dën sheet chúa thòng tin cän tim.\n\n# Quay tr lai So dò ban däu\n\n#...",
-    "content_length": 85314,
-    "created_at": "2025-10-31T08:49:05.183176+00:00",
-    "updated_at": "2025-10-31T09:06:27.902877+00:00",
-    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/input/converted/ChuyenTienDi_DoanhNghiep.pdf",
-    "track_id": "insert_20251031_154905_82e16cc5",
+  "eb3d9334-18df-4ec4-90de-4e638502a27a": {
+    "status": "processing",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-79300353ee5ac0d0c1916256d25d44d9"
+    ],
+    "content_summary": "Document ChuyenTienDi_DoanhNghiep.xlsx could not be processed",
+    "content_length": 61,
+    "created_at": "2025-10-31T09:35:49.331977+00:00",
+    "updated_at": "2025-10-31T10:24:39.846979+00:00",
+    "file_path": "/app/uploads/eb3d9334-18df-4ec4-90de-4e638502a27a/ChuyenTienDi_DoanhNghiep.xlsx",
+    "track_id": "insert_20251031_093549_76739c45",
     "metadata": {
-      "processing_start_time": 1761900545,
-      "processing_end_time": 1761901587
-    },
+      "processing_start_time": 1761906279
+    }
+  },
+  "0f6e0204-d3ac-4cec-acf7-03dba2d4993a": {
+    "status": "processing",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-79300353ee5ac0d0c1916256d25d44d9"
+    ],
+    "content_summary": "Document ChuyenTienDi_DoanhNghiep.xlsx could not be processed",
+    "content_length": 61,
+    "created_at": "2025-10-31T09:36:50.351164+00:00",
+    "updated_at": "2025-10-31T10:24:39.847197+00:00",
+    "file_path": "/app/uploads/0f6e0204-d3ac-4cec-acf7-03dba2d4993a/ChuyenTienDi_DoanhNghiep.xlsx",
+    "track_id": "insert_20251031_093650_d578a9a0",
+    "metadata": {
+      "processing_start_time": 1761906279
+    }
+  },
+  "093e12b4-9d9e-4a8f-9339-6fb3bee08df4": {
+    "status": "pending",
+    "content_summary": "Document ChuyenTienDi_DoanhNghiep.xlsx could not be processed",
+    "content_length": 61,
+    "created_at": "2025-10-31T09:41:34.320491+00:00",
+    "updated_at": "2025-10-31T10:24:39.835421+00:00",
+    "file_path": "/app/uploads/093e12b4-9d9e-4a8f-9339-6fb3bee08df4/ChuyenTienDi_DoanhNghiep.xlsx",
+    "track_id": "insert_20251031_094134_152891c8",
+    "error_msg": "",
+    "metadata": {},
+    "chunks_list": []
+  },
+  "df46c6c4-d236-4cbe-9a17-899663b6e87b": {
+    "status": "pending",
+    "content_summary": "Document ChuyenTienDi_DoanhNghiep.xlsx could not be processed",
+    "content_length": 61,
+    "created_at": "2025-10-31T10:06:35.085536+00:00",
+    "updated_at": "2025-10-31T10:24:39.835424+00:00",
+    "file_path": "/app/uploads/df46c6c4-d236-4cbe-9a17-899663b6e87b/ChuyenTienDi_DoanhNghiep.xlsx",
+    "track_id": "insert_20251031_100635_88338b1d",
+    "error_msg": "",
+    "metadata": {},
+    "chunks_list": []
+  },
+  "64b8959b-c3bb-4460-bc98-1c14074dbb67": {
+    "status": "pending",
+    "content_summary": "Document ChuyenTienDi_DoanhNghiep.xlsx could not be processed",
+    "content_length": 61,
+    "created_at": "2025-10-31T10:08:33.179096+00:00",
+    "updated_at": "2025-10-31T10:24:39.835428+00:00",
+    "file_path": "/app/uploads/64b8959b-c3bb-4460-bc98-1c14074dbb67/ChuyenTienDi_DoanhNghiep.xlsx",
+    "track_id": "insert_20251031_100833_522e2e55",
+    "error_msg": "",
+    "metadata": {},
+    "chunks_list": []
+  },
+  "56550bcd-3508-451e-9ea6-e17e72fb6f81": {
+    "status": "pending",
+    "content_summary": "Document ChuyenTienDi_DoanhNghiep.xlsx could not be processed",
+    "content_length": 61,
+    "created_at": "2025-10-31T10:11:09.767043+00:00",
+    "updated_at": "2025-10-31T10:24:39.835432+00:00",
+    "file_path": "/app/uploads/56550bcd-3508-451e-9ea6-e17e72fb6f81/ChuyenTienDi_DoanhNghiep.xlsx",
+    "track_id": "insert_20251031_101109_d3e33fdf",
+    "error_msg": "",
+    "metadata": {},
+    "chunks_list": []
+  },
+  "f0971d1c-0e92-43b1-9205-105b2221e630": {
+    "status": "pending",
+    "content_summary": "Document ChuyenTienDi_DoanhNghiep.xlsx could not be processed",
+    "content_length": 61,
+    "created_at": "2025-10-31T10:14:03.890847+00:00",
+    "updated_at": "2025-10-31T10:24:39.835440+00:00",
+    "file_path": "/app/uploads/f0971d1c-0e92-43b1-9205-105b2221e630/ChuyenTienDi_DoanhNghiep.xlsx",
+    "track_id": "insert_20251031_101403_fb92d7c2",
+    "error_msg": "",
+    "metadata": {},
+    "chunks_list": []
+  },
+  "ad9389c5-43aa-4b51-9135-fee60a18c463": {
+    "status": "pending",
+    "content_summary": "Tiếp nhận\nhồ sơB1\nKiểm tra hồ s ơB2\nTrình CTQ phê \nduyệt (nếu có)B3\nLập Phiếu tiếp nhận \nBM-TTQT.04B4\nChuyển hồ sơ \nvề TT.TTQTB7\nLưu hồ sơ & \nchứng từ kế toánB9Phòng chống rửa tiền\nLệnh chuyển tiền\nChứng từ chứng minh mục đích \nchuyển tiền\nKiểm tra h...",
+    "content_length": 427999,
+    "created_at": "2025-10-31T10:24:39.817002+00:00",
+    "updated_at": "2025-10-31T10:24:39.817015+00:00",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/input/converted/ChuyenTienDi_DoanhNghiep.pdf",
+    "track_id": "insert_20251031_172439_d3d9e7d0",
     "chunks_list": []
   }
 }

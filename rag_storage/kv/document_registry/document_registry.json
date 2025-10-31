@@ -125,12 +125,66 @@
     "chunks_count": 0,
     "entities_count": 0
   },
-  "a79c2e69-13fd-4fc3-9980-357d61f2cd22": {
-    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/input/converted/ChuyenTienDi_DoanhNghiep.pdf",
-    "registered_at": 1761901599.80957,
-    "file_type": ".pdf",
-    "total_pages": 96,
-    "processed_at": 1761901599.8080158,
+  "eb3d9334-18df-4ec4-90de-4e638502a27a": {
+    "file_path": "/app/uploads/eb3d9334-18df-4ec4-90de-4e638502a27a/ChuyenTienDi_DoanhNghiep.xlsx",
+    "registered_at": 1761903350.8482819,
+    "file_type": ".xlsx",
+    "total_pages": 1,
+    "processed_at": 1761903350.8469925,
+    "chunks_count": 0,
+    "entities_count": 0
+  },
+  "0f6e0204-d3ac-4cec-acf7-03dba2d4993a": {
+    "file_path": "/app/uploads/0f6e0204-d3ac-4cec-acf7-03dba2d4993a/ChuyenTienDi_DoanhNghiep.xlsx",
+    "registered_at": 1761903411.2327344,
+    "file_type": ".xlsx",
+    "total_pages": 1,
+    "processed_at": 1761903411.2310643,
+    "chunks_count": 0,
+    "entities_count": 0
+  },
+  "093e12b4-9d9e-4a8f-9339-6fb3bee08df4": {
+    "file_path": "/app/uploads/093e12b4-9d9e-4a8f-9339-6fb3bee08df4/ChuyenTienDi_DoanhNghiep.xlsx",
+    "registered_at": 1761903695.9585505,
+    "file_type": ".xlsx",
+    "total_pages": 1,
+    "processed_at": 1761903695.9573274,
+    "chunks_count": 0,
+    "entities_count": 0
+  },
+  "df46c6c4-d236-4cbe-9a17-899663b6e87b": {
+    "file_path": "/app/uploads/df46c6c4-d236-4cbe-9a17-899663b6e87b/ChuyenTienDi_DoanhNghiep.xlsx",
+    "registered_at": 1761905196.8831995,
+    "file_type": ".xlsx",
+    "total_pages": 1,
+    "processed_at": 1761905196.881491,
+    "chunks_count": 0,
+    "entities_count": 0
+  },
+  "64b8959b-c3bb-4460-bc98-1c14074dbb67": {
+    "file_path": "/app/uploads/64b8959b-c3bb-4460-bc98-1c14074dbb67/ChuyenTienDi_DoanhNghiep.xlsx",
+    "registered_at": 1761905315.3799605,
+    "file_type": ".xlsx",
+    "total_pages": 1,
+    "processed_at": 1761905315.3780487,
+    "chunks_count": 0,
+    "entities_count": 0
+  },
+  "56550bcd-3508-451e-9ea6-e17e72fb6f81": {
+    "file_path": "/app/uploads/56550bcd-3508-451e-9ea6-e17e72fb6f81/ChuyenTienDi_DoanhNghiep.xlsx",
+    "registered_at": 1761905472.4506054,
+    "file_type": ".xlsx",
+    "total_pages": 1,
+    "processed_at": 1761905472.4478493,
+    "chunks_count": 0,
+    "entities_count": 0
+  },
+  "f0971d1c-0e92-43b1-9205-105b2221e630": {
+    "file_path": "/app/uploads/f0971d1c-0e92-43b1-9205-105b2221e630/ChuyenTienDi_DoanhNghiep.xlsx",
+    "registered_at": 1761905647.1154613,
+    "file_type": ".xlsx",
+    "total_pages": 1,
+    "processed_at": 1761905647.1134157,
     "chunks_count": 0,
     "entities_count": 0
   }

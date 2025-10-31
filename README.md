@@ -75,8 +75,7 @@ curl http://localhost:8000/health
 If everything is wired correctly you should see the API respond with status information and the server logs will list the masked OpenAI key.
 ## 📄 Document Processing Workflow
 
-1. **(Optional) Convert an Excel workbook only**  
-   Use the dedicated convert endpoint if you simply need the PDF output:
+1. **(Optional) Convert an Excel workbook only**     Use the dedicated convert endpoint if you simply need the PDF output:
    
    ```bash
    curl -F "file=@input/ChuyenTienDi_DoanhNghiep.xlsx" \
@@ -85,8 +84,19 @@ If everything is wired correctly you should see the API respond with status info
    
    The response includes the generated PDF path (`input/converted/<name>.pdf`) and the directory containing per-sheet debug assets under `Convert_excel_pdf/split/`.
 
-2. **Ingest a document**  
+1. **Process without ingest (preview only)**     Run the new `/process` endpoint to produce the structured MinerU outputs without chunking or embeddings:
+   
    ```bash
+   curl -F "file=@input/ChuyenTienDi_DoanhNghiep.xlsx" \
+        -F "enable_images=true" \
+        -F "enable_tables=true" \
+        -F "enable_equations=true" \
+        http://localhost:8000/process
+   ```
+   
+   The response returns the absolute path to the `rag_storage/output/<document>/auto/` directory containing `_content_list.json`, `_middle.json`, `_model.json`, and a Markdown reconstruction. No chunks or embeddings are created in this mode.
+
+1. **Ingest a document**     ```bash
    curl -F "file=@input/ChuyenTienDi_DoanhNghiep.xlsx" \
         -F "enable_images=true" \
         -F "enable_tables=true" \
@@ -95,20 +105,17 @@ If everything is wired correctly you should see the API respond with status info
    ```
    The API returns a `task_id` immediately while processing continues in the background.
 
-3. **Monitor progress**  
-   ```bash
+1. **Monitor progress**     ```bash
    curl http://localhost:8000/ingest/status/<task_id>
    ```
    Once `status` becomes `completed`, you will see the chunk/entity counts derived from LightRAG. Logs also note the location of any debug artifacts produced during conversion.
 
-4. **Inspect outputs**  
-   - Converted PDFs: `input/converted/<document>.pdf`
+1. **Inspect outputs**     - Converted PDFs: `input/converted/<document>.pdf`
    - Collabora debug artifacts (split XLSX, per-sheet PDFs, combined PDF): `Convert_excel_pdf/split/<workbook>/`
    - Parsed markdown / JSON summaries: `rag_storage/output/<doc_id>/auto/`
    - Registry + vector data: `rag_storage/`
 
-5. **Query the knowledge base**  
-   ```bash
+1. **Query the knowledge base**     ```bash
    curl -X POST http://localhost:8000/query \
         -H "Content-Type: application/json" \
         -d '{
@@ -119,8 +126,7 @@ If everything is wired correctly you should see the API respond with status info
    ```
    Advanced endpoints (`/query/advanced`, `/query/semantic-search`, etc.) are also available once LightRAG finishes building the graph.
 
-6. **List or clean up documents**  
-   ```bash
+1. **List or clean up documents**     ```bash
    curl http://localhost:8000/documents
    curl -X DELETE http://localhost:8000/documents/<doc_id>
    ```
@@ -135,6 +141,30 @@ Once the server is running, visit:
 ## 🔌 API Endpoints
 
 ### Document Management
+
+#### Process Document (preview only)
+```bash
+POST /process
+Content-Type: multipart/form-data
+
+Parameters:
+- file: Document to preprocess (Excel, PDF, etc.)
+- enable_images / enable_tables / enable_equations: toggle extraction flags (defaults true)
+- parser: Optional parser override (auto/mineru/docling)
+
+Response:
+{
+  "status": "processed",
+  "task_id": "uuid",
+  "output_dir": "rag_storage/output/<document>/auto",
+  "files": {
+    "content_list": "..._content_list.json",
+    "middle": "..._middle.json",
+    "model": "..._model.json",
+    "markdown": "... .md"
+  }
+}
+```
 
 #### Upload Document
 ```bash
