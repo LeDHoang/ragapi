@@ -188,16 +188,31 @@ class RAGPipeline:
             
             # 3. Process text with LightRAG
             logger.info("Processing text content")
-            await self._process_text_content(full_text, task_id, file_path, ingest_summary)
+            text_chunks_created, text_entities_found = await self._process_text_content(
+                full_text,
+                task_id,
+                file_path,
+                ingest_summary
+            )
             status.progress = 0.6
             await self._update_status(status)
             
             # 4. Process multimodal content
             logger.info("Processing multimodal content")
             if self.lightrag:
-                await self._process_multimodal_content_lightrag(multimodal_items, task_id, file_path, ingest_summary)
+                multimodal_chunks_created, multimodal_entities_found = await self._process_multimodal_content_lightrag(
+                    multimodal_items,
+                    task_id,
+                    file_path,
+                    ingest_summary
+                )
             else:
-                await self._process_multimodal_content(multimodal_items, task_id, file_path, ingest_summary)
+                multimodal_chunks_created, multimodal_entities_found = await self._process_multimodal_content(
+                    multimodal_items,
+                    task_id,
+                    file_path,
+                    ingest_summary
+                )
             status.progress = 0.8
             await self._update_status(status)
             
@@ -281,9 +296,12 @@ class RAGPipeline:
         doc_id: str,
         file_path: str,
         ingest_summary: Dict[str, Any] = None
-    ):
-        """Process text content with chunking and storage"""
-        
+    ) -> Tuple[int, int]:
+        """Process text content with chunking and storage.
+
+        Returns a tuple of (chunks_created, entities_found).
+        """
+
         # Split text into chunks
         chunk_size = self.config.CHUNK_SIZE
         chunk_overlap = self.config.CHUNK_OVERLAP
@@ -291,19 +309,21 @@ class RAGPipeline:
         chunks = self._split_text_into_chunks(text, chunk_size, chunk_overlap)
 
         if self.lightrag:
-            await self._upsert_text_chunks_lightrag(
+            chunk_count = await self._upsert_text_chunks_lightrag(
                 chunks=chunks,
                 doc_id=doc_id,
                 file_path=file_path,
                 ingest_summary=ingest_summary
             )
-            return
+            return chunk_count, 0
 
         # Fallback legacy path
+        chunk_count = 0
+        entity_count = 0
         for i, chunk_text in enumerate(chunks):
             chunk_id = f"chunk-{doc_id}-{i}"
 
-            await self._store_chunk(
+            created, entities = await self._store_chunk(
                 chunk_id=chunk_id,
                 content=chunk_text,
                 doc_id=doc_id,
@@ -312,6 +332,10 @@ class RAGPipeline:
                 page_idx=None,
                 ingest_summary=ingest_summary
             )
+            chunk_count += created
+            entity_count += entities
+
+        return chunk_count, entity_count
     
     def _split_text_into_chunks(self, text: str, chunk_size: int, chunk_overlap: int) -> List[str]:
         """Split text into overlapping chunks"""
@@ -368,13 +392,15 @@ class RAGPipeline:
             )
 
             # Extract and store entities from the chunk
-            await self.storage_manager.extract_and_store_entities(
+            entities = await self.storage_manager.extract_and_store_entities(
                 content=content,
                 chunk_id=chunk_id,
                 doc_id=doc_id,
                 file_path=file_path,
                 content_type=chunk_type
             )
+
+            return 1, len(entities or [])
 
         except Exception as e:
             error_msg = f"Failed to process chunk {chunk_id}: {str(e)}"
@@ -385,6 +411,7 @@ class RAGPipeline:
                     ingest_summary['errors'] = {}
                 error_key = "Chunk processing failed"
                 ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
+            return 0, 0
     
     async def _process_multimodal_content(
         self,
@@ -394,7 +421,9 @@ class RAGPipeline:
         ingest_summary: Dict[str, Any] = None
     ):
         """Process multimodal content items"""
-        
+        total_chunks = 0
+        total_entities = 0
+
         for item in items:
             try:
                 # Get context for the item
@@ -403,12 +432,15 @@ class RAGPipeline:
                 )
                 
                 # Process based on type
+                chunks, entities = (0, 0)
                 if item["type"] in ("image", "image".upper(), "IMAGE"):
-                    await self._process_image(item, context, doc_id, file_path, ingest_summary)
+                    chunks, entities = await self._process_image(item, context, doc_id, file_path, ingest_summary)
                 elif item["type"] in ("table", "TABLE"):
-                    await self._process_table(item, context, doc_id, file_path, ingest_summary)
+                    chunks, entities = await self._process_table(item, context, doc_id, file_path, ingest_summary)
                 elif item["type"] in ("equation", "EQUATION"):
-                    await self._process_equation(item, context, doc_id, file_path, ingest_summary)
+                    chunks, entities = await self._process_equation(item, context, doc_id, file_path, ingest_summary)
+                total_chunks += chunks
+                total_entities += entities
             except Exception as e:
                 error_msg = f"Failed to process multimodal item: {str(e)}"
                 logger.warning(error_msg)
@@ -419,6 +451,8 @@ class RAGPipeline:
                     error_key = "Multimodal item processing failed"
                     ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
                 continue
+
+        return total_chunks, total_entities
     
     async def _process_image(
         self,
@@ -432,7 +466,7 @@ class RAGPipeline:
         
         img_path = item.get("img_path")
         if not img_path or not Path(img_path).exists():
-            return
+            return 0, 0
         
         # Read image and convert to base64
         with open(img_path, "rb") as f:
@@ -463,7 +497,7 @@ class RAGPipeline:
         """
 
         # Store multimodal chunk in graph and vector storage
-        await self._store_chunk(
+        return await self._store_chunk(
             chunk_id=hashlib.md5(chunk_content.encode()).hexdigest(),
             content=chunk_content,
             doc_id=doc_id,
@@ -485,6 +519,9 @@ class RAGPipeline:
         
         table_body = item.get("table_body", "")
         captions = item.get("table_caption", [])
+
+        if not table_body:
+            return 0, 0
         
         # Analyze table
         prompt = f"""
@@ -513,7 +550,7 @@ class RAGPipeline:
         """
 
         # Store multimodal chunk in graph and vector storage
-        await self._store_chunk(
+        return await self._store_chunk(
             chunk_id=hashlib.md5(chunk_content.encode()).hexdigest(),
             content=chunk_content,
             doc_id=doc_id,
@@ -535,6 +572,9 @@ class RAGPipeline:
         
         latex = item.get("latex", "")
         text = item.get("text", "")
+
+        if not (latex or text):
+            return 0, 0
         
         # Analyze equation
         prompt = f"""
@@ -562,7 +602,7 @@ class RAGPipeline:
         """
 
         # Store multimodal chunk in graph and vector storage
-        await self._store_chunk(
+        return await self._store_chunk(
             chunk_id=hashlib.md5(chunk_content.encode()).hexdigest(),
             content=chunk_content,
             doc_id=doc_id,
@@ -677,10 +717,13 @@ class RAGPipeline:
         file_path: str,
         ingest_summary: Dict[str, Any] = None
     ):
-        """Insert text chunks into LightRAG storage"""
+        """Insert text chunks into LightRAG storage.
+
+        Returns the approximate number of chunks inserted.
+        """
         if not self.lightrag:
             logger.warning("LightRAG not initialized, skipping text chunk insertion")
-            return
+            return 0
 
         try:
             # Filter out empty or very short chunks to prevent embedding errors
@@ -688,7 +731,7 @@ class RAGPipeline:
             
             if not valid_chunks:
                 logger.warning(f"No valid text chunks found for document {doc_id}, skipping LightRAG insertion")
-                return
+                return 0
 
             # Convert chunks to format LightRAG expects
             # LightRAG's ainsert expects text content, not pre-split chunks
@@ -697,7 +740,7 @@ class RAGPipeline:
             # Additional validation to ensure we have meaningful content
             if len(full_text.strip()) < 20:
                 logger.warning(f"Text content too short for document {doc_id}, skipping LightRAG insertion")
-                return
+                return 0
 
             # Use LightRAG's ainsert method
             track_id = await self.lightrag.ainsert(
@@ -709,6 +752,7 @@ class RAGPipeline:
             )
 
             logger.info(f"LightRAG text insertion completed with track_id: {track_id}")
+            return len(valid_chunks)
 
         except Exception as e:
             error_msg = f"LightRAG text insertion failed: {str(e)}"
@@ -731,7 +775,7 @@ class RAGPipeline:
         """Process multimodal content using LightRAG"""
         if not self.lightrag:
             logger.warning("LightRAG not initialized, skipping multimodal content processing")
-            return
+            return 0, 0
 
         try:
             # Convert multimodal items to LightRAG format
@@ -862,6 +906,8 @@ class RAGPipeline:
 
                 logger.info(f"LightRAG multimodal insertion completed with track_id: {track_id}")
 
+            return len(multimodal_content), 0
+
         except Exception as e:
             error_msg = f"LightRAG multimodal processing failed: {str(e)}"
             logger.error(error_msg)
@@ -872,7 +918,7 @@ class RAGPipeline:
                 error_key = "LightRAG multimodal processing failed"
                 ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
             # Don't raise - multimodal processing is supplementary
-            pass
+            return 0, 0
 
     async def _count_entities_lightrag(self, doc_id: str) -> int:
         """Count entities for a document using LightRAG"""

@@ -17,66 +17,112 @@ A powerful multimodal RAG (Retrieval-Augmented Generation) API built with FastAP
 
 ### Prerequisites
 
-- Docker and Docker Compose (recommended)
-- OpenAI API key
-- At least 4GB RAM recommended
+- OpenAI API key with access to the models you configure in `.env`
+- Docker & Docker Compose (required for the Excel→PDF converter, recommended for the API)
+- Python 3.10+ if you want to run the FastAPI server locally
+- At least 4 GB RAM and 10 GB free disk space
 
-### Using Docker (Recommended)
+### 1. Clone the repository
+```bash
+git clone <your-repo-url>
+cd ragapi
+```
 
-1. **Clone the repository**
+### 2. Configure environment variables
+```bash
+cp env.example .env
+```
+Edit `.env` and set at minimum:
+```bash
+OPENAI_API_KEY=sk-...
+OPENAI_BASE_URL=https://api.openai.com/v1  # or your gateway
+```
+You can also tune retry behaviour (`OPENAI_RETRY_MAX_ATTEMPTS`, `OPENAI_RETRY_INITIAL_DELAY`) and the Collabora converter settings (`LOOL_*`).
+
+### 3. Start the Collabora converter
+LibreOffice Online (Collabora CODE) handles all Excel conversions.
+```bash
+cd Convert_excel_pdf
+docker-compose up -d
+# optional: tail logs
+# docker-compose logs -f collabora
+cd ..
+```
+Health check:
+```bash
+curl http://localhost:9980/hosting/discovery
+```
+
+### 4. Launch the RAG API
+**Option A – Docker Compose (recommended)**
+```bash
+docker-compose up --build
+```
+Ensure your OpenAI key is passed into the container (either via `.env` mounted into the service or the `environment:` block in `docker-compose.yml`).
+
+**Option B – Local virtualenv**
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+### 5. Smoke test
+```bash
+curl http://localhost:8000/health
+```
+If everything is wired correctly you should see the API respond with status information and the server logs will list the masked OpenAI key.
+## 📄 Document Processing Workflow
+
+1. **(Optional) Convert an Excel workbook only**  
+   Use the dedicated convert endpoint if you simply need the PDF output:
+   
    ```bash
-   git clone <your-repo-url>
-   cd ragapi
+   curl -F "file=@input/ChuyenTienDi_DoanhNghiep.xlsx" \
+        http://localhost:8000/convert
    ```
+   
+   The response includes the generated PDF path (`input/converted/<name>.pdf`) and the directory containing per-sheet debug assets under `Convert_excel_pdf/split/`.
 
-2. **Set up environment variables**
+2. **Ingest a document**  
    ```bash
-   cp env.example .env
+   curl -F "file=@input/ChuyenTienDi_DoanhNghiep.xlsx" \
+        -F "enable_images=true" \
+        -F "enable_tables=true" \
+        -F "enable_equations=true" \
+        http://localhost:8000/ingest/upload
    ```
+   The API returns a `task_id` immediately while processing continues in the background.
 
-3. **Edit the `.env` file** and add your OpenAI API key:
+3. **Monitor progress**  
    ```bash
-   OPENAI_API_KEY=your_openai_api_key_here
+   curl http://localhost:8000/ingest/status/<task_id>
    ```
+   Once `status` becomes `completed`, you will see the chunk/entity counts derived from LightRAG. Logs also note the location of any debug artifacts produced during conversion.
 
-4. **Build and run with Docker Compose**
+4. **Inspect outputs**  
+   - Converted PDFs: `input/converted/<document>.pdf`
+   - Collabora debug artifacts (split XLSX, per-sheet PDFs, combined PDF): `Convert_excel_pdf/split/<workbook>/`
+   - Parsed markdown / JSON summaries: `rag_storage/output/<doc_id>/auto/`
+   - Registry + vector data: `rag_storage/`
+
+5. **Query the knowledge base**  
    ```bash
-   docker-compose up --build
+   curl -X POST http://localhost:8000/query \
+        -H "Content-Type: application/json" \
+        -d '{
+              "query": "What are the key findings?",
+              "query_type": "text",
+              "mode": "hybrid"
+            }'
    ```
+   Advanced endpoints (`/query/advanced`, `/query/semantic-search`, etc.) are also available once LightRAG finishes building the graph.
 
-5. **Test the API**
+6. **List or clean up documents**  
    ```bash
-   curl http://localhost:8000/health
-   ```
-
-### Manual Installation
-
-1. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Install system dependencies** (Ubuntu/Debian)
-   ```bash
-   sudo apt-get update
-   sudo apt-get install libreoffice libreoffice-writer libreoffice-calc libreoffice-impress poppler-utils
-   ```
-
-4. **Set up environment**
-   ```bash
-   cp env.example .env
-   # Edit .env file with your configuration
-   ```
-
-5. **Run the application**
-   ```bash
-   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   curl http://localhost:8000/documents
+   curl -X DELETE http://localhost:8000/documents/<doc_id>
    ```
 
 ## 📚 API Documentation
