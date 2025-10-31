@@ -12,6 +12,12 @@ from rag_core.config import config
 from rag_core.pipeline import RAGPipeline
 from rag_core.query import QueryProcessor
 from rag_core.advanced_query import AdvancedQueryProcessor
+from rag_core.conversion.excel_to_pdf import (
+    convert_excel_to_pdf,
+    get_latest_debug_artifacts_dir,
+    get_latest_debug_combined_pdf,
+    needs_conversion,
+)
 from rag_core.schemas import (
     ProcessingStatus,
     DocumentMetadata,
@@ -48,6 +54,31 @@ app = FastAPI(
     description="Multimodal RAG API for document processing and querying",
     version="1.0.0"
 )
+
+# Log key configuration at startup (masked)
+try:
+    key = config.OPENAI_API_KEY
+    base_url = config.OPENAI_BASE_URL
+    masked = None
+    if key:
+        if len(key) >= 12:
+            masked = f"{key[:6]}...{key[-4:]}"
+        else:
+            masked = "[set]"
+    else:
+        masked = "[not set]"
+
+    from pathlib import Path as _Path
+    env_here = _Path(".env")
+    logger.info(
+        "[CONFIG] OPENAI_API_KEY=%s OPENAI_BASE_URL=%s .env_present=%s cwd=%s",
+        masked,
+        base_url,
+        env_here.exists(),
+        str(_Path.cwd())
+    )
+except Exception as _e:
+    logger.warning("[CONFIG] Failed to log OpenAI config: %s", str(_e))
 
 # Add CORS middleware
 app.add_middleware(
@@ -98,6 +129,8 @@ async def upload_document(
     """Upload document for processing"""
     
     try:
+        request_start = time.time()
+        logger.info("[INGEST] Upload started: filename=%s", file.filename)
         # Validate file size
         if file.size > config.MAX_FILE_SIZE_MB * 1024 * 1024:
             raise HTTPException(
@@ -117,7 +150,42 @@ async def upload_document(
         content = await file.read()
         with open(file_path, "wb") as f:
             f.write(content)
-        
+        logger.info(
+            "[INGEST] File saved: task_id=%s path=%s elapsed=%.3fs",
+            task_id,
+            str(file_path),
+            time.time() - request_start
+        )
+
+        # Check if file needs conversion and convert if necessary
+        if needs_conversion(str(file_path)):
+            logger.info("[INGEST] File needs conversion, converting to PDF: %s", file_path)
+            conversion_start = time.time()
+            try:
+                converted_pdf_path = convert_excel_to_pdf(str(file_path))  # Will save to input/converted
+                file_path = Path(converted_pdf_path)  # Update file_path to point to the PDF
+                debug_dir = get_latest_debug_artifacts_dir()
+                debug_combined = get_latest_debug_combined_pdf()
+                conversion_elapsed = time.time() - conversion_start
+                logger.info(
+                    "[INGEST] Conversion completed: original=%s pdf=%s conversion_time=%.2fs total_elapsed=%.2fs",
+                    str(upload_dir / file.filename),
+                    str(file_path),
+                    conversion_elapsed,
+                    time.time() - request_start
+                )
+                if debug_dir:
+                    logger.info("[INGEST] Debug artifacts stored at %s", debug_dir)
+                if debug_combined:
+                    logger.info("[INGEST] Debug combined PDF at %s", debug_combined)
+            except Exception as conv_error:
+                logger.error("[INGEST] Conversion failed after %.2fs for %s: %s",
+                           time.time() - conversion_start, file_path, str(conv_error))
+                raise HTTPException(
+                    status_code=500,
+                    detail=f"Document conversion failed: {str(conv_error)}"
+                )
+
         # Start background processing
         background_tasks.add_task(
             process_document_background,
@@ -130,6 +198,11 @@ async def upload_document(
                 "enable_equations": enable_equations
             }
         )
+        logger.info(
+            "[INGEST] Background task queued: task_id=%s elapsed=%.3fs",
+            task_id,
+            time.time() - request_start
+        )
         
         # Initialize task status
         processing_tasks[task_id] = {
@@ -137,6 +210,11 @@ async def upload_document(
             "file_path": str(file_path),
             "start_time": time.time()
         }
+        logger.info(
+            "[INGEST] Tracking initialized: task_id=%s total_elapsed=%.3fs",
+            task_id,
+            time.time() - request_start
+        )
         
         return {
             "task_id": task_id,
@@ -149,6 +227,83 @@ async def upload_document(
         raise HTTPException(
             status_code=500,
             detail=f"Document upload failed: {str(e)}"
+        )
+
+@app.post("/convert")
+async def convert_document(file: UploadFile = File(...)):
+    """Convert Excel/Office document to PDF and return the PDF file"""
+
+    try:
+        request_start = time.time()
+        logger.info("[CONVERT] Conversion started: filename=%s", file.filename)
+
+        # Validate file size
+        if file.size > config.MAX_FILE_SIZE_MB * 1024 * 1024:
+            raise HTTPException(
+                status_code=413,
+                detail=f"File too large (max {config.MAX_FILE_SIZE_MB}MB)"
+            )
+
+        # Check if file needs conversion
+        file_ext = Path(file.filename).suffix.lower()
+        if not needs_conversion(file.filename):
+            raise HTTPException(
+                status_code=400,
+                detail=f"File type {file_ext} does not need conversion. Supported: Excel (.xlsx, .xls)"
+            )
+
+        # Generate task ID
+        task_id = str(uuid.uuid4())
+
+        # Create upload directory for original file
+        upload_dir = config.get_upload_dir() / task_id
+        upload_dir.mkdir(parents=True, exist_ok=True)
+
+        # Save original file
+        original_file_path = upload_dir / file.filename
+        content = await file.read()
+        with open(original_file_path, "wb") as f:
+            f.write(content)
+
+        # Convert to PDF (will save to input/converted directory)
+        conversion_start = time.time()
+        try:
+            logger.info("[CONVERT] Starting conversion for task_id=%s: %s", task_id, original_file_path)
+            converted_pdf_path = convert_excel_to_pdf(str(original_file_path))
+            conversion_elapsed = time.time() - conversion_start
+            logger.info(
+                "[CONVERT] Conversion completed: task_id=%s original=%s pdf=%s conversion_time=%.2fs total_elapsed=%.2fs",
+                task_id,
+                str(original_file_path),
+                converted_pdf_path,
+                conversion_elapsed,
+                time.time() - request_start
+            )
+
+            return {
+                "task_id": task_id,
+                "status": "converted",
+                "original_file": str(original_file_path),
+                "converted_pdf": converted_pdf_path,
+                "debug_artifacts_dir": get_latest_debug_artifacts_dir(),
+                "debug_combined_pdf": get_latest_debug_combined_pdf(),
+                "message": "Document conversion successful"
+            }
+
+        except Exception as conv_error:
+            logger.error(f"Conversion failed for {original_file_path}: {str(conv_error)}")
+            raise HTTPException(
+                status_code=500,
+                detail=f"Document conversion failed: {str(conv_error)}"
+            )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Document conversion failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Document conversion failed: {str(e)}"
         )
 
 @app.get("/ingest/status/{task_id}")
@@ -443,6 +598,8 @@ async def process_document_background(
     """Background document processing"""
     
     try:
+        bg_start = time.time()
+        logger.info("[INGEST] Processing started: task_id=%s file=%s", task_id, file_path)
         # Update task status
         processing_tasks[task_id].update({
             "status": "processing",
@@ -465,6 +622,16 @@ async def process_document_background(
             "entities_found": status.entities_found,
             "completed_at": time.time()
         })
+        started_at = processing_tasks[task_id].get("start_time", bg_start)
+        logger.info(
+            "[INGEST] Processing completed: task_id=%s doc_id=%s chunks=%s entities=%s elapsed=%.3fs total_elapsed=%.3fs",
+            task_id,
+            status.doc_id,
+            status.chunks_created,
+            status.entities_found,
+            time.time() - bg_start,
+            time.time() - started_at
+        )
         
         # Clean up upload file
         Path(file_path).unlink(missing_ok=True)
@@ -476,6 +643,13 @@ async def process_document_background(
             "error": str(e),
             "completed_at": time.time()
         })
+        started_at = processing_tasks[task_id].get("start_time", None)
+        if started_at:
+            logger.info(
+                "[INGEST] Processing failed: task_id=%s elapsed=%.3fs",
+                task_id,
+                time.time() - started_at
+            )
         
         # Clean up on error
         Path(file_path).unlink(missing_ok=True)

@@ -1,0 +1,27 @@
+# Extended Collabora CODE image with Microsoft core fonts for better Excel rendering fidelity
+FROM collabora/code:6.4.8.4
+
+# Install Microsoft core fonts
+RUN apt-get update && apt-get install -y \
+    ttf-mscorefonts-installer \
+    fonts-liberation \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create font directory for additional corporate fonts (optional mount point)
+RUN mkdir -p /usr/share/fonts/corporate
+
+# Copy any local corporate fonts (uncomment and modify as needed)
+# COPY fonts/*.ttf /usr/share/fonts/corporate/
+
+# Update font cache
+RUN fc-cache -f -v
+
+# Default environment variables for local development
+ENV username=admin
+ENV password=adminadmin
+
+# Allow HTTP POSTs from localhost and allow WOPI-less storage for local testing
+ENV extra_params=--o:ssl.enable=false --o:ssl.termination=true --o:net.post_allow.host[0]=.+ --o:storage.wopi.host[0]=.+ --o:security.enable_macros_execution=true
+
+
+

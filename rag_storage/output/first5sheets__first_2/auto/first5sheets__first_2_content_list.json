@@ -1,0 +1,212 @@
+[
+    {
+        "type": "image",
+        "img_path": "images/017ee5c6b7f77adfbecf96cdb2f8c97f8cb7c15dc2b45eebb91692161dabb5ac.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            55,
+            81,
+            892,
+            663
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Huóng dån su dung: ",
+        "text_level": 1,
+        "bbox": [
+            263,
+            86,
+            377,
+            107
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Di den sheet có thong tin lièn ket: ",
+        "text_level": 1,
+        "bbox": [
+            150,
+            114,
+            290,
+            129
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Nhng ni dung có lién két dén sheet chúa thòng tin khi dua chut den s hin th biu tuong: ",
+        "bbox": [
+            157,
+            135,
+            487,
+            176
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Click chut vào ni dung dó se dân dén sheet chúa thông tin can tim. ",
+        "bbox": [
+            157,
+            181,
+            421,
+            199
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/1ff6fb3aaaf18782819d580fb2893781210b0b0a506c3e0bf9e84bbe56e831e4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            186,
+            227,
+            468,
+            379
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Quay tr lai So dò ban dau ",
+        "bbox": [
+            150,
+            379,
+            265,
+            395
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "HOME ",
+        "text_level": 1,
+        "bbox": [
+            268,
+            401,
+            310,
+            421
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Click vào biu tugng quay ve so do ban däu. ",
+        "bbox": [
+            161,
+            423,
+            252,
+            460
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "pt cgóheet hút ",
+        "bbox": [
+            313,
+            423,
+            503,
+            439
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Zoom in / Zoom out ",
+        "text_level": 1,
+        "bbox": [
+            148,
+            465,
+            238,
+            482
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Nguòi dung có the zoom in (phóng to) /zoom out (thu nh) màn hinh dé thun tin xem các thông tin trong sheet bang cách: ",
+        "bbox": [
+            159,
+            486,
+            503,
+            524
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Cách 1: Dé chut  vi trí cän zoom trên màn hinh: ",
+        "bbox": [
+            162,
+            529,
+            349,
+            545
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "- Zoom in: Gir phím Ctrl $^ +$ Lan chuot lèn.   \nZoom out: Gi phím Ctr $^ +$ Ln chut xuöng. ",
+        "bbox": [
+            189,
+            550,
+            369,
+            588
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Cách 2: Su dung chúc nng zoom ò góc phåi duói cung màn hình ",
+        "bbox": [
+            165,
+            593,
+            409,
+            609
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/63d552d67ece8010f7e444af66b1af3ffbd05d1d3659012ca124dc7493873a46.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            189,
+            609,
+            436,
+            715
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Truòng hgp click chut vào màn hinh nhieu lan làm toàn màn hinh trng, khòng hin thi thông tin $\\Rightarrow$ Nhân phím \"ESC\" dé hién thi lai thông tin. ",
+        "bbox": [
+            148,
+            720,
+            488,
+            756
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/e369869fcfe362e08dfb33bdd0e12c34c9d140e7b0bdec5e44ed7e3444e0645d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            181,
+            758,
+            472,
+            895
+        ],
+        "page_idx": 1
+    }
+]

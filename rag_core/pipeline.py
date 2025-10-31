@@ -154,7 +154,15 @@ class RAGPipeline:
         parser_type: Optional[str] = None
     ) -> ProcessingStatus:
         """Process document through the complete pipeline"""
-        
+
+        # Initialize ingest summary for tracking
+        ingest_summary = {
+            'parser_used': None,
+            'storage_issues': [],
+            'errors': {},
+            'warnings': {}
+        }
+
         try:
             # Update status
             status = ProcessingStatus(
@@ -163,10 +171,10 @@ class RAGPipeline:
                 progress=0.0
             )
             await self._update_status(status)
-            
+
             # 1. Parse document
             logger.info(f"Parsing document: {file_path}")
-            content_list = await ParserFactory.parse_document(file_path, parser_type)
+            content_list = await ParserFactory.parse_document(file_path, parser_type, ingest_summary)
             status.progress = 0.2
             await self._update_status(status)
             
@@ -180,16 +188,16 @@ class RAGPipeline:
             
             # 3. Process text with LightRAG
             logger.info("Processing text content")
-            await self._process_text_content(full_text, task_id, file_path)
+            await self._process_text_content(full_text, task_id, file_path, ingest_summary)
             status.progress = 0.6
             await self._update_status(status)
             
             # 4. Process multimodal content
             logger.info("Processing multimodal content")
             if self.lightrag:
-                await self._process_multimodal_content_lightrag(multimodal_items, task_id, file_path)
+                await self._process_multimodal_content_lightrag(multimodal_items, task_id, file_path, ingest_summary)
             else:
-                await self._process_multimodal_content(multimodal_items, task_id, file_path)
+                await self._process_multimodal_content(multimodal_items, task_id, file_path, ingest_summary)
             status.progress = 0.8
             await self._update_status(status)
             
@@ -206,24 +214,40 @@ class RAGPipeline:
             await self._save_metadata(metadata)
 
             # 6. Store document in graph database
-            await self.storage_manager.store_document(
-                doc_id=task_id,
-                file_path=str(file_path),
-                metadata={
-                    "file_type": Path(file_path).suffix,
-                    "total_pages": summary["structure"]["total_pages"],
-                    "chunks_count": await self._count_chunks(task_id),
-                    "entities_count": await self._count_entities_lightrag(task_id) if self.lightrag else len(await self._get_entities(task_id)),
-                    "processed_at": time.time()
-                }
-            )
+            try:
+                await self.storage_manager.store_document(
+                    doc_id=task_id,
+                    file_path=str(file_path),
+                    metadata={
+                        "file_type": Path(file_path).suffix,
+                        "total_pages": summary["structure"]["total_pages"],
+                        "chunks_count": await self._count_chunks(task_id),
+                        "entities_count": await self._count_entities_lightrag(task_id) if self.lightrag else len(await self._get_entities(task_id)),
+                        "processed_at": time.time()
+                    }
+                )
+            except Exception as e:
+                error_msg = f"Graph database storage failed: {str(e)}"
+                logger.warning(error_msg)
+                ingest_summary['storage_issues'].append(error_msg)
+                if 'errors' not in ingest_summary:
+                    ingest_summary['errors'] = {}
+                ingest_summary['errors']['Graph database storage failed'] = ingest_summary['errors'].get('Graph database storage failed', 0) + 1
 
             # 7. Find and create relationships between entities
             logger.info("Creating entity relationships")
-            if self.lightrag:
-                await self._build_cross_modal_relationships_lightrag(task_id)
-            else:
-                await self.storage_manager.find_entity_relationships(task_id)
+            try:
+                if self.lightrag:
+                    await self._build_cross_modal_relationships_lightrag(task_id, ingest_summary)
+                else:
+                    await self.storage_manager.find_entity_relationships(task_id)
+            except Exception as e:
+                error_msg = f"Entity relationship creation failed: {str(e)}"
+                logger.warning(error_msg)
+                ingest_summary['storage_issues'].append(error_msg)
+                if 'errors' not in ingest_summary:
+                    ingest_summary['errors'] = {}
+                ingest_summary['errors']['Entity relationship creation failed'] = ingest_summary['errors'].get('Entity relationship creation failed', 0) + 1
 
             # 8. Register document in document registry for API access
             await self._register_document(metadata)
@@ -235,7 +259,13 @@ class RAGPipeline:
             status.chunks_created = metadata.chunks_count
             status.entities_found = await self._count_entities_lightrag(task_id) if self.lightrag else len(await self._get_entities(task_id))
             await self._update_status(status)
-            
+
+            # Log final ingest summary
+            self._log_ingest_summary(ingest_summary, task_id, file_path, status)
+
+            # Attach summary to status for access by caller
+            status.ingest_summary = ingest_summary
+
             return status
             
         except Exception as e:
@@ -249,7 +279,8 @@ class RAGPipeline:
         self,
         text: str,
         doc_id: str,
-        file_path: str
+        file_path: str,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Process text content with chunking and storage"""
         
@@ -264,6 +295,7 @@ class RAGPipeline:
                 chunks=chunks,
                 doc_id=doc_id,
                 file_path=file_path,
+                ingest_summary=ingest_summary
             )
             return
 
@@ -278,6 +310,7 @@ class RAGPipeline:
                 file_path=file_path,
                 chunk_type="text",
                 page_idx=None,
+                ingest_summary=ingest_summary
             )
     
     def _split_text_into_chunks(self, text: str, chunk_size: int, chunk_overlap: int) -> List[str]:
@@ -314,7 +347,8 @@ class RAGPipeline:
         doc_id: str,
         file_path: str,
         chunk_type: str,
-        page_idx: Optional[int] = None
+        page_idx: Optional[int] = None,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Store a chunk with metadata, create embedding, and extract entities"""
 
@@ -343,13 +377,21 @@ class RAGPipeline:
             )
 
         except Exception as e:
-            logger.warning(f"Failed to process chunk {chunk_id}: {e}")
+            error_msg = f"Failed to process chunk {chunk_id}: {str(e)}"
+            logger.warning(error_msg)
+            if ingest_summary is not None:
+                ingest_summary['storage_issues'].append(error_msg)
+                if 'errors' not in ingest_summary:
+                    ingest_summary['errors'] = {}
+                error_key = "Chunk processing failed"
+                ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
     
     async def _process_multimodal_content(
         self,
         items: List[Dict[str, Any]],
         doc_id: str,
-        file_path: str
+        file_path: str,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Process multimodal content items"""
         
@@ -362,13 +404,20 @@ class RAGPipeline:
                 
                 # Process based on type
                 if item["type"] in ("image", "image".upper(), "IMAGE"):
-                    await self._process_image(item, context, doc_id, file_path)
+                    await self._process_image(item, context, doc_id, file_path, ingest_summary)
                 elif item["type"] in ("table", "TABLE"):
-                    await self._process_table(item, context, doc_id, file_path)
+                    await self._process_table(item, context, doc_id, file_path, ingest_summary)
                 elif item["type"] in ("equation", "EQUATION"):
-                    await self._process_equation(item, context, doc_id, file_path)
+                    await self._process_equation(item, context, doc_id, file_path, ingest_summary)
             except Exception as e:
-                logger.warning(f"Failed to process multimodal item: {str(e)}")
+                error_msg = f"Failed to process multimodal item: {str(e)}"
+                logger.warning(error_msg)
+                if ingest_summary is not None:
+                    ingest_summary['storage_issues'].append(error_msg)
+                    if 'errors' not in ingest_summary:
+                        ingest_summary['errors'] = {}
+                    error_key = "Multimodal item processing failed"
+                    ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
                 continue
     
     async def _process_image(
@@ -376,7 +425,8 @@ class RAGPipeline:
         item: Dict[str, Any],
         context: str,
         doc_id: str,
-        file_path: str
+        file_path: str,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Process image with vision model"""
         
@@ -411,7 +461,7 @@ class RAGPipeline:
         Caption: {', '.join(item.get('image_caption', []))}
         Analysis: {analysis}
         """
-        
+
         # Store multimodal chunk in graph and vector storage
         await self._store_chunk(
             chunk_id=hashlib.md5(chunk_content.encode()).hexdigest(),
@@ -419,7 +469,8 @@ class RAGPipeline:
             doc_id=doc_id,
             file_path=file_path,
             chunk_type=item["type"],
-            page_idx=item.get('page_idx', 0)
+            page_idx=item.get('page_idx', 0),
+            ingest_summary=ingest_summary
         )
     
     async def _process_table(
@@ -427,7 +478,8 @@ class RAGPipeline:
         item: Dict[str, Any],
         context: str,
         doc_id: str,
-        file_path: str
+        file_path: str,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Process table content"""
         
@@ -459,7 +511,7 @@ class RAGPipeline:
         {table_body}
         Analysis: {analysis}
         """
-        
+
         # Store multimodal chunk in graph and vector storage
         await self._store_chunk(
             chunk_id=hashlib.md5(chunk_content.encode()).hexdigest(),
@@ -467,7 +519,8 @@ class RAGPipeline:
             doc_id=doc_id,
             file_path=file_path,
             chunk_type=item["type"],
-            page_idx=item.get('page_idx', 0)
+            page_idx=item.get('page_idx', 0),
+            ingest_summary=ingest_summary
         )
     
     async def _process_equation(
@@ -475,7 +528,8 @@ class RAGPipeline:
         item: Dict[str, Any],
         context: str,
         doc_id: str,
-        file_path: str
+        file_path: str,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Process equation content"""
         
@@ -506,7 +560,7 @@ class RAGPipeline:
         Description: {text}
         Explanation: {explanation}
         """
-        
+
         # Store multimodal chunk in graph and vector storage
         await self._store_chunk(
             chunk_id=hashlib.md5(chunk_content.encode()).hexdigest(),
@@ -514,7 +568,8 @@ class RAGPipeline:
             doc_id=doc_id,
             file_path=file_path,
             chunk_type=item["type"],
-            page_idx=item.get('page_idx', 0)
+            page_idx=item.get('page_idx', 0),
+            ingest_summary=ingest_summary
         )
     
     
@@ -619,7 +674,8 @@ class RAGPipeline:
         self,
         chunks: List[str],
         doc_id: str,
-        file_path: str
+        file_path: str,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Insert text chunks into LightRAG storage"""
         if not self.lightrag:
@@ -655,14 +711,22 @@ class RAGPipeline:
             logger.info(f"LightRAG text insertion completed with track_id: {track_id}")
 
         except Exception as e:
-            logger.error(f"LightRAG text insertion failed: {str(e)}")
+            error_msg = f"LightRAG text insertion failed: {str(e)}"
+            logger.error(error_msg)
+            if ingest_summary is not None:
+                ingest_summary['storage_issues'].append(error_msg)
+                if 'errors' not in ingest_summary:
+                    ingest_summary['errors'] = {}
+                error_key = "LightRAG text insertion failed"
+                ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
             raise
 
     async def _process_multimodal_content_lightrag(
         self,
         items: List[Dict[str, Any]],
         doc_id: str,
-        file_path: str
+        file_path: str,
+        ingest_summary: Dict[str, Any] = None
     ):
         """Process multimodal content using LightRAG"""
         if not self.lightrag:
@@ -799,7 +863,14 @@ class RAGPipeline:
                 logger.info(f"LightRAG multimodal insertion completed with track_id: {track_id}")
 
         except Exception as e:
-            logger.error(f"LightRAG multimodal processing failed: {str(e)}")
+            error_msg = f"LightRAG multimodal processing failed: {str(e)}"
+            logger.error(error_msg)
+            if ingest_summary is not None:
+                ingest_summary['storage_issues'].append(error_msg)
+                if 'errors' not in ingest_summary:
+                    ingest_summary['errors'] = {}
+                error_key = "LightRAG multimodal processing failed"
+                ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
             # Don't raise - multimodal processing is supplementary
             pass
 
@@ -816,7 +887,7 @@ class RAGPipeline:
             logger.warning(f"Failed to count entities via LightRAG: {e}")
             return 0
 
-    async def _build_cross_modal_relationships_lightrag(self, doc_id: str):
+    async def _build_cross_modal_relationships_lightrag(self, doc_id: str, ingest_summary: Dict[str, Any] = None):
         """Build cross-modal relationships using LightRAG"""
         if not self.lightrag:
             logger.warning("LightRAG not initialized, skipping cross-modal relationship building")
@@ -833,7 +904,14 @@ class RAGPipeline:
             logger.info(f"Cross-modal relationships built for document {doc_id}")
 
         except Exception as e:
-            logger.error(f"Cross-modal relationship building failed: {str(e)}")
+            error_msg = f"Cross-modal relationship building failed: {str(e)}"
+            logger.error(error_msg)
+            if ingest_summary is not None:
+                ingest_summary['storage_issues'].append(error_msg)
+                if 'errors' not in ingest_summary:
+                    ingest_summary['errors'] = {}
+                error_key = "Cross-modal relationship building failed"
+                ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
             # Don't raise - relationship building is supplementary
             pass
 
@@ -843,3 +921,44 @@ class RAGPipeline:
         status_path.parent.mkdir(exist_ok=True)
         with open(status_path, "w") as f:
             f.write(status.json())
+
+    def _log_ingest_summary(self, ingest_summary: Dict[str, Any], task_id: str, file_path: str, status: ProcessingStatus):
+        """Log comprehensive ingest summary"""
+        logger.info("="*80)
+        logger.info(f"[INGEST SUMMARY] Document processing completed for task_id={task_id}")
+        logger.info(f"[INGEST SUMMARY] File: {file_path}")
+        logger.info(f"[INGEST SUMMARY] Parser used: {ingest_summary.get('parser_used', 'unknown')}")
+
+        # Log storage issues
+        storage_issues = ingest_summary.get('storage_issues', [])
+        if storage_issues:
+            logger.warning(f"[INGEST SUMMARY] Storage issues detected ({len(storage_issues)}):")
+            for issue in storage_issues:
+                logger.warning(f"[INGEST SUMMARY]   - {issue}")
+        else:
+            logger.info("[INGEST SUMMARY] No storage issues detected")
+
+        # Log errors with counts
+        errors = ingest_summary.get('errors', {})
+        if errors:
+            logger.warning(f"[INGEST SUMMARY] Errors encountered ({sum(errors.values())} total):")
+            for error_msg, count in errors.items():
+                logger.warning(f"[INGEST SUMMARY]   - {error_msg}: {count} occurrence(s)")
+        else:
+            logger.info("[INGEST SUMMARY] No errors encountered")
+
+        # Log warnings with counts
+        warnings = ingest_summary.get('warnings', {})
+        if warnings:
+            logger.warning(f"[INGEST SUMMARY] Warnings encountered ({sum(warnings.values())} total):")
+            for warning_msg, count in warnings.items():
+                logger.warning(f"[INGEST SUMMARY]   - {warning_msg}: {count} occurrence(s)")
+        else:
+            logger.info("[INGEST SUMMARY] No warnings encountered")
+
+        # Log final statistics
+        logger.info(f"[INGEST SUMMARY] Final statistics:")
+        logger.info(f"[INGEST SUMMARY]   - Chunks created: {status.chunks_created}")
+        logger.info(f"[INGEST SUMMARY]   - Entities found: {status.entities_found}")
+        logger.info(f"[INGEST SUMMARY]   - Processing status: {status.status}")
+        logger.info("="*80)

@@ -57,10 +57,20 @@ class BaseParser:
 class MineruParser(BaseParser):
     async def parse_document(self, file_path: str) -> List[Dict[str, Any]]:
         """Parse document using MinerU"""
-        
+
         # Create temporary directory for output
         with tempfile.TemporaryDirectory() as temp_dir:
-            # Build MinerU command (try CLI first, then python -m mineru)
+            # Convert Office documents to PDF first, skip if already PDF
+            from .conversion.excel_to_pdf import convert_office_to_pdf, needs_conversion
+            if needs_conversion(file_path):
+                logger.info("[MINERU] Converting Office document to PDF: %s", file_path)
+                file_path, _ = convert_office_to_pdf(file_path, temp_dir)
+            else:
+                logger.debug("[MINERU] Skipping conversion for PDF file: %s", file_path)
+
+            # Build MinerU command using the virtual environment executable
+            mineru_cmd = str(Path(sys.executable).parent / "mineru")
+
             base_args = [
                 "-p", file_path,
                 "-o", temp_dir,
@@ -72,28 +82,16 @@ class MineruParser(BaseParser):
                 base_args.extend(["--formula", "true"])
             if self.config["enable_tables"]:
                 base_args.extend(["--table", "true"])
-            
-            # Try different ways to run mineru
-            venv_mineru = str(Path(sys.executable).parent / "mineru")
-            tried_cmds = [
-                ["mineru", *base_args],  # Direct command
-                [sys.executable, "-m", "mineru", *base_args],  # Python module
-                [venv_mineru, *base_args],  # venv/bin/mineru
-            ]
-            
-            last_err: Optional[str] = None
-            for cmd in tried_cmds:
-                try:
-                    result = subprocess.run(cmd, capture_output=True, text=True)
-                    if result.returncode == 0:
-                        break
-                    last_err = result.stderr
-                except FileNotFoundError as e:
-                    last_err = str(e)
-                    continue
-            else:
-                # None succeeded
-                raise Exception(f"MinerU failed to run: {last_err}")
+
+            # Use the virtual environment mineru executable
+            cmd = [mineru_cmd, *base_args]
+
+            try:
+                result = subprocess.run(cmd, capture_output=True, text=True)
+                if result.returncode != 0:
+                    raise Exception(f"MinerU command failed: {result.stderr}")
+            except FileNotFoundError as e:
+                raise Exception(f"MinerU executable not found at {mineru_cmd}: {str(e)}")
             
             # Read output files
             stem = Path(file_path).stem
@@ -183,8 +181,9 @@ class DoclingParser(BaseParser):
         try:
             # Try to use docling if available
             with tempfile.TemporaryDirectory() as temp_dir:
+                docling_cmd = str(Path(sys.executable).parent / "docling")
                 cmd = [
-                    "docling",
+                    docling_cmd,
                     "convert",
                     file_path,
                     "--output-dir", temp_dir,
@@ -259,25 +258,38 @@ class DoclingParser(BaseParser):
                             "text_level": 0
                         }]
 
+            elif file_ext in ['.xlsx', '.xls']:
+                # Handle Excel files with improved structure preservation
+                return await self._parse_excel_file(file_path)
+
             else:
-                # Try PDF extraction as fallback
-                import PyPDF2
+                # Try PDF extraction as fallback for other file types
+                try:
+                    import PyPDF2
 
-                content_list = []
-                with open(file_path, 'rb') as file:
-                    pdf_reader = PyPDF2.PdfReader(file)
+                    content_list = []
+                    with open(file_path, 'rb') as file:
+                        pdf_reader = PyPDF2.PdfReader(file)
 
-                    for page_num, page in enumerate(pdf_reader.pages):
-                        text = page.extract_text()
-                        if text.strip():
-                            content_list.append({
-                                "type": ContentType.TEXT,
-                                "text": text.strip(),
-                                "page_idx": page_num,
-                                "text_level": 0
-                            })
+                        for page_num, page in enumerate(pdf_reader.pages):
+                            text = page.extract_text()
+                            if text.strip():
+                                content_list.append({
+                                    "type": ContentType.TEXT,
+                                    "text": text.strip(),
+                                    "page_idx": page_num,
+                                    "text_level": 0
+                                })
 
-                return content_list
+                    return content_list
+                except Exception as e:
+                    logger.warning(f"PDF extraction failed for {file_ext} file: {str(e)}")
+                    return [{
+                        "type": ContentType.TEXT,
+                        "text": f"Unsupported file type {file_ext}: {Path(file_path).name}",
+                        "page_idx": 0,
+                        "text_level": 0
+                    }]
 
         except ImportError:
             logger.error("PyPDF2 not available for fallback text extraction")
@@ -297,6 +309,99 @@ class DoclingParser(BaseParser):
                 "page_idx": 0,
                 "text_level": 0
             }]
+    
+    async def _parse_excel_file(self, file_path: str) -> List[Dict[str, Any]]:
+        """Minimal Excel parsing fallback using pandas/openpyxl.
+        Produces TABLE items by converting sheets to markdown-like text.
+        """
+        try:
+            import pandas as pd
+        except Exception as e:
+            logger.warning(f"pandas not available for Excel parsing: {str(e)}")
+            return [{
+                "type": ContentType.TEXT,
+                "text": f"Excel file {Path(file_path).name} processed (no table parser available)",
+                "page_idx": 0,
+                "text_level": 0
+            }]
+
+        try:
+            # Read all sheets without dtype coercion, keep headers
+            sheets = pd.read_excel(file_path, sheet_name=None, engine="openpyxl")
+        except Exception as e:
+            logger.warning(f"Failed reading Excel via pandas: {str(e)}")
+            return [{
+                "type": ContentType.TEXT,
+                "text": f"Excel file {Path(file_path).name} could not be parsed",
+                "page_idx": 0,
+                "text_level": 0
+            }]
+
+        content_list: List[Dict[str, Any]] = []
+        max_rows_per_chunk = 200
+
+        for sheet_name, df in sheets.items():
+            # Fill NaNs for readability
+            safe_df = df.copy()
+            safe_df = safe_df.where(pd.notnull(safe_df), "")
+
+            total_rows = len(safe_df)
+            if total_rows == 0:
+                table_body = f"Sheet: {sheet_name}\n(Empty sheet)"
+                content_list.append({
+                    "type": ContentType.TABLE,
+                    "table_body": table_body,
+                    "table_caption": [f"Sheet {sheet_name}"],
+                    "table_footnote": [],
+                    "page_idx": 0
+                })
+                continue
+
+            # Chunk by rows
+            for start in range(0, total_rows, max_rows_per_chunk):
+                end = min(start + max_rows_per_chunk, total_rows)
+                chunk_df = safe_df.iloc[start:end]
+
+                # Convert to simple pipe table (limited width)
+                # Cap very long cell text to keep memory reasonable
+                def truncate_cell(val: Any) -> str:
+                    s = str(val)
+                    return (s[:500] + "…") if len(s) > 500 else s
+
+                limited_df = chunk_df.applymap(truncate_cell)
+                # Include headers
+                header = list(limited_df.columns)
+                rows = [header] + limited_df.astype(str).values.tolist()
+
+                # Build markdown-like table
+                def row_to_pipe(r: List[str]) -> str:
+                    return "| " + " | ".join(r) + " |"
+
+                table_lines = []
+                if header:
+                    table_lines.append(row_to_pipe([str(h) for h in header]))
+                    table_lines.append("| " + " | ".join(["---"] * len(header)) + " |")
+                    for r in limited_df.astype(str).values.tolist():
+                        table_lines.append(row_to_pipe([str(c) for c in r]))
+                else:
+                    # No headers
+                    for r in rows:
+                        table_lines.append(row_to_pipe([str(c) for c in r]))
+
+                table_body = (
+                    f"Sheet: {sheet_name} (rows {start + 1}-{end} of {total_rows})\n" +
+                    "\n".join(table_lines)
+                )
+
+                content_list.append({
+                    "type": ContentType.TABLE,
+                    "table_body": table_body,
+                    "table_caption": [f"Sheet {sheet_name}"],
+                    "table_footnote": [],
+                    "page_idx": 0
+                })
+
+        return content_list
     
     def _process_content_list(self, content_list: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Process and validate content list (same as MineruParser)"""
@@ -351,7 +456,7 @@ class ParserFactory:
     def get_parser(parser_type: Optional[str] = None) -> BaseParser:
         """Get appropriate parser based on type or config"""
         parser_type = parser_type or config.PARSER
-        
+
         if parser_type.lower() == "mineru":
             return MineruParser()
         elif parser_type.lower() == "docling":
@@ -360,7 +465,94 @@ class ParserFactory:
             raise ValueError(f"Unsupported parser type: {parser_type}")
 
     @staticmethod
-    async def parse_document(file_path: str, parser_type: Optional[str] = None) -> List[Dict[str, Any]]:
+    async def parse_document(file_path: str, parser_type: Optional[str] = None, ingest_summary: Dict[str, Any] = None) -> List[Dict[str, Any]]:
         """Parse document using appropriate parser"""
+        from pathlib import Path
+
+        # Auto-select parser based on file type (following RAG-Anything template)
+        file_ext = Path(file_path).suffix.lower()
+
+        # For Office documents (Excel, Word, PowerPoint), prefer MinerU
+        # MinerU handles Office documents natively with full content extraction
+        if file_ext in ['.xlsx', '.xls', '.docx', '.doc', '.pptx', '.ppt']:
+            if not parser_type or parser_type.lower() == "auto":
+                parser_type = "mineru"  # MinerU is better for Office docs
+        elif file_ext in ['.pdf']:
+            # Use MinerU as default for PDF parsing - it provides superior layout analysis
+            if not parser_type or parser_type.lower() == "auto":
+                parser_type = "mineru"
+        else:
+            # For other formats, use configured default
+            pass
+
+        # Get the appropriate parser
         parser = ParserFactory.get_parser(parser_type)
-        return await parser.parse_document(file_path)
+        actual_parser_used = parser.__class__.__name__.replace('Parser', '').lower()
+
+        # Track parser usage in summary if provided
+        if ingest_summary is not None:
+            ingest_summary['parser_used'] = actual_parser_used
+
+        # Try the primary parser first
+        try:
+            result = await parser.parse_document(file_path)
+            if result:  # If we got meaningful content, return it
+                return result
+        except Exception as e:
+            logger.warning(f"Primary parser {parser.__class__.__name__} failed for {file_path}: {str(e)}")
+            # Track error in summary
+            if ingest_summary is not None:
+                if 'errors' not in ingest_summary:
+                    ingest_summary['errors'] = {}
+                error_key = f"Primary parser {actual_parser_used} failed"
+                ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
+
+        # Fallback: try alternative parser if primary fails
+        if isinstance(parser, MineruParser):
+            try:
+                fallback_parser = DoclingParser()
+                result = await fallback_parser.parse_document(file_path)
+                if result:
+                    logger.info(f"Using Docling parser as fallback for {file_path}")
+                    # Update parser used in summary
+                    if ingest_summary is not None:
+                        ingest_summary['parser_used'] = 'docling (fallback)'
+                    return result
+            except Exception as e:
+                logger.warning(f"Fallback parser also failed for {file_path}: {str(e)}")
+                # Track error in summary
+                if ingest_summary is not None:
+                    if 'errors' not in ingest_summary:
+                        ingest_summary['errors'] = {}
+                    error_key = "Fallback parser docling failed"
+                    ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
+        elif isinstance(parser, DoclingParser):
+            try:
+                fallback_parser = MineruParser()
+                result = await fallback_parser.parse_document(file_path)
+                if result:
+                    logger.info(f"Using MinerU parser as fallback for {file_path}")
+                    # Update parser used in summary
+                    if ingest_summary is not None:
+                        ingest_summary['parser_used'] = 'mineru (fallback)'
+                    return result
+            except Exception as e:
+                logger.warning(f"Fallback parser also failed for {file_path}: {str(e)}")
+                # Track error in summary
+                if ingest_summary is not None:
+                    if 'errors' not in ingest_summary:
+                        ingest_summary['errors'] = {}
+                    error_key = "Fallback parser mineru failed"
+                    ingest_summary['errors'][error_key] = ingest_summary['errors'].get(error_key, 0) + 1
+
+        # Final fallback: basic text extraction
+        logger.warning(f"All parsers failed for {file_path}, using basic fallback")
+        fallback_parser = DoclingParser()
+        # Track fallback usage in summary
+        if ingest_summary is not None:
+            ingest_summary['parser_used'] = 'fallback text extraction'
+            if 'warnings' not in ingest_summary:
+                ingest_summary['warnings'] = {}
+            warning_key = "All parsers failed, using basic text extraction"
+            ingest_summary['warnings'][warning_key] = ingest_summary['warnings'].get(warning_key, 0) + 1
+        return await fallback_parser._fallback_text_extraction(file_path)

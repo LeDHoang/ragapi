@@ -2,6 +2,10 @@ from pydantic_settings import BaseSettings
 from typing import Optional, Dict, Any
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load .env into process environment early, so os.getenv picks it up regardless of CWD
+load_dotenv()  # Uses default .env in current or parent directories
 
 class RAGConfig(BaseSettings):
     # Base paths
@@ -9,7 +13,7 @@ class RAGConfig(BaseSettings):
     UPLOAD_DIR: str = "./uploads"
     
     # Parser configuration
-    PARSER: str = "docling"  # or "mineru"
+    PARSER: str = "mineru"  # Primary parser for Office documents, PDFs, images
     PARSE_METHOD: str = "auto"  # "auto", "ocr", "txt"
     
     # AWS Configuration
@@ -18,18 +22,18 @@ class RAGConfig(BaseSettings):
     AWS_REGION: str = "us-east-1"
     BEDROCK_MODEL_ID: str = "anthropic.claude-v2"
     
-    # OpenAI Configuration
-    OPENAI_API_KEY: Optional[str] = None
-    OPENAI_BASE_URL: str = "https://api.openai.com/v1"
+    # OpenAI Configuration (read directly from environment)
+    OPENAI_API_KEY: Optional[str] = os.getenv("OPENAI_API_KEY")
+    OPENAI_BASE_URL: str = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
     
     # Model Configuration (with environment variable mapping)
-    EMBEDDING_MODEL: str = "text-embedding-3-small"
-    OPENAI_EMBEDDING_MODEL: Optional[str] = None  # For .env compatibility
+    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+    OPENAI_EMBEDDING_MODEL: Optional[str] = os.getenv("OPENAI_EMBEDDING_MODEL")  # For .env compatibility
     EMBEDDING_DIM: int = 1536
-    LLM_MODEL: str = "gpt-4o-mini"
-    OPENAI_LLM_MODEL: Optional[str] = None  # For .env compatibility
-    VISION_MODEL: str = "gpt-4o-mini"
-    OPENAI_VISION_MODEL: Optional[str] = None  # For .env compatibility
+    LLM_MODEL: str = os.getenv("LLM_MODEL", "gpt-4o-mini")
+    OPENAI_LLM_MODEL: Optional[str] = os.getenv("OPENAI_LLM_MODEL")  # For .env compatibility
+    VISION_MODEL: str = os.getenv("VISION_MODEL", "gpt-4o-mini")
+    OPENAI_VISION_MODEL: Optional[str] = os.getenv("OPENAI_VISION_MODEL")  # For .env compatibility
     LIGHTRAG_ENABLED: bool = True  # Set to False to disable LightRAG
     LIGHTRAG_WORKING_DIR: Optional[str] = None
     LIGHTRAG_KV_STORAGE: str = "JsonKVStorage"
@@ -54,6 +58,15 @@ class RAGConfig(BaseSettings):
     ENABLE_IMAGES: bool = True
     ENABLE_TABLES: bool = True
     ENABLE_EQUATIONS: bool = True
+
+    # LibreOffice Online conversion (Collabora CODE)
+    LOOL_ENABLED: bool = True
+    LOOL_BASE_URL: str = os.getenv("LOOL_BASE_URL", "http://localhost:9980")
+    LOOL_ENDPOINT: str = os.getenv("LOOL_ENDPOINT", "/lool/convert-to/pdf")
+    LOOL_TIMEOUT: int = int(os.getenv("LOOL_TIMEOUT", "600"))
+    LOOL_RETRY_ATTEMPTS: int = int(os.getenv("LOOL_RETRY_ATTEMPTS", "3"))
+    LOOL_RETRY_DELAY: float = float(os.getenv("LOOL_RETRY_DELAY", "5.0"))
+    LOOL_FALLBACK_TO_LOCAL: bool = True
     
     class Config:
         env_file = ".env"

@@ -1,0 +1,24 @@
+# Step-by-step workflow for Excel → PDF (preserves SmartArt/images)
+
+1. Start LibreOffice Online
+   docker-compose up -d
+
+2. (First time only) install Python deps
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+
+3. Split large workbooks into per-sheet XLSX chunks
+   source venv/bin/activate
+   python3 excel_splitter.py first8excel2.xlsx --max-sheets 4
+   python3 excel_splitter.py ChuyenTienDi_DoanhNghiep.xlsx --max-sheets 20
+   # outputs: split/<workbook>/sheets/<workbook>_part_XX.xlsx
+
+4. Submit chunks for conversion and combine PDFs (venv must be active)
+   source venv/bin/activate
+   python3 convert_parts_combine.py first8excel2
+   python3 convert_parts_combine.py ChuyenTienDi_DoanhNghiep
+   # outputs: split/<workbook>/pdf/ and split/<workbook>/pdf/combined_<workbook>.pdf
+
+5. When done
+   deactivate  # optional

@@ -1,0 +1,293 @@
+![](images/71eabf9c0e28b9791f322cc113f18342a1eebd136ec248798cb6dc277cbfd779.jpg)
+
+# Huóng dn su dung:
+
+# 1Di dén sheet có thông tin lién két:
+
+Nhüng ni dung có lièn két dën sheet chúa thòng tin khi dua chut dën s hin thi biu
+
+tu'gng:
+
+Click chut vào ni dung dó se dn dën sheet chúa thòng tin cän tim.
+
+![](images/40b2d54011123aa2816496cb6379445969197adb9752d76b801b4028c889a818.jpg)
+
+# Quay tr lai So do ban däu
+
+# HOME
+
+Click vào bieu tugng quay ve so do ban däu.
+
+phía trên cung góc trái các sheet chú'a thông tin de
+
+# Zoom in / Zoom out
+
+Nguòi dung có thé zoom in (phóng to) / zoom out (thu nh) màn hinh dê thun tin xem các thông tin trong sheet bang cách:
+
+Cách 1: Dé chut  vi trí cän zoom trên màn hình: Zoom in: Gi phím Ctrl $^ +$ Ln chut lên. Zoom out: Gi phím Ctrl $^ +$ Lan chut xuöng.
+
+Cách 2: S dung chúc nng zoom  góc phái duói cùng màn hinh
+
+![](images/54c0571c46b2408e08d786b0d8a6e1166769e7ab9408995389375d28feedb4b2.jpg)
+
+4.Truòng hgp click chut vào màn hình nhieu làn làm toàn màn hình trång, khòng hin thi thông tin $= >$ Nhân phím "ESC" dé hiên thi lai thông tin.
+
+![](images/87ca3fcbd80adf079e81699722d00d19e72ce718c5aa6e15e5a4ad24311ed2c6.jpg)
+
+<table><tr><td rowspan=2 colspan=1>MUC LUC(theo thú ty PL1.1)</td><td></td></tr><tr><td rowspan=1 colspan=1>ClcClcApchh</td></tr><tr><td rowspan=2 colspan=1>HnpávoVvàtnhap tai xuåt</td><td rowspan=1 colspan=1>TIEN HANG NK VAO VN</td></tr><tr><td rowspan=1 colspan=1>TAM NHAP TAI XUAT</td></tr><tr><td rowspan=1 colspan=1>1.2.Hàng hóa mua bán theo hinh thúcchuvén khau</td><td rowspan=1 colspan=1>CHUYEN KHAU</td></tr><tr><td rowspan=21 colspan=1>1Chhu </td><td rowspan=1 colspan=1>HOA HONG MOI GIÓI</td></tr><tr><td rowspan=1 colspan=1>PHI MOI GIÓI VAN CHUYEN</td></tr><tr><td rowspan=1 colspan=1>CUÓC PHI VAN CHUYEN HANG</td></tr><tr><td rowspan=1 colspan=1>PHI THUE NGOAI LAM THU TUC XNK</td></tr><tr><td rowspan=1 colspan=1>PHI GIA CONG</td></tr><tr><td rowspan=1 colspan=1>TTHOA HONG/THU/CHI H CUC PHI VAN CHUYEN</td></tr><tr><td rowspan=1 colspan=1>MUAVAN CHUYEN LINH KIEN, VAT TU, HI DO, XANG DAU...</td></tr><tr><td rowspan=1 colspan=1>PHI DAI LY LAM THU TUC CHO TAU TAI CÁNG NUÓC NGOAI</td></tr><tr><td rowspan=1 colspan=1>CHO THUYEN TRUNG, THUYEN VIEN THONG QUA DAILY</td></tr><tr><td rowspan=1 colspan=1>PHI THONG TIN LIEN LAC CUA TAU CHO NHA CUNG CAP DICH VY</td></tr><tr><td rowspan=1 colspan=1>PHI SUA CHOA CON TAU</td></tr><tr><td rowspan=1 colspan=1>CHI PHI LIEN QUAN HP TAC DU HQC</td></tr><tr><td rowspan=1 colspan=1>PHI /HOA HONG DCH VU/DAI LY DU LCH /BAN VÉ MAY BAY</td></tr><tr><td rowspan=1 colspan=1>TT HP DONG TAI BAO HIEM</td></tr><tr><td rowspan=1 colspan=1>PHI CHUYEN GIAO CONG NGHE</td></tr><tr><td rowspan=1 colspan=1>THANH TOAN TIEN BAN QUYEN (SU DUNG PHAN MEM, PHAT HANH SACH, PHAT SONG PHIM ANH, ..</td></tr><tr><td rowspan=1 colspan=1>TIEN LIEN QUAN DÉN KHAI THAC TRÒ CHOI DIN TU</td></tr><tr><td rowspan=1 colspan=1>PHI CHUYÉN NHUQNG BAN QUYEN SU DUNG HINH ANH /LOGO / TRADEMARK</td></tr><tr><td rowspan=1 colspan=1>PHI NHUQNG QUYEN THUONG MAI</td></tr><tr><td rowspan=1 colspan=1>PHI MÒI DI TUYÉN/DIÉN VIÉN/CA SI NUÓC NGOAI BIEU DIÉN</td></tr><tr><td rowspan=1 colspan=1>CHCah …</td></tr><tr><td rowspan=10 colspan=1>Ch</td><td rowspan=1 colspan=1>CUÓC PHI GÜI HANG MAU VE</td></tr><tr><td rowspan=1 colspan=1>HOA HONG MOI GIÓI XUÁT KHÁU LAO DQNG</td></tr><tr><td rowspan=1 colspan=1>PHI CAP CHUNG CHI DI BIEN CHO THUYEN VIEN</td></tr><tr><td rowspan=1 colspan=1>PHI C TAU</td></tr><tr><td rowspan=1 colspan=1>PHI QUA EO BIEN</td></tr><tr><td rowspan=1 colspan=1>CHI PHI CU NGUÒI CONG TAC/HQC TAP / KHAO SAT /THAM DU HI THAO /CUC HQP QUOC TE</td></tr><tr><td rowspan=1 colspan=1>TT PHI HQIVIEN CHO TO CHUC QUOC TE</td></tr><tr><td rowspan=1 colspan=1>CHI PHI THAM GIA HI CHQ / TRIEN LAM DO DV NUÓC NGOAI TO CHUC</td></tr><tr><td rowspan=1 colspan=1>CHUYEN TIEN PHUC VU HOAT DONG CUA VP DAI DIEN  NUÓC NGOAI</td></tr><tr><td rowspan=1 colspan=1>PHI ÜY THAC TU PHAP RA NUC NGOAI</td></tr><tr><td rowspan=4 colspan=1>3.Chuyén tin thanh toán các khon låiahu/honúngln quanXKNhàng hóa/ djch vy</td><td rowspan=1 colspan=1>LAI PHAT /LAI TRÁ CHAM THANH TOAN</td></tr><tr><td rowspan=1 colspan=1>BOI THUONG XUÁT KHÁU HH/DV</td></tr><tr><td rowspan=1 colspan=1>HOAN TRA TIEN UNG TRUÓC</td></tr><tr><td rowspan=1 colspan=1>TIEN PHAT BOC/D HANG CHAM</td></tr><tr><td rowspan=5 colspan=1>Chuyén tièn 1 chiu</td><td rowspan=1 colspan=1>CHUYEN THU NHAP VE NUÓC CHO NGUÒI NUÓC NGOAI LAM VIEC TAIVN</td></tr><tr><td rowspan=1 colspan=1>VITR HEO CAC CAM,  THU GIAHAUC, HINH HU, AC AP CHINHQUYEDA UNG NUC NGOAI.</td></tr><tr><td rowspan=1 colspan=1>TIR, VITRCAQTHIA, C B, CIRA.</td></tr><tr><td rowspan=1 colspan=1>OCG</td></tr><tr><td rowspan=1 colspan=1>UN THU HP PHAP CHO NGUI KHONG CU TRUTU S DU TREN TAI KHON</td></tr><tr><td rowspan=2 colspan=1>CHUYE TIEN LEN QUAN VAY, TRANQ</td><td rowspan=1 colspan=1>CHO NUC NGOAIVAY</td></tr><tr><td rowspan=1 colspan=1>VAY, TRA N NUC NGOAI</td></tr><tr><td rowspan=2 colspan=1>CHUYEN TIEN LIEN QUAN HOAT DNGDAU TU</td><td rowspan=1 colspan=1>DAU TU NUC NGOAI VAO VN</td></tr><tr><td rowspan=1 colspan=1>DAU TU RA NUÓC NGOAI</td></tr></table>
+
+# HOME
+
+Quy die chre t shung thi gie xicy Tht glan OV git Nl wThdl glan TT MMMHGCITT HVH88
+
+) ĐV thu thập đầy đủ chứng từ phù hợp với mục đích chuyển tiền/nhu cầu khác củ KH theo quy định. g từ chứng minh m
+
+ply sen vir dhe she cis nde sl
+
+văn bản yêu cầu/chỉ thị/phản hồi của KH đảm bảo phù hợp với bộ chữ ký hữu
+
+chữ ký số đã đăng ký với Sacombank (cá nhân
+
+hie sine 1 h
+
+dịch, ĐV có thể sử dụng lại chứng từ không thay đổi và có giá trị giao dịch để dịch ở các
+
+twiling
+
+ngày…. trị giá…” đồng thời yêu cầu KH bổ sung các chứng từ còn thiếu theo quy
+
+đăng ký với Sa nk, phải thu thập thêm Giấy giới thiệu ký bởi người đại diện hợp pháp và Giấy tờ tùy thân của người nhận, scan lưu đầy đủ Giấy giới thiệu và
+
+c. Hồ sơ/chứ
+
+d. Người giao nhận hồ sơ/chứng từ TTQT/BLQT với KH phải là chuyên viên phụ trác TTQT/BLQT tại ĐV hoặc CV/NV Hỗ trợ tại TT.NVNHBB/NVNHGD. Các chức danh khá
+
+cư trú...).
+
+Tìm hiểu kỹ giao dịch, KH đảm bảo giao dịch than
+
+h. Đối với hồ sơ TTQT/BLQT ngoài quy định, ĐV cần tư vấn hồ sơ
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Phan vikin ts</td><td colspan="2">Trich nhilem</td><td rowspan="2">Ghicho</td></tr><tr><td>oV</td><td>TT.NVNHGD</td></tr><tr><td colspan="5">Theg tin chung</td></tr><tr><td></td><td>Kales tre thling tin vi PORT. TTKB</td><td>x</td><td></td><td>Khadn 3 Mye N Quy dh chang nis Quy tein niby.</td></tr><tr><td>2</td><td>TTPGVKHDHL Xaie donh tf ech ey tri cia KH</td><td></td><td>x()</td><td>Mye I ele Phy lpe 1.</td></tr><tr><td></td><td>khalch hling cung Hs thing N chp:</td><td></td><td></td><td></td></tr><tr><td></td><td>The thire thing ti</td><td>*</td><td></td><td>Khoin 4 Mye N Gay drh chang cias Quy trinh ndly.</td></tr><tr><td>t2</td><td>Nepin ngil nie thing</td><td>*</td><td>×(</td><td>chang cis Quy tinh ndly. Khsin 8 Mye N Gry drh</td></tr><tr><td></td><td>Oi loge ehing ) thee myt dioh ohuydin ie</td><td></td><td>x()</td><td>Phy lue 1.1.</td></tr><tr><td></td><td>Tinh hop ligaias abc ehing s)</td><td>x()</td><td>(°)</td><td>- Khain &amp; Muc 8t cia Phu lue - Diim 1.4 Kodn 1 Muc IV Quy riby</td></tr><tr><td></td><td>Tak khodn *i davng</td><td></td><td>x (′)</td><td>Khodin 5 Muc I ca Phy lc d shung ci Quy sinhy. rikyp.</td></tr><tr><td>6</td><td>chuyin sin in quan Yiee cllu die blet k w, wi ng nule</td><td>x()</td><td>x (°)</td><td></td></tr></table>
+
+đích bổ sung vốn lưu động/kinh doanh ngắn hạn)/Phiếu đề xuất hạn mức chuyển tiền ra nước ngoài (BMTTQT.TT.06)/Phiếu đề xuất hạn mức chuyển tiền ra nước ngoài (Áp dụng đối với KH do PGD giới thiệu) (BM-TTQT.TT.08)
+
+(nếu phát sinh th
+
+# an o
+
+![](images/82bc96d5b5bd7820a1963831e9889816ed76332e51745d931f0279e7ca03e80b.jpg)  
+PHỤ LỤC 1 - I. GIẢI THÍCH TỪ NGỮ
+
+n tiền trên IB về TT.NVNHGD và CV
+
+ü Tài liệu: “Hướng dẫn sử – e.FT” B12: Trường hợp uyển tiền qua MG
+
+![](images/4a426e39f87ea28b104be38484f1bc98a80d8e8c46a019268d636d8c2aecc1b2.jpg)
+
+dịch chuyển tiền đi trê
+
+ü Tài liệu: Hướng dẫn sử dụng chương trình Agent Portal và QĐ 68/2019/QĐ-VBLQ v/v ban hành Dịch vụ chuyển tiền ra
+
+Trường hợp Giao dịch không thành công: NHNNg hoàn trả tiền về do không đúng tên, số tài khoản, không phù hợp chín
+
+Ng v s ứng với số r ủa hồ sơ đã chuyển ü Cập nhật trạng thái hồ sơ trên Chương trình QLHSTT và ĐNTT theo quy định tại Phụ lục 1.4.
+
+![](images/c9aa078c2b0f9df336e45620bbd7c05b453b41654ccc6731fac44def71cc3041.jpg)
+
+ngoii dugic thinh likp, hoet dong tsi Viet Nam theo
+
+shie kinh 16
+
+h - nghà nghidp, 1t6 chano xs hoi, t6 chio xis hgi - quhi Vi
+
+<table><tr><td></td><td>Hps enis ohuyln sikn re rutdie ngoibl ein ci Tnding tix nguli thy nhan</td><td>B</td><td>x(∞</td><td>Difre 2.1 K0w Phy hye niby Didive 4.1 Kholin Phy has mbky. 4 Muc ll cila</td></tr><tr><td colspan="5">buaing i ruie agak 05 ylKH of chite</td></tr><tr><td>6</td><td>Oiu kidin thanh toin chuplin sin ras nudc regpabl ik qus hagt ding regoei thureng qpue bikn pipi</td><td></td><td></td><td>Khedln 1 Myc II cia Phy kuc nky.</td></tr><tr><td></td><td>Oilu kiin thanh todin, chupkin sin sk sukc res murine neguiki dli vii KH of thive</td><td></td><td></td><td>Khedn 2 Mpc II cia Phu luc nky.</td></tr><tr><td></td><td>thye hilen TY wi Hen mirc clip cho KOH trvils vih TT thark cb ln cun hopt tmin siken mae haing dirg ngoei thueng</td><td></td><td></td><td>Mue I cie Phuy luc nky. Thalt 3.2.1 Dilm 3.2 Kholn</td></tr><tr><td></td><td>qua biken gidi SE av khi dung cia THHD 46i wik Ni w chaplin sin hing</td><td></td><td></td><td>Mue It cin Phy hye miry, That 3.2.2 Dilen 2.2 Khwoken</td></tr><tr><td></td><td>hde trsl su Taling tix ngull thy</td><td></td><td>x(¬</td><td>Difiv 4.2 Kholin 4 Muc I cia</td></tr><tr><td></td><td>Fuding d rus ngoak Hie war pien hen TT k</td><td>*</td><td>*</td><td>Phe los i Phe hee 1.4.</td></tr><tr><td>12</td><td>Hb sa id sung TT trvidle</td><td>x</td><td>x ()</td><td>Phy luc 1.4.</td></tr></table>
+
+C qun ei gis,  qn ei din l
+
+hinh thi ie iV  ud o tham
+
+9 Nkhi r   T6  g th n8
+
+<table><tr><td rowspan=1 colspan=1>Loai sai bit</td><td rowspan=1 colspan=1>Hinh thúc gii quyét</td></tr><tr><td rowspan=1 colspan=1>Chúng tù khòng thé hin/thé hin sai: s/ngày Hop döng, s/ngàyHóa don, tên/dia chi nguòi XK/NK, tén/dia chi nguòi chuyen tin/nguòithu hung trên báo có qua Vietcombank/ngân hàng khác, phuong thúcthanh toán, .. mà các sai bit nay không lam thay di bån chät ho so(mc dích, ni dung giao dich), nhâm lân vói h so khác và các thòng tincòn lai khóp dúng.</td><td rowspan=3 colspan=1>Chäp nhn cn cú giài trinh hop ly cúa KH bng vn bân (hoctrèn LCT/Giây de nghi/Giây yêu cäu/...).</td></tr><tr><td rowspan=1 colspan=1>Tri giá trên TKHQ, Chúng tù&#x27; báo có, . cao hon/thâp hon so vóiLnh chuyén tien/Hóa don/Hop döng/Thôa thun hoàn trå tien/... (hocnguc lai) do làm tròn s thâp phân hoc khòng quá 100 USD (hocngoai te khác tuong duong).</td></tr><tr><td rowspan=1 colspan=1>TKHQ b sung cho hö sσ TT trå truóc hàng hóa thé hin ngay hoànthn kim tra và/hoc ngày thông quan truócngày thanh toán tr truó.</td></tr></table>
+
+# Quy định chung - 3. Quy định về kiểm tra thông tin liên quan đến phòng, chống, rửa tiền, tài trợ khủng
+
+bố, tài trợ phổ biến vũ khí hủy diệt hàng loạt a. ĐV, TT.NVNHBB kiểm tra thông tin trong hồ sơ TTQT trước/trong khi thực hiện giao dịch và hồ sơ KH bổ sung với thông tin mới trên cơ sở:
+
+Đảm bảo thoả điều kiện về PCRT, TTKB, TTPBVKHDHL: đối tượng tham gia vào giao dịch và/hoặc bất kỳ thông tin có liên quan trong giao dịch (bao gồm nhưng không giới hạn các thông tin như: tên cá nhân/tổ chức có liên quan, ngân hàng, quốc gia, hàng hóa/dịch vụ, nơi/cảng đi, nơi/cảng đến, nguồn gốc xuất xứ của hàng hóa, tên con tàu/cờ tàu/quốc tịch tàu, …) đều không thuộc danh sách đen; danh sách trì hoãn giao dịch; danh sách cấm vận, trừng phạt và/hoặc bất kỳ danh sách nào khác có nội dung cấm/phong tỏa/ngăn chặn/hạn chế vì có liên quan đến PCRT, TTKB, TTPBVKHDHL được ban hành bởi cơ quan có thẩm quyền tại Việt Nam và/hoặc bởi các cơ quan/tổ chức quốc tế, quốc gia khác bao gồm nhưng không giới hạn: Liên Hợp Quốc (UN), Lực lượng đặc nhiệm tài chính quốc tế (FATF), Hoa Kỳ (US), Cộng đồng chung Châu Âu (EU) và bất kỳ các cơ quan/tổ chức khác mà Sacombank đã thực hiện cam kết tuân thủ trong từng thời kỳ.
+
+b. ĐV/TT.NVNHGD/TT.NVNHBB kiểm tra hồ sơ trên cơ sở phù hợp Quy định PCRT, TTKB,
+
+NGAN HANG THUONG MAI CO PHANSAI GON THUONG TINS6:3366 /2020/TB-TT
+
+CONG HOA XA HOI CH NGHIA VIT NAM DOc lp - Ty do - Hanh phuc Tp.HCM, ngdx29 th4ng19 plm 2020
+
+PHU LUC [DANH SACH QUOC GIAVUNG LANH TH B CAM VAN HOC HAN CHE GIAO DICH (SANCTIONED COUNTRY (Ban hanh kém Thong bd0 s55366a/2020/0D-TB ngay23/40/2020)   
+
+<table><tr><td>STT</td><td>Quda gia</td><td>STT</td><td>Qudc gla</td></tr><tr><td>1.</td><td>Afghanistan</td><td>20.</td><td>Moldova</td></tr><tr><td>2.</td><td>Albania</td><td>21.</td><td>Montenegro</td></tr><tr><td>3.</td><td>Belarus</td><td>22.</td><td>Myanmar/Burma</td></tr><tr><td>4.</td><td>Bosnia and Herzegovina</td><td>23.</td><td>North Korea/ Democratic People&#x27;s Republic of Korea</td></tr><tr><td>5.</td><td>Burundi</td><td>24.</td><td>North Macedonia/Macedonia</td></tr><tr><td>6.</td><td>Central African Republic</td><td>25.</td><td>Republic of Guinea</td></tr><tr><td>7.</td><td>Croatia</td><td>26.</td><td>Republic of Nicaragua</td></tr><tr><td>8.</td><td>Cuba</td><td>27.</td><td>Russia</td></tr><tr><td>9.</td><td>Democratic Republic Congo of the</td><td>28.</td><td>Serbia</td></tr><tr><td>10.</td><td>Egypt</td><td>29.</td><td>Somalia</td></tr><tr><td>11.</td><td>Guinea-Bissau</td><td>30.</td><td>South Sudan</td></tr><tr><td>12.</td><td>Haiti</td><td>31.</td><td>Sudan</td></tr><tr><td>13.</td><td>Hong Kong</td><td>32.</td><td>Syrian Arab Republic (Syria)</td></tr><tr><td>14.</td><td>Iran</td><td>33.</td><td>Tunisia</td></tr><tr><td>15.</td><td>Iraq</td><td>34.</td><td>Turkey</td></tr><tr><td>16.</td><td>Kosovo</td><td>35.</td><td>Ukraine</td></tr><tr><td>17.</td><td>Lebanon</td><td>36.</td><td>Venezuela</td></tr><tr><td>18.</td><td>Liby8</td><td>37.</td><td>Yemen</td></tr><tr><td>19.</td><td>Mali</td><td>38.</td><td>Zimbabwe</td></tr></table>
+
+# THONG BAO
+
+Vn th y d e quan n qdc ga/v an th b  n o han
+
+Can cir Quydt dinh a5 90201910D-vBLQ ngiy 31/712019 wiv ban hanh Quy dinh v phong, chdng rih tin (a0 902019/0p-VeLQ):
+
+TTPBVKHDHL hiện hành và/hoặc các văn bản sửa đổi, bổ sung, thay thế trong từng thời kỳ.   
+
+<table><tr><td>5tt</td><td>Noi dung</td><td></td><td>Huding diln</td></tr><tr><td></td><td>Trach nhiem kiem tra</td><td>CN/PGD (TT.TTQT khOng hju kidm)</td><td>Chuong trinh AML Express (User Viewer)</td></tr><tr><td>2 3</td><td>Kénh ki6m tra Noi dung kiém tra</td><td>nhung khong gioi han:</td><td>Tat cà thong tin trén tait cà càc chung tu cua ho sd chuyéin tién ra nudc ngoài, bao göm Qu6c gia (nh&amp;p khdu, xudit khdu, trung chuyen, xudit xúr hang ho. ...)</td></tr><tr><td>4</td><td>Nguyén tic xir ly</td><td></td><td>T6 chuc/ca nhan: Ngudi mua/chuyein tien, nguoi ban/nhan tien, ngan hàng trung gian/nhan tian, hang van chuyén, nhà san xut. Con tau, co tau, ... Cang/Noi di/dén/trung chuyen Ten hang nhap khilu Kidm tra nhanh co bait ky thong tin nào trong chung tu lién quan dein qudc gia caim, han che giso dich theo Thong bao 806/2019/TB-KTrNB ngày 18/3/2019 và cac van</td></tr><tr><td></td><td></td><td>trong do co thém mdi/thay ddi caic thong tin vié qudc gia, to churc/cai nhàn, ..(nhu</td><td>ban s0ra d6i, bo sung. thay th6 trong tong thoi ky hay khong? Neu co lien quan thi chuyen ho so vie Phong Tuin tho d6 tham muu ve PCRT. chte  ton   h omt Cu Neu khong co thong tin lien quan dein qudc gia caim, han che giao dich thi kiem tra AML Express: thyuic hien giao dich theo quy dinh hien hanh: Neu ket quà kiém tra la &quot;KHONG TRUNG&quot;, CN/PGD chuyen ho sd ve TT.TTOT Neu ket quà kifm tra la TRUNG&quot; hodic CN/PGD khong co co sò d6 nh&amp;in dinh Ia *TRUNG&quot; hodc &quot;KHONG TRUNG&quot;, CN/PGD phdi chuyén h0 so v6 Phong Kt quà kidm ta chl co giatr trong ngy chuydn tien ao gm càkt quàkiem r Tuàn Thú d4 tham muu ve PCRT: c0a CN/PGD và k6t quà ki6m tra c0a Phong Tuàn thG) Vi li do niào do ma ho so chuylin tin thye hifn sau ngay kilim tra PCRT, CNUPGD phal kidlim tra pCRT iai tren Chuong trinh AML Express vao ngay Su khi da co két quà kidm tra PCRT. ndu khach hang b sung/thay the chg t chuyein tien ra nude ngodi.</td></tr><tr><td>5</td><td>Tai li€u tham khào</td><td>Tuàn thi.</td><td>trinh AML Express , dam bdo ket quà kiém tra &quot;KHONG TRONG&quot; trudo khi chuyen ho sd ve TT.TTOT d6 chuyén tién ra nudc ngoia Quyét dinh 90/2019/QD-VBLQ ngby 31/07/2019 v/v ban hanh Quy dinh vie Phong. chong rüra tien; Hudng dan sú dung Chuong trinh AML Express và Compliance Link cia Phong (Hodic cac VB s0ra d6i, bd sung, thay the khac trong tong thoi ky)</td></tr></table>
+
+QPV BLTC nghiem tac tri@in khal va thyc hien cac ni dung sau:
+
+tai kidm t thnhach len uan tron sg ch theo y din i   CRT c NH con/Cong ty con (ndu phat sinh t H con/Cong ty cn).
+
+kidchan unh anh sc ua/angh6mhohahéohSanioned County tié't tai Phu luc dinh kèm Thong baio này). Don v luu y thyc hien nhu sau:
+
+aTrong quà trinh mò mà khaich hàng và c8p nhat thOng tin khàch h i. Trurdng hop ap dung:
+
+Mà mà khdch hàng chudin/vang lai; hoc Cap nhat thong tin khach hang iDdn vi goi hò sd phap ty cúa khach hàng và cac thng tin b6 sung vè BP. PCRT - Phng Tudn thù d6 trinh Hi dOng Phòng. chOng rúra tièn duy€t thuin trudc khi thyfc hin.
+
+# NGAN HANG THUONG MAI CO PHAN
+
+# CONG HOA XA HOI CHU NGHIA VIÉT NAM
+
+SAI GON THUONG TIN S6:373/2022/TB-TT
+
+Dc lap - Ty do - Hanh phúc TP. H0 Chi Minh, pgàx-3 8tbáng?, päm 2022
+
+#
+
+Can c Thông bào s6 33662020/TB-TT ngay 29/10/2020 vv tuån thú quy djnh lén quan dén quc gia/vüng lnh jcám van hoic han ch6 giao djch,
+
+V/v tuån thù càc quy dinh vè cám vn
+
+Cuckhg hoåg chih r gia ga Ukraie dang din bién phúc tap.Do o,hâ äm bo tuân thcc quy dinh ve cám vn cua các cd quan t chúc quc té, Tóg Giám dc yéu càu ác Dn vi him tuc trién khai và thuc hien càc ni dung sau:
+
+DcT c u y ua u ti Cpla LinkDh Don s cg t P.Tuàn th d dug tuvn trog tg truòg hgp cy héé c thng tn Li QUAN (\*) dén qu6c gia và/hoθc vùng lånh th6 sau:
+
+() Belarus (ii) Russia (ii) Ukraine (iv) Donetsk (v) Luhansk (hoãc Lugansk)
+
+# Ké tr ngày 28/02/2022, tr ch6i/khng thyc hi€n các giao dich có LIEN QUAN (\*) dén các DCTC sa
+
+# THONG BAO
+
+<table><tr><td>STT</td><td>Thong tin</td><td>Ca nhan</td><td>TO chitc</td></tr><tr><td></td><td>Tén dily d0</td><td>x</td><td>x</td></tr><tr><td>2</td><td>Dja chl tail Vst Nam</td><td>x</td><td>x</td></tr><tr><td>3</td><td>Dia chl tai qudc gia mà khach hång mang qudc tich</td><td>x</td><td></td></tr><tr><td>4</td><td>Nghà nghi¢p</td><td>x</td><td></td></tr><tr><td>5</td><td>Ngành nghà kinh doanh</td><td></td><td>x</td></tr><tr><td>6</td><td>Muc dich thiet l8p quan he voi Sacombank (thayic hiθn sdn phdim/dich v gl, bao gδm sdn phdm/dich vy c6 y dinh sr dung trong tuong lai)</td><td>x</td><td>x</td></tr><tr><td></td><td>Khàch hang c6 nhu càu thyc hien giao djich thanh toan qudc t6 (TTQT) khòng? Neu có, vui long neu rδ càc qudc gia lien quan, mdi quan he gihas ngus chuydin và nguo nhn, muc dlich chuydfin tin</td><td>x</td><td>x</td></tr><tr><td>8</td><td>Neu ngubi thånh lp/ngubi dgi dien/ohà sd h0u huòng lgl/thanh vi8n gop vn càa t5 chúc.. co thong tin lien quan d6in quGc gia trong danh sach Sanctioned Country&quot;: thu thap them thdng tin cue chc ben lien quan, bao qudic tich/qudic gls not dang ky kinh doanh, dja chl gbm: ten diay do, s¢ h chidu/s6 dang ky kinh doanh, ngåy clp, noi cdip.</td><td></td><td></td></tr></table>
+
+<table><tr><td>Tén t6 chüc tài chinh</td><td>Qu6c gia</td></tr><tr><td>Belarussian Bank of Development and Reconstruction Belinvestbank Joint Stock Company</td><td rowspan="3">Belarus</td></tr><tr><td>Limited Liability Company Belinvest-Engineering</td></tr><tr><td>CJSC Belbizneslizing</td></tr><tr><td>Bank Dabrabyt Joint-Stock Company (Bank Dabrabyt)</td><td></td></tr><tr><td>VTB Bank Public Joint Stock Company (VTB Bank)</td><td>Russia</td></tr></table>
+
+lånh thó, tó chuc bj clim vin/ han ché giao djch.
+
+Lécp  theP.Tnt/.Qvccu nn thà khi thuc hien giao dich TQT (Luu y: Kø t ngay 26/03/2022, các dinh ché tài chinh va tó chúc theo Phy luc 1 và Phy luc 2 dinh kòm Thông báo này sé chinh thúc bj cám ván/ han ché giao djch).
+
+Kinh de nghi các Don vi nghièm tuc thyc hien theo ni dung Thông báo này.
+
+Trong qud trinh thuc hièn giao dich mà khng bdit buc mò ma khdch hàng Ddn vi thus hien tyong ty guy dinh tai Muc 2.a neu trén.
+
+cTrong qud trinh cung clip sàn ph&m dich vy cho khách hång, dc biet la glao djch TTQT: Nu cd bit ky thong tin nbo trong h so/chámg tr nhu ngudi mua, ngui ba, don vi vn chuy@n. càng ngàn hàng chuydn tin/trug glan/thy huàng. phuang tin vn chuydn, hàng hda.co lin quan déin qudc gia trong danh sach Sanctioned Country. Don vi gri ban scan hd sa/chúmg tr v BP. PCRT - Phòng Tuån thà di dugc hδ try kiGm tra và tu vain;
+
+Quy dinh lin quan dn Hong KongRussa &Ukrainetr vúng Crimea Sevastopol: D   o uy   c n o ui  c hàng trong trurong hop khong bdit buc md Ma khach hàng:
+
+". Trung hdp khach hàng có nhu càu s dung sán pham/djich vy theo quy djnh phàl mò Ma khdich hang chudin. Ddn vi thuc hien turong tur nhur Muc 2.a ndu tren;
+
+ieg s  thng t lin uan n Hong Kong. Dacà dng ki trudc khi chuyein hò sd v TT. TTQT dé xαr ly giao djch.
+
+# MOt st lu 9:
+
+- Quy djnh tai Muc 2.a khong ap dung trong truòng høp khách hàng c§p nh3t thong tin nhung khOng lam phat sinh mdi bdit ky qudc gia trong danh sách Sanctioned Country.   
+Quy dinh tai Muc 2. khong dip dung di vi cac giao dich bao c tir nudc ngoài da dugc kim tra theo quy dinh tai Myc B.1.2 Phy luc chudng trinh phòng. chóng rúra ti@n cúa Q① 90/2019/QD-VBLQ & cac hò sd TTQT da dugc ki6m tra trèn chudng trinh Compllance Link.   
+iiEon vi dac biet luu y d6 xác djinh o bdit ky thong tin lin quan dGn qudc gia trong danh sàch Sanctioned Country hay khOng và xr ly giao djch theo dung quy dinh hien hành trong mot s6 truòng hap sau: Tg tin trén sa/chúg tr khng nu y thé ten qdc ia ma thay th6 bàng cdc cum tir turdng durdng oó nghla rOng hdn (vi du; "Port of Loading; Any port in Persian Gul" Khu vy/c Persian Gulf bao göm nhibu qudc gia trong do co Iran, Iraq...); Thong tin trong hò sa/chúmg tir khòng néu day dò ten qudc gia dåin d6n nhàm In gl0ra cdc qudc gia o6 ten gàn gidng nhau (vi du: "Korea": Republic of Korea và Democratic People's Republic of Korea, "Congo": Democratic Republic of the Congo và Republic of the Congo, ...).
+
+Email: bp.port@sacombank.com; hoc
+
+Kanh online:https:/quytrinhonline_sacombank.com (thdi gian trién khai cy th6 theo Thong bào còa TGng gidm d6c)   
+2080208120822085
+
+Thòng bao này có hiθu lyc k6 tir ngày ky và thay th6 cho Thòng bdo s5 806/2019/TB-KTrN ngày 18/03/2019 v/v tuån thò quy djnh li€n quan dén quQc gia/vúng lanh thδ bj cdim vn ho han ché glao dich.
+
+Dinh kièm Phy luc Danh saich qusc gia/ving llinh thó bi caim vain hojic han chéi giao dich Tran trong.
+
+# Din Phy luo 1 - Danh sdch cdo dinh chd tai chinh by clm vn hojc han chd giao djch k6 ti ngay 26/03/2022
+
+![](images/cffb2df332e6fd566b42895504d5332243be585525a9a634b52f92f0c10bc392.jpg)
+
+Phy luc 2 - Danh sdch cdc t5 chic kinh t6 bj clim vfin hodic han ch giao djch ki tir ngdy 26/o32022.
+
+#
+
+- DV. NVNH, CN/PGD, |"des thye hidn"? Cong ty/ Ngan hång con   
+Sao kinh gf:   
+- HDQT, BKS, TGD "d6 bso cdo" Luu vån thu.
+
+![](images/cf07fe8a16ea1e5ee06f951de28059349a1ab75a28a471525c48434771e059c8.jpg)
+
+# PHU LUC 1
+
+N SACH CAC DINH CHE TAI CHIH B CAM VAN HC HAN CHE GIAO DCH KE TUNGAY 26/03/2022 (Ban hanh kém Thong bao s 313.12022/TB-TT ngay.28.122022)
+
+<table><tr><td></td><td></td><td></td></tr><tr><td>STT</td><td>Tén dnh ché tài chinh</td><td>Qubc gla</td></tr><tr><td>1</td><td>PUBLIC JOINT STOCK COMPANY SBERBANK OF RUSSIA GAZPROMBANK JOINT STOCK COMPANY</td><td rowspan="4">Russia</td></tr><tr><td>2</td><td></td></tr><tr><td>3 4</td><td>JOIN STOCK COMPANY ALFA-BANK</td></tr><tr><td>5</td><td>JOINT STOCK COMPANY RUSSIAN AGRICULTURAL BANK CREDIT BANK OF MOSCOW PUBLIC JOINT STOCK COMPANY</td></tr></table>
+
+# PHU LUC 2
+
+DANH SACH CAC TO CHúC KINH TE B! CAM VAN HOAC HAN CHE GIAO DICH KÉ TU NGAY 26/03/2022 (Ban hånh kém Thong bao s631:3.12022/TB-TT ngåy-24.12./2022)
+
+<table><tr><td>STT</td><td>Tén cng ty</td><td>Qutic glia</td></tr><tr><td>1.</td><td>ARIMERO HOLDING LIMITED</td><td colspan="3" rowspan="11">Russia</td></tr><tr><td>2. 3.</td><td>IKS JOINT STOCK COMPANY INSURANCE COMPANY SBERBANK INSURANCE LIMITED LIABILITY COMPANY</td></tr><tr><td>4.</td><td>INSURANCE COMPANY SBERBANK LIFE INSURANCE LIMITED LIABILITY COMPANY</td></tr><tr><td>5.</td><td>JOINT STOCK COMPANY RASCHETNIYE RESHENIYA</td></tr><tr><td></td><td></td></tr><tr><td>6.</td><td>JOINT STOCK COMPANY SBERBANK</td></tr><tr><td>7.</td><td>JOINT STOCK COMPANY SBERBANK AUTOMATED TRADE SYSTEM</td></tr><tr><td>8. 9.</td><td>JOINT STOCK COMPANY SBERBANK LEASING</td></tr><tr><td>10.</td><td>JOINT STOCK COMPANY SBERBANK PRIVATE PENSION FUND</td></tr><tr><td>11.</td><td>LIMITED LIABILITY COMPANY MARKET FUND ADMINISTRATION LIMITED LIABILITY COMPANY MARKET FUND ADMINISTRATION</td></tr><tr><td></td><td>LIMITED LIABILITY COMPANY PROMISING INVESTMENTS</td></tr><tr><td>12. 13.</td><td>LIMITED LIABILITY COMPANY SBERBANK CAPITAL</td></tr><tr><td></td><td></td></tr><tr><td>14.</td><td>LIMITED LIABILITY COMPANY SBERBANK CIB HOLDING</td></tr><tr><td>15.</td><td>LIMITED LIABILITY COMPANY SBERBANK FACTORING</td></tr><tr><td>16.</td><td>LIMITED LIABILITY COMPANY SBERBANK FINANCIAL COMPANY</td></tr><tr><td>17.</td><td>LIMITED LIABILITY COMPANY SBERBANK INSURANCE BROKER</td></tr><tr><td>18.</td><td>LIMITED LIABILITY COMPANY SBERBANK INVESTMENTS</td></tr><tr><td>19.</td><td>LIMITED LIABILITY COMPANY YOOMONEY</td></tr><tr><td>20.</td><td>OPEN JOINT STOCK COMPANY BPS-SBERBANK</td></tr><tr><td>21.</td><td>SB SECURITIES SA</td></tr><tr><td>22.</td><td>SBERBANK EUROPE AG</td></tr><tr><td>23.</td><td>SETELEM BANK LIMITED LIABILITY COMPANY</td></tr><tr><td></td><td></td></tr></table>
+
+Quy định chung - 7.1. Lưu hồ sơ TTQT   
+
+<table><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>LC/tu chinh LC XK gc;BL/tu chinh BL gôc;BCT LC/NT gc;BCT döi tien theo BL göc;</td><td rowspan=1 colspan=1>Luu vào két sát/kho quy.</td><td rowspan=1 colspan=1>Cho dén khi giao cho KH hoc chuyéndén nguòi nhån tiép theo.</td></tr><tr><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>Bán gc Bién lai CPN gδi BCT di, có kynhn cuúa nhån vién CPN.</td><td rowspan=1 colspan=1>Tam luu vào file riéng dé kiém tra, di chiéu viHóa don doi tièn cua Don vi CPN và xú ly các phátsinh (néu co);Dugc phép húy sau thdi gian luu.</td><td rowspan=1 colspan=1>Cho dén khi da thanh toán phi cho Donvi CPN.</td></tr><tr><td rowspan=1 colspan=1>3</td><td rowspan=1 colspan=1>Dien swift di/dén</td><td rowspan=1 colspan=1>Luu tryc tiép trén h thng Swift</td><td rowspan=1 colspan=1>10 nm.</td></tr><tr><td rowspan=1 colspan=1>4</td><td rowspan=1 colspan=1>H sα TTQT/BLQT khác</td><td rowspan=1 colspan=1>Chdg tir glaly ban chinh luu cung Chúng tu kétoán (CTKT) theo quy dinh trong các luu do tácnghiep, khoán 7.2 myc này, hoc luu Bia h sa/filerièng, bao gm:Tò trinh dè xuåt/tham muu và Phè duyt cuaCTQ&quot;;Van bån yéu càu/xác nhn/cam kêt/ky nhncua KH/NH khác.Truòng hgp CTQ phé duyét chúng ti döng thöilå nguòi duyét giao dich lén quan trên ing dungdüng trong TTQT (T24, Omni,E-portal,Quytrinhonline ..) thi khóng cn luu bán chinh.Chámg tir bån sao: Luu toàn b trènOmnidocs/E-potal.Chdmg tir dln t0r (D nghi cua KH trên IB, Totrinh cáp thám quyen, Báo cáo trén chuong trinhin):uryctn luu file pdf tren Omnidocs.</td><td rowspan=1 colspan=1>10 nm.</td></tr><tr><td rowspan=1 colspan=1>5</td><td rowspan=1 colspan=1>Dieu khoán và dieu kien su dung dichv chuyén tièn quc té (BM-TTQT.TT.14)</td><td rowspan=1 colspan=1>Bán chinh lu Bia h so/file riéng; vàBân scan luu tren Omnidocs theo só ref hö sd.</td><td rowspan=1 colspan=1>10 nm.</td></tr></table>
+
+Quy định chung - 7.2. Lưu chứng từ kế toán   
+
+<table><tr><td colspan="4">-Cách thúc và thòi gian luu: Theo quy dinh Tái chinh ké toán.</td></tr><tr><td rowspan="2">Nghiep vy</td><td colspan="2">Chdmg tir luu</td></tr><tr><td>DV</td><td>TT.NVNHGD/TT.NVNHBB</td></tr><tr><td>Chuyeén ti8n ra nudc ngoàl ngoai te).</td><td>BKCT chuyén khoán ngoài han múc theo GDV (néu có bán</td><td>Bång ké các bút toán thanh toán h Chi nhánh (Dv chuyén tien bång din swift phát sinh tai DV</td></tr><tr><td rowspan="6">Chuyén tièn ra nuc ngoài</td><td>BKCT chuyén khoån (TTQT)</td><td>Bång kè bút toán chuyén tièn 1H (Di vi chuyén tin Dng Dudng)</td></tr><tr><td>Bán chinh LCT/D nghj chuyén tièn trén IB/LCT</td><td>Bang ké giao dich chuyén tièn di qua MG (Di vói chuyén tièn MG)</td></tr><tr><td>Moneygram; Phiéu tiép nhn</td><td>BKCT chuyén khoán ngoài han múc giao dich theo GDV (Divi giao dich hoàn trà, chuyén tien h Lào/Cam), tra phi</td></tr><tr><td></td><td>cho NHNNg, ..)</td></tr><tr><td>Di vói h sα TT.TMBG, Sacombank CNBG luu:</td><td>Phiu chuyén khoân (Di v gio dich hoan tr, chuyén tin h Lào/Cam, tra phi cho NHNNg, ..</td></tr><tr><td>Phiéu CK chuyén ngun vào TK NHNNg CBG; phiéu CK traà phi cho NHNNg CBG (néu có) •Bån dien thanh toán; bån din trà phi (néu có) trén web có ch ky cua TDV</td><td></td></tr><tr><td rowspan="3">Thu phi Tu chinh/tra soát/gia han</td><td>Truòng hqp hò sd CNPS khác Sacombank CNBG: Phiéu CK chuyén phi vè CNBG dé trà cho NHNNg CBG do TT.NVNHGD hach toán (néu co).</td><td></td></tr><tr><td>BKCT chuyén khoàn (TTQT)</td><td></td></tr><tr><td>Phiéu tiép nhån</td><td></td></tr><tr><td rowspan="3">Xác nhån mang</td><td>Ban chinh Giåy de nghiDè nghi tu chinh chuyén tien trèn IB.</td><td></td></tr><tr><td>Di vói h so TT.TMBG, Sacombank CNBG luu:</td><td></td></tr><tr><td>Dien tu chinh trén web có ch ky cua TDV BKCT chuyén khoån ngoåi han múc theo GDV</td><td></td></tr><tr><td rowspan="2">ngoai te mt, dong Viet Nam tièn mt ra nudc ngoài (XNMNT)</td><td>BKCT chuyén khoån (TTQT)</td><td></td></tr><tr><td>Giy de nghi XNMNT</td><td></td></tr></table>
+
+Quy định chung - IV. HỒ SƠ LƯU   
+CHUNG CHO CÁC NGHIỆP VỤ   
+CHUYỂN TIỀN ĐI   
+
+<table><tr><td></td><td></td></tr><tr><td>Bia h sα TTQT</td><td>BM-TTQT.01</td></tr><tr><td>Thu thng báo </td><td>BM-TTQT.02 BM-TTQT.03</td></tr><tr><td>Phiéu tiép nhån kiem chäp nhån bán ngoai te</td><td>BM-TTQT.04</td></tr></table>
+
+<table><tr><td rowspan=1 colspan=1>Lenh chuyén tièn</td><td rowspan=1 colspan=1>BM-TTQT.TT.01</td></tr><tr><td rowspan=1 colspan=1>Bién bån lam vic</td><td rowspan=1 colspan=1>BM-TTQT.TT.02</td></tr><tr><td rowspan=1 colspan=1>[:itruhidu áp phép du tu]</td><td rowspan=1 colspan=1>BM-TTQT.TT.03</td></tr><tr><td rowspan=1 colspan=1>Giy de nghi xác nhn mang ngoai te, dng vit nam tien mt ra nuc ngoài</td><td rowspan=1 colspan=1>BM-TTQT.TT.04</td></tr><tr><td rowspan=1 colspan=1>G áchn mang ngoai t, dngvit nam tn mt a nu ngoi</td><td rowspan=1 colspan=1>BM-TTQT.TT.05</td></tr><tr><td rowspan=1 colspan=1>Phiéu de xuåt han múc chuyén tien ra nuôc ngoài</td><td rowspan=1 colspan=1>BM-TTQT.TT.06.</td></tr><tr><td rowspan=1 colspan=1>P    KH  Gu]</td><td rowspan=1 colspan=1>BM-TTQT.TT.07</td></tr><tr><td rowspan=1 colspan=1>Phiéu de xuåt han muc chuyén tien ra nuc ngoài [áp dung: döi vöi KH doPGD giöi thiu]</td><td rowspan=1 colspan=1>BM-TTQT.TT.08</td></tr><tr><td rowspan=1 colspan=1>Báo co kiém tra hoat dng</td><td rowspan=1 colspan=1>BM-TTQT.TT.09</td></tr><tr><td rowspan=1 colspan=1>Báo cáo danh sâch KH dugc cäp han múc chuyén tien ra nuc ngoài</td><td rowspan=1 colspan=1>BM-TTQT.TT.10</td></tr><tr><td rowspan=1 colspan=1>  i  </td><td rowspan=1 colspan=1>BM-TTQT.TT.13</td></tr><tr><td rowspan=1 colspan=1>Diu khoan và dieu kin s dung dich v chuyén tien quc t ch étien vå áp dung cho toån bö quá trinh giao dich sau.]</td><td rowspan=1 colspan=1>BM-TTQT.TT.14</td></tr></table>
+
+![](images/c87f633543e3c864c40554ab5c56f3ab64e0654cf4539d4aa103bed5ac5c4dec.jpg)
+
+# HOME
+
+# Đối với hồ sơ TTQT/BLQT ngoài quy định, ĐV cần tư vấn hồ sơ
+
+# (i) Trước khi gửi yêu cầu tư vấn, ĐV:
+
+CN/PGD tạo mã TV trên chương trình S-Helpdesk, để
+
+# Hồ sơ không thỏa / chưa được quy định chứng từ trong quy trình à ĐV lập tờ trình TT.TTQT tham mưu B.TGĐ phê duyệt ĐV thực hiện thông báo 1136/2022/TB-TTQT - V/v Triển khai Chương trình Tờ trình Thanh toán quốc tế trực tuyến
+
+Tìm hiểu đầy đủ các thông tin về số tiền chuyển, người thụ hưởng, mục đích chuyển tiền… đảm bảo hiểu rõ nhu cầu của KH. Thu thập và kiểm tra chứng từ KH cung cấp với quy định/hướng dẫn hiện hành và chỉ gửi yêu cầu tư vấn đối với các trường hợp không thỏa quy định hoặc chưa được quy định/hướng dẫn.
+
+# (i) Khi gửi yêu cầu tư vấn, ĐV ghi rõ:
+
+Nhu cầu của KH;   
+Vướng mắc/nội dung không phù hợp quy định của hồ sơ/chứng từ/giao dịch;   
+Đánh giá, đề xuất sơ bộ của ĐV (nếu có).
+
+(i) Khi nhận kết quả tư vấn, ĐV đảm bảo hiểu rõ nội dung tư vấn trước khi trao đổi, thông tin đến KH.
+
+Đường dẫn: s-helpdesk.sacombank.com
+
+# =Sacombank DashboardsUng DungTim KiéemB co Tao Yeu Cau
+
+#
+
+Chuyên tièn thu nhap hop pháp có nguòn góc tu tài sân chung
+
+#
+
+# Chi tiét
+
+<table><tr><td>Chi tiet</td><td></td><td></td><td></td></tr><tr><td>Loal Yeu Càu:</td><td>TTQT</td><td>Trang Thál:</td><td>HOAN TAT</td></tr><tr><td>Dien Thoal:</td><td>0971</td><td></td><td></td></tr><tr><td>Don Vi:</td><td>KV TP.HÒ CHI MINH - NGUYENVANTROI-CAUKIEU</td><td></td><td></td></tr><tr><td>Nghiép Vy TTQT-Loal Hinh:</td><td>CHUYÉN TIÉN DI - CHUYÉN THU NHÁP HQP PHÁP</td><td></td><td></td></tr><tr><td>Ni Dung Trich Yéu: Só Tham Chiéu:</td><td>Chuyen tièn thu nhap hop phap co nguòn góc tu tai san chung NONREF</td><td></td><td></td></tr><tr><td>Ten Nguòi Chuyén:</td><td></td><td></td><td></td></tr><tr><td>Ma Khach Hang:</td><td></td><td></td><td></td></tr><tr><td>Nguòi Huòng:</td><td></td><td></td><td></td></tr><tr><td>Só Tièn Chuyén:</td><td></td><td></td><td></td></tr><tr><td>Loai Tièn:</td><td>USD</td><td></td><td></td></tr><tr><td>Noi Dung Càn Tu Ván:</td><td>vOng</td><td>KIT (KH)ch u hué tè10, ancúa KHaol u c</td><td></td></tr><tr><td></td><td></td><td>KIÉT,</td><td>TUAN vå HUY, tri gla tai sån</td></tr><tr><td></td><td>la</td><td>VND vå dugc chia dèu cho các dòng so hu.</td><td></td></tr><tr><td></td><td></td><td>Theo nhu HD-346, PGD có hung dän KH Iap Cam két riéng tal PGD vè vléc xác nhn lol túcnhn dugc cúa các</td><td></td></tr><tr><td></td><td></td><td>chú s h0u néu trén và sé khng phát sinh tranh cháp, tuy nhién nl dung xác nhn khng dúng theo HD-346.</td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>Kinh nhò BP Tu van kiém tra ni dung cam két theo fle dinh kèm co phα hgp khg</td><td></td></tr></table>
+
+Pham vi trién khai:   
+
+<table><tr><td rowspan=1 colspan=1>Stt</td><td rowspan=1 colspan=1>Don vi tao tà trinh</td><td rowspan=1 colspan=1>Cáp duyt</td><td rowspan=1 colspan=1>Loai tò trinh</td></tr><tr><td rowspan=1 colspan=1>1</td><td rowspan=1 colspan=1>PGD duqc tryc tiép nhnhò so thanh toán quôc t(TTQT) và chuyn vTT.TTQT xú ly</td><td rowspan=1 colspan=1>Tng giám dóc/Nguài dugcphân quyèn</td><td rowspan=3 colspan=1>To trinh thanh toén T/Ttrå truóc ân dàu;Tò trinh thanh toán T/T(cd ché/tüng lan);Tò trinh dóng hò sd T/Ttrà trudc;Tò trinh PGD chuyén hösd trc tiép vè TT.TTQTx ly;Tò trinh khác lién quanhò sd TTQT.Ghi chú: CN/PGD láp to</td></tr><tr><td rowspan=1 colspan=1>2</td><td rowspan=1 colspan=1>PGD khng dugc tryc tiépnhn hò sd TQt vàchuyén vè TT.TTQ xú ly</td><td rowspan=1 colspan=1>Giám dôc CN/ Nguòi dugcphân quyèn;Tóng giám döc/Nguòi dugcphån quyèn.</td></tr><tr><td rowspan=1 colspan=1>3</td><td rowspan=1 colspan=1>CN</td><td rowspan=1 colspan=1>Giám dôc CN/ Nguòi dugcphán quyèn;Tng giám döc/Nguài dugcphán quyèn.</td></tr><tr><td rowspan=1 colspan=1>4</td><td rowspan=1 colspan=1>TT.TTQT</td><td rowspan=1 colspan=1>Tng giám dc/Nguài dugcphân quyèn (có/không cótham muu t DV.NVNH)</td><td rowspan=1 colspan=1>trinh bng vn bán khichuong trinh gp su có.</td></tr></table>
+
+![](images/39ef2e365f25f9fe699805cb8e8a52e356260548f41d3aed432b57651d9f5f55.jpg)
+
+![](images/8068a4c782ef91855ec8f5c7deeb0c015baad5ff17c1f6908e51596146dfaaf4.jpg)

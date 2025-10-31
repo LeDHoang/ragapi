@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  collabora:
+    image: collabora/code:6.4.8.4
+    container_name: collabora-code
+    ports:
+      - "9980:9980"
+    environment:
+      # Disable TLS for local testing (HTTP only), allow HTTP POSTs and local storage, extend convert timeout
+      - extra_params=--o:ssl.enable=false --o:ssl.termination=true --o:net.post_allow.host[0]=.+ --o:storage.wopi.host[0]=.+ --o:per_document.limit_convert_secs=1800
+      # Admin credentials for console access
+      - username=${CODE_ADMIN_USER:-admin}
+      - password=${CODE_ADMIN_PASS:-adminadmin}
+    restart: unless-stopped
+    # Mount corporate fonts for better Excel rendering fidelity
+    volumes:
+      - ./fonts:/usr/share/fonts/corporate:ro
+    healthcheck:
+      # Older CODE images may not include curl; use wget via CMD-SHELL
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:9980/hosting/discovery > /dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

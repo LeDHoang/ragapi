@@ -42,6 +42,7 @@ class ProcessingStatus(BaseModel):
     doc_id: Optional[str] = None
     chunks_created: Optional[int] = None
     entities_found: Optional[int] = None
+    ingest_summary: Optional[Dict[str, Any]] = None
 
 class DocumentMetadata(BaseModel):
     doc_id: str

@@ -1,0 +1,2257 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        44,
+                        50,
+                        707,
+                        406
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                44,
+                                50,
+                                707,
+                                406
+                            ],
+                            "group_id": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        50,
+                                        707,
+                                        406
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                44,
+                                                50,
+                                                707,
+                                                406
+                                            ],
+                                            "score": 0.955,
+                                            "type": "image",
+                                            "image_path": "017ee5c6b7f77adfbecf96cdb2f8c97f8cb7c15dc2b45eebb91692161dabb5ac.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        50,
+                                        707,
+                                        168.66666666666669
+                                    ],
+                                    "spans": [],
+                                    "index": 0
+                                },
+                                {
+                                    "bbox": [
+                                        44,
+                                        168.66666666666669,
+                                        707,
+                                        287.33333333333337
+                                    ],
+                                    "spans": [],
+                                    "index": 1
+                                },
+                                {
+                                    "bbox": [
+                                        44,
+                                        287.33333333333337,
+                                        707,
+                                        406.00000000000006
+                                    ],
+                                    "spans": [],
+                                    "index": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ],
+            "page_idx": 0,
+            "page_size": [
+                792,
+                612
+            ],
+            "discarded_blocks": [],
+            "para_blocks": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        44,
+                        50,
+                        707,
+                        406
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                44,
+                                50,
+                                707,
+                                406
+                            ],
+                            "group_id": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        50,
+                                        707,
+                                        406
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                44,
+                                                50,
+                                                707,
+                                                406
+                                            ],
+                                            "score": 0.955,
+                                            "type": "image",
+                                            "image_path": "017ee5c6b7f77adfbecf96cdb2f8c97f8cb7c15dc2b45eebb91692161dabb5ac.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 1,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        44,
+                                        50,
+                                        707,
+                                        168.66666666666669
+                                    ],
+                                    "spans": [],
+                                    "index": 0
+                                },
+                                {
+                                    "bbox": [
+                                        44,
+                                        168.66666666666669,
+                                        707,
+                                        287.33333333333337
+                                    ],
+                                    "spans": [],
+                                    "index": 1
+                                },
+                                {
+                                    "bbox": [
+                                        44,
+                                        287.33333333333337,
+                                        707,
+                                        406.00000000000006
+                                    ],
+                                    "spans": [],
+                                    "index": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "type": "title",
+                    "bbox": [
+                        209,
+                        53,
+                        299,
+                        66
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                208,
+                                50,
+                                300,
+                                69
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        208,
+                                        50,
+                                        300,
+                                        69
+                                    ],
+                                    "score": 0.919,
+                                    "content": "Huóng dån su dung:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        119,
+                        70,
+                        230,
+                        79
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                118,
+                                69,
+                                230,
+                                80
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        118,
+                                        69,
+                                        230,
+                                        80
+                                    ],
+                                    "score": 0.911,
+                                    "content": "Di den sheet có thong tin lièn ket:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        125,
+                        83,
+                        386,
+                        108
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                82,
+                                386,
+                                94
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        82,
+                                        386,
+                                        94
+                                    ],
+                                    "score": 0.905,
+                                    "content": "Nhng ni dung có lién két dén sheet chúa thòng tin khi dua chut den s hin th biu",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 2
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                96,
+                                153,
+                                111
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        96,
+                                        153,
+                                        111
+                                    ],
+                                    "score": 0.985,
+                                    "content": "tuong:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 2.5
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        125,
+                        111,
+                        334,
+                        122
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                111,
+                                335,
+                                122
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        111,
+                                        335,
+                                        122
+                                    ],
+                                    "score": 0.924,
+                                    "content": "Click chut vào ni dung dó se dân dén sheet chúa thông tin can tim.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 4
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        148,
+                        139,
+                        371,
+                        232
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                148,
+                                139,
+                                371,
+                                232
+                            ],
+                            "group_id": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        148,
+                                        139,
+                                        371,
+                                        232
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                148,
+                                                139,
+                                                371,
+                                                232
+                                            ],
+                                            "score": 0.91,
+                                            "type": "image",
+                                            "image_path": "1ff6fb3aaaf18782819d580fb2893781210b0b0a506c3e0bf9e84bbe56e831e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 8.5,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        148,
+                                        139,
+                                        371,
+                                        150.625
+                                    ],
+                                    "spans": [],
+                                    "index": 5
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        150.625,
+                                        371,
+                                        162.25
+                                    ],
+                                    "spans": [],
+                                    "index": 6
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        162.25,
+                                        371,
+                                        173.875
+                                    ],
+                                    "spans": [],
+                                    "index": 7
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        173.875,
+                                        371,
+                                        185.5
+                                    ],
+                                    "spans": [],
+                                    "index": 8
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        185.5,
+                                        371,
+                                        197.125
+                                    ],
+                                    "spans": [],
+                                    "index": 9
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        197.125,
+                                        371,
+                                        208.75
+                                    ],
+                                    "spans": [],
+                                    "index": 10
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        208.75,
+                                        371,
+                                        220.375
+                                    ],
+                                    "spans": [],
+                                    "index": 11
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        220.375,
+                                        371,
+                                        232.0
+                                    ],
+                                    "spans": [],
+                                    "index": 12
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8.5
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        119,
+                        232,
+                        210,
+                        242
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                117,
+                                231,
+                                211,
+                                243
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        117,
+                                        231,
+                                        211,
+                                        243
+                                    ],
+                                    "score": 0.959,
+                                    "content": "Quay tr lai So dò ban dau",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 13
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        213,
+                        246,
+                        246,
+                        258
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                212,
+                                245,
+                                247,
+                                259
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        212,
+                                        245,
+                                        247,
+                                        259
+                                    ],
+                                    "score": 1.0,
+                                    "content": "HOME",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 14
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        128,
+                        259,
+                        200,
+                        282
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                258,
+                                201,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        258,
+                                        201,
+                                        269
+                                    ],
+                                    "score": 0.96,
+                                    "content": "Click vào biu tugng",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 15
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                272,
+                                201,
+                                282
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        272,
+                                        201,
+                                        282
+                                    ],
+                                    "score": 0.892,
+                                    "content": "quay ve so do ban däu.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 17
+                        }
+                    ],
+                    "index": 16.0
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        248,
+                        259,
+                        399,
+                        269
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                247,
+                                258,
+                                399,
+                                270
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        247,
+                                        258,
+                                        399,
+                                        270
+                                    ],
+                                    "score": 0.65,
+                                    "content": "pt cgóheet hút",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 16
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        118,
+                        285,
+                        189,
+                        295
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                117,
+                                285,
+                                190,
+                                295
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        117,
+                                        285,
+                                        190,
+                                        295
+                                    ],
+                                    "score": 0.998,
+                                    "content": "Zoom in / Zoom out",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 18
+                        }
+                    ],
+                    "index": 18
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        126,
+                        298,
+                        399,
+                        321
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                128,
+                                298,
+                                400,
+                                309
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        298,
+                                        400,
+                                        309
+                                    ],
+                                    "score": 0.946,
+                                    "content": "Nguòi dung có the zoom in (phóng to) /zoom out (thu nh) màn hinh dé thun tin xem các",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 19
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                311,
+                                226,
+                                322
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        311,
+                                        226,
+                                        322
+                                    ],
+                                    "score": 0.965,
+                                    "content": "thông tin trong sheet bang cách:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 20
+                        }
+                    ],
+                    "index": 19.5
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        129,
+                        324,
+                        277,
+                        334
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                324,
+                                277,
+                                334
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        324,
+                                        277,
+                                        334
+                                    ],
+                                    "score": 0.938,
+                                    "content": "Cách 1: Dé chut  vi trí cän zoom trên màn hinh:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 21
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        150,
+                        337,
+                        293,
+                        360
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                150,
+                                336,
+                                280,
+                                347
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        336,
+                                        230,
+                                        347
+                                    ],
+                                    "score": 0.962,
+                                    "content": "- Zoom in: Gir phím Ctrl",
+                                    "type": "text"
+                                },
+                                {
+                                    "bbox": [
+                                        230,
+                                        338,
+                                        236,
+                                        345
+                                    ],
+                                    "score": 0.67,
+                                    "content": "^ +",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        237,
+                                        336,
+                                        280,
+                                        347
+                                    ],
+                                    "score": 0.88,
+                                    "content": "Lan chuot lèn.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 22
+                        },
+                        {
+                            "bbox": [
+                                155,
+                                348,
+                                293,
+                                361
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        155,
+                                        348,
+                                        234,
+                                        361
+                                    ],
+                                    "score": 0.921,
+                                    "content": "Zoom out: Gi phím Ctr",
+                                    "type": "text"
+                                },
+                                {
+                                    "bbox": [
+                                        234,
+                                        351,
+                                        240,
+                                        358
+                                    ],
+                                    "score": 0.67,
+                                    "content": "^ +",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        241,
+                                        348,
+                                        293,
+                                        361
+                                    ],
+                                    "score": 0.93,
+                                    "content": "Ln chut xuöng.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 23
+                        }
+                    ],
+                    "index": 22.5
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        131,
+                        363,
+                        324,
+                        373
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                362,
+                                325,
+                                374
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        362,
+                                        325,
+                                        374
+                                    ],
+                                    "score": 0.929,
+                                    "content": "Cách 2: Su dung chúc nng zoom ò góc phåi duói cung màn hình",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 24
+                        }
+                    ],
+                    "index": 24
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        150,
+                        373,
+                        346,
+                        438
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                150,
+                                373,
+                                346,
+                                438
+                            ],
+                            "group_id": 2,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        373,
+                                        346,
+                                        438
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                150,
+                                                373,
+                                                346,
+                                                438
+                                            ],
+                                            "score": 0.852,
+                                            "type": "image",
+                                            "image_path": "63d552d67ece8010f7e444af66b1af3ffbd05d1d3659012ca124dc7493873a46.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 25.5,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        373,
+                                        346,
+                                        405.5
+                                    ],
+                                    "spans": [],
+                                    "index": 25
+                                },
+                                {
+                                    "bbox": [
+                                        150,
+                                        405.5,
+                                        346,
+                                        438.0
+                                    ],
+                                    "spans": [],
+                                    "index": 26
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25.5
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        118,
+                        441,
+                        387,
+                        463
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                116,
+                                440,
+                                388,
+                                452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        116,
+                                        440,
+                                        388,
+                                        452
+                                    ],
+                                    "score": 0.944,
+                                    "content": "Truòng hgp click chut vào màn hinh nhieu lan làm toàn màn hinh trng, khòng hin thi",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 27
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                453,
+                                290,
+                                464
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        453,
+                                        155,
+                                        464
+                                    ],
+                                    "score": 0.951,
+                                    "content": "thông tin",
+                                    "type": "text"
+                                },
+                                {
+                                    "bbox": [
+                                        155,
+                                        455,
+                                        165,
+                                        462
+                                    ],
+                                    "score": 0.77,
+                                    "content": "\\Rightarrow",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        166,
+                                        453,
+                                        290,
+                                        464
+                                    ],
+                                    "score": 0.935,
+                                    "content": "Nhân phím \"ESC\" dé hién thi lai thông tin.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 28
+                        }
+                    ],
+                    "index": 27.5
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        144,
+                        464,
+                        374,
+                        548
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                144,
+                                464,
+                                374,
+                                548
+                            ],
+                            "group_id": 3,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        464,
+                                        374,
+                                        548
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                464,
+                                                374,
+                                                548
+                                            ],
+                                            "score": 0.419,
+                                            "type": "image",
+                                            "image_path": "e369869fcfe362e08dfb33bdd0e12c34c9d140e7b0bdec5e44ed7e3444e0645d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        464,
+                                        374,
+                                        476.0
+                                    ],
+                                    "spans": [],
+                                    "index": 29
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        476.0,
+                                        374,
+                                        488.0
+                                    ],
+                                    "spans": [],
+                                    "index": 30
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        488.0,
+                                        374,
+                                        500.0
+                                    ],
+                                    "spans": [],
+                                    "index": 31
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        500.0,
+                                        374,
+                                        512.0
+                                    ],
+                                    "spans": [],
+                                    "index": 32
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        512.0,
+                                        374,
+                                        524.0
+                                    ],
+                                    "spans": [],
+                                    "index": 33
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        524.0,
+                                        374,
+                                        536.0
+                                    ],
+                                    "spans": [],
+                                    "index": 34
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        536.0,
+                                        374,
+                                        548.0
+                                    ],
+                                    "spans": [],
+                                    "index": 35
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32
+                }
+            ],
+            "page_idx": 1,
+            "page_size": [
+                792,
+                612
+            ],
+            "discarded_blocks": [
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        50,
+                        54,
+                        87,
+                        70
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                57,
+                                54,
+                                88,
+                                72
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        55,
+                                        59,
+                                        72
+                                    ],
+                                    "score": 0.0,
+                                    "content": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "bbox": [
+                                        60,
+                                        54,
+                                        88,
+                                        66
+                                    ],
+                                    "score": 1.0,
+                                    "content": "HOME",
+                                    "type": "text"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        192,
+                        243,
+                        212,
+                        266
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                191,
+                                241,
+                                214,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        191,
+                                        241,
+                                        214,
+                                        269
+                                    ],
+                                    "score": 0.0,
+                                    "content": "",
+                                    "type": "text"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "para_blocks": [
+                {
+                    "type": "title",
+                    "bbox": [
+                        209,
+                        53,
+                        299,
+                        66
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                208,
+                                50,
+                                300,
+                                69
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        208,
+                                        50,
+                                        300,
+                                        69
+                                    ],
+                                    "score": 0.919,
+                                    "content": "Huóng dån su dung:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        119,
+                        70,
+                        230,
+                        79
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                118,
+                                69,
+                                230,
+                                80
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        118,
+                                        69,
+                                        230,
+                                        80
+                                    ],
+                                    "score": 0.911,
+                                    "content": "Di den sheet có thong tin lièn ket:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        125,
+                        83,
+                        386,
+                        108
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                82,
+                                386,
+                                94
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        82,
+                                        386,
+                                        94
+                                    ],
+                                    "score": 0.905,
+                                    "content": "Nhng ni dung có lién két dén sheet chúa thòng tin khi dua chut den s hin th biu",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 2
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                96,
+                                153,
+                                111
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        96,
+                                        153,
+                                        111
+                                    ],
+                                    "score": 0.985,
+                                    "content": "tuong:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 2.5,
+                    "bbox_fs": [
+                        128,
+                        82,
+                        386,
+                        111
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        125,
+                        111,
+                        334,
+                        122
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                111,
+                                335,
+                                122
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        111,
+                                        335,
+                                        122
+                                    ],
+                                    "score": 0.924,
+                                    "content": "Click chut vào ni dung dó se dân dén sheet chúa thông tin can tim.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 4
+                        }
+                    ],
+                    "index": 4,
+                    "bbox_fs": [
+                        129,
+                        111,
+                        335,
+                        122
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        148,
+                        139,
+                        371,
+                        232
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                148,
+                                139,
+                                371,
+                                232
+                            ],
+                            "group_id": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        148,
+                                        139,
+                                        371,
+                                        232
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                148,
+                                                139,
+                                                371,
+                                                232
+                                            ],
+                                            "score": 0.91,
+                                            "type": "image",
+                                            "image_path": "1ff6fb3aaaf18782819d580fb2893781210b0b0a506c3e0bf9e84bbe56e831e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 8.5,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        148,
+                                        139,
+                                        371,
+                                        150.625
+                                    ],
+                                    "spans": [],
+                                    "index": 5
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        150.625,
+                                        371,
+                                        162.25
+                                    ],
+                                    "spans": [],
+                                    "index": 6
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        162.25,
+                                        371,
+                                        173.875
+                                    ],
+                                    "spans": [],
+                                    "index": 7
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        173.875,
+                                        371,
+                                        185.5
+                                    ],
+                                    "spans": [],
+                                    "index": 8
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        185.5,
+                                        371,
+                                        197.125
+                                    ],
+                                    "spans": [],
+                                    "index": 9
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        197.125,
+                                        371,
+                                        208.75
+                                    ],
+                                    "spans": [],
+                                    "index": 10
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        208.75,
+                                        371,
+                                        220.375
+                                    ],
+                                    "spans": [],
+                                    "index": 11
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        220.375,
+                                        371,
+                                        232.0
+                                    ],
+                                    "spans": [],
+                                    "index": 12
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8.5
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        119,
+                        232,
+                        210,
+                        242
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                117,
+                                231,
+                                211,
+                                243
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        117,
+                                        231,
+                                        211,
+                                        243
+                                    ],
+                                    "score": 0.959,
+                                    "content": "Quay tr lai So dò ban dau",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 13
+                        }
+                    ],
+                    "index": 13,
+                    "bbox_fs": [
+                        117,
+                        231,
+                        211,
+                        243
+                    ]
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        213,
+                        246,
+                        246,
+                        258
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                212,
+                                245,
+                                247,
+                                259
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        212,
+                                        245,
+                                        247,
+                                        259
+                                    ],
+                                    "score": 1.0,
+                                    "content": "HOME",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 14
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        128,
+                        259,
+                        200,
+                        282
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                258,
+                                201,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        258,
+                                        201,
+                                        269
+                                    ],
+                                    "score": 0.96,
+                                    "content": "Click vào biu tugng",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 15
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                272,
+                                201,
+                                282
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        272,
+                                        201,
+                                        282
+                                    ],
+                                    "score": 0.892,
+                                    "content": "quay ve so do ban däu.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 17
+                        }
+                    ],
+                    "index": 16.0,
+                    "bbox_fs": [
+                        128,
+                        258,
+                        201,
+                        282
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        248,
+                        259,
+                        399,
+                        269
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                247,
+                                258,
+                                399,
+                                270
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        247,
+                                        258,
+                                        399,
+                                        270
+                                    ],
+                                    "score": 0.65,
+                                    "content": "pt cgóheet hút",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 16
+                        }
+                    ],
+                    "index": 16,
+                    "bbox_fs": [
+                        247,
+                        258,
+                        399,
+                        270
+                    ]
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        118,
+                        285,
+                        189,
+                        295
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                117,
+                                285,
+                                190,
+                                295
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        117,
+                                        285,
+                                        190,
+                                        295
+                                    ],
+                                    "score": 0.998,
+                                    "content": "Zoom in / Zoom out",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 18
+                        }
+                    ],
+                    "index": 18
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        126,
+                        298,
+                        399,
+                        321
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                128,
+                                298,
+                                400,
+                                309
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        298,
+                                        400,
+                                        309
+                                    ],
+                                    "score": 0.946,
+                                    "content": "Nguòi dung có the zoom in (phóng to) /zoom out (thu nh) màn hinh dé thun tin xem các",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 19
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                311,
+                                226,
+                                322
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        311,
+                                        226,
+                                        322
+                                    ],
+                                    "score": 0.965,
+                                    "content": "thông tin trong sheet bang cách:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 20
+                        }
+                    ],
+                    "index": 19.5,
+                    "bbox_fs": [
+                        128,
+                        298,
+                        400,
+                        322
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        129,
+                        324,
+                        277,
+                        334
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                324,
+                                277,
+                                334
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        324,
+                                        277,
+                                        334
+                                    ],
+                                    "score": 0.938,
+                                    "content": "Cách 1: Dé chut  vi trí cän zoom trên màn hinh:",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 21
+                        }
+                    ],
+                    "index": 21,
+                    "bbox_fs": [
+                        129,
+                        324,
+                        277,
+                        334
+                    ]
+                },
+                {
+                    "type": "list",
+                    "bbox": [
+                        150,
+                        337,
+                        293,
+                        360
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                150,
+                                336,
+                                280,
+                                347
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        336,
+                                        230,
+                                        347
+                                    ],
+                                    "score": 0.962,
+                                    "content": "- Zoom in: Gir phím Ctrl",
+                                    "type": "text"
+                                },
+                                {
+                                    "bbox": [
+                                        230,
+                                        338,
+                                        236,
+                                        345
+                                    ],
+                                    "score": 0.67,
+                                    "content": "^ +",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        237,
+                                        336,
+                                        280,
+                                        347
+                                    ],
+                                    "score": 0.88,
+                                    "content": "Lan chuot lèn.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 22,
+                            "is_list_end_line": true
+                        },
+                        {
+                            "bbox": [
+                                155,
+                                348,
+                                293,
+                                361
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        155,
+                                        348,
+                                        234,
+                                        361
+                                    ],
+                                    "score": 0.921,
+                                    "content": "Zoom out: Gi phím Ctr",
+                                    "type": "text"
+                                },
+                                {
+                                    "bbox": [
+                                        234,
+                                        351,
+                                        240,
+                                        358
+                                    ],
+                                    "score": 0.67,
+                                    "content": "^ +",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        241,
+                                        348,
+                                        293,
+                                        361
+                                    ],
+                                    "score": 0.93,
+                                    "content": "Ln chut xuöng.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 23,
+                            "is_list_start_line": true,
+                            "is_list_end_line": true
+                        }
+                    ],
+                    "index": 22.5,
+                    "bbox_fs": [
+                        150,
+                        336,
+                        293,
+                        361
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        131,
+                        363,
+                        324,
+                        373
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                129,
+                                362,
+                                325,
+                                374
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        129,
+                                        362,
+                                        325,
+                                        374
+                                    ],
+                                    "score": 0.929,
+                                    "content": "Cách 2: Su dung chúc nng zoom ò góc phåi duói cung màn hình",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 24
+                        }
+                    ],
+                    "index": 24,
+                    "bbox_fs": [
+                        129,
+                        362,
+                        325,
+                        374
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        150,
+                        373,
+                        346,
+                        438
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                150,
+                                373,
+                                346,
+                                438
+                            ],
+                            "group_id": 2,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        373,
+                                        346,
+                                        438
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                150,
+                                                373,
+                                                346,
+                                                438
+                                            ],
+                                            "score": 0.852,
+                                            "type": "image",
+                                            "image_path": "63d552d67ece8010f7e444af66b1af3ffbd05d1d3659012ca124dc7493873a46.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 25.5,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        150,
+                                        373,
+                                        346,
+                                        405.5
+                                    ],
+                                    "spans": [],
+                                    "index": 25
+                                },
+                                {
+                                    "bbox": [
+                                        150,
+                                        405.5,
+                                        346,
+                                        438.0
+                                    ],
+                                    "spans": [],
+                                    "index": 26
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 25.5
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        118,
+                        441,
+                        387,
+                        463
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                116,
+                                440,
+                                388,
+                                452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        116,
+                                        440,
+                                        388,
+                                        452
+                                    ],
+                                    "score": 0.944,
+                                    "content": "Truòng hgp click chut vào màn hinh nhieu lan làm toàn màn hinh trng, khòng hin thi",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 27
+                        },
+                        {
+                            "bbox": [
+                                128,
+                                453,
+                                290,
+                                464
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        128,
+                                        453,
+                                        155,
+                                        464
+                                    ],
+                                    "score": 0.951,
+                                    "content": "thông tin",
+                                    "type": "text"
+                                },
+                                {
+                                    "bbox": [
+                                        155,
+                                        455,
+                                        165,
+                                        462
+                                    ],
+                                    "score": 0.77,
+                                    "content": "\\Rightarrow",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        166,
+                                        453,
+                                        290,
+                                        464
+                                    ],
+                                    "score": 0.935,
+                                    "content": "Nhân phím \"ESC\" dé hién thi lai thông tin.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 28
+                        }
+                    ],
+                    "index": 27.5,
+                    "bbox_fs": [
+                        116,
+                        440,
+                        388,
+                        464
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        144,
+                        464,
+                        374,
+                        548
+                    ],
+                    "blocks": [
+                        {
+                            "type": "image_body",
+                            "bbox": [
+                                144,
+                                464,
+                                374,
+                                548
+                            ],
+                            "group_id": 3,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        464,
+                                        374,
+                                        548
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                144,
+                                                464,
+                                                374,
+                                                548
+                                            ],
+                                            "score": 0.419,
+                                            "type": "image",
+                                            "image_path": "e369869fcfe362e08dfb33bdd0e12c34c9d140e7b0bdec5e44ed7e3444e0645d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32,
+                            "virtual_lines": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        464,
+                                        374,
+                                        476.0
+                                    ],
+                                    "spans": [],
+                                    "index": 29
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        476.0,
+                                        374,
+                                        488.0
+                                    ],
+                                    "spans": [],
+                                    "index": 30
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        488.0,
+                                        374,
+                                        500.0
+                                    ],
+                                    "spans": [],
+                                    "index": 31
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        500.0,
+                                        374,
+                                        512.0
+                                    ],
+                                    "spans": [],
+                                    "index": 32
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        512.0,
+                                        374,
+                                        524.0
+                                    ],
+                                    "spans": [],
+                                    "index": 33
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        524.0,
+                                        374,
+                                        536.0
+                                    ],
+                                    "spans": [],
+                                    "index": 34
+                                },
+                                {
+                                    "bbox": [
+                                        144,
+                                        536.0,
+                                        374,
+                                        548.0
+                                    ],
+                                    "spans": [],
+                                    "index": 35
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32
+                }
+            ]
+        }
+    ],
+    "_backend": "pipeline",
+    "_version_name": "2.6.2"
+}
