@@ -124,5 +124,14 @@
     "processed_at": 1761708906.8431768,
     "chunks_count": 0,
     "entities_count": 0
+  },
+  "a79c2e69-13fd-4fc3-9980-357d61f2cd22": {
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/input/converted/ChuyenTienDi_DoanhNghiep.pdf",
+    "registered_at": 1761901599.80957,
+    "file_type": ".pdf",
+    "total_pages": 96,
+    "processed_at": 1761901599.8080158,
+    "chunks_count": 0,
+    "entities_count": 0
   }
 }

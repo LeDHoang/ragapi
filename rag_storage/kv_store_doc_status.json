@@ -2984,5 +2984,20 @@
       "processing_start_time": 1761708773,
       "processing_end_time": 1761708793
     }
+  },
+  "a79c2e69-13fd-4fc3-9980-357d61f2cd22": {
+    "status": "failed",
+    "error_msg": "RetryError[C[548/643]: chunk-967552a58c83c94f33b0b39f29526252: <Future at 0x3102bff40 state=finished raised RateLimitError>]",
+    "content_summary": "# Huóng dan sur dung:\n\n# Di dën sheet có thông tin lién kêt:\n\nNhng ni dung có lièn kêt dén sheet chúa thòng tin khi dua chut dën s hin thi bi€u\n\ntugng:\n\nClick chut vào ni dung dó se dn dën sheet chúa thòng tin cän tim.\n\n# Quay tr lai So dò ban däu\n\n#...",
+    "content_length": 85314,
+    "created_at": "2025-10-31T08:49:05.183176+00:00",
+    "updated_at": "2025-10-31T09:06:27.902877+00:00",
+    "file_path": "/Users/hoangleduc/Desktop/Coding Project/ragapi/input/converted/ChuyenTienDi_DoanhNghiep.pdf",
+    "track_id": "insert_20251031_154905_82e16cc5",
+    "metadata": {
+      "processing_start_time": 1761900545,
+      "processing_end_time": 1761901587
+    },
+    "chunks_list": []
   }
 }
